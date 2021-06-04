@@ -4,11 +4,15 @@ using namespace std;
 
 int main()
 {
-    std::array result[];
-    for (int i = 1; i < 10; i++)
+    int amount;
+    int i;
+    cin >> i;
+    for (i = 1; i < 1000; i++)
     {
-        result[i] += result[i-1] + result[i-2];
-        printf("%i\n", result[i]);
+        if (i % 3 == 0 || i % 5 == 0)
+        {
+            amount += i;
+        }
     }
-    
+    cout << amount;
 }

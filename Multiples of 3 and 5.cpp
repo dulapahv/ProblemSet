@@ -6,7 +6,7 @@ int main()
 {
     int amount;
     int i;
-    cin >> i; // Get input
+    //cin >> i; // Get input
     for (i = 1; i < 1000; i++)
     {
         if (i % 3 == 0 || i % 5 == 0)

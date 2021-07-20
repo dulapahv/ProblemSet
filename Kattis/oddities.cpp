@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     int cases, number[20];
-    scanf("%d", &cases);
+    cin >> cases;
 
     for (int i = 0; i < cases; i++) {
         scanf("%d", &number[i]);

@@ -7,11 +7,11 @@ int main() {
     int age;
 
     printf("Enter your first name: ");
-    scanf("%s", &name);
+    scanf("%s", name);
     printf("Enter your surname: ");
-    scanf("%s", &surname);
+    scanf("%s", surname);
     printf("Enter your nickname: ");
-    scanf("%s", &nickname);
+    scanf("%s", nickname);
     printf("Enter your age: ");
     scanf("%d", &age);
 

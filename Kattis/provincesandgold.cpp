@@ -8,38 +8,40 @@ int main() {
         cin >> usin[i];
     }
 
-    int bp = 0;
-    bp = (usin[0] * 3) + (usin[1] * 2) + (usin[2] * 1);
+    int x = (usin[0] * 3) + (usin[1] * 2) + (usin[2] * 1);
 
     string victory;
-    while (bp >= 2) {
-        if (bp >= 8) {
-            victory = "Province";
+    while (x >= 2) {
+        if (x >= 8) {
+            victory = "Province or ";
             break;
         }
-        else if (bp >= 5) {
-            victory = "Duchy";
+        else if (x >= 5) {
+            victory = "Duchy or ";
             break;
         }
         else {
-            victory = "Estate";
+            victory = "Estate or ";
             break;
         }
     }
 
-    while (bp >= 0)
+    string treasure;
+    while (x >= 0)
     {
-        if ()if (bp >= 8) {
-            victory = "Province";
+        if (x >= 6) {
+            treasure = "Gold";
             break;
         }
-        else if (bp >= 5) {
-            victory = "Duchy";
+        else if (x >= 3) {
+            treasure = "Silver";
             break;
         }
         else {
-            victory = "Estate";
+            treasure = "Copper";
             break;
         }
+    }
     
+    cout << victory << treasure << endl;
 }

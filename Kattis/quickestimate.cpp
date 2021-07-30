@@ -7,9 +7,13 @@ int main() {
     cin >> cases;
 
     string usin;
+    int result[cases];
     for (int i = 0; i < cases; i++) {
         cin >> usin;
+        result[i] = usin.length(); 
     }
 
-    cout << usin.length() << endl;
+    for (int i = 0; i < cases; i++) {
+        cout << result[i] << endl;
+    }
 }

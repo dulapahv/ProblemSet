@@ -1,2 +1,2 @@
 
-    cout << result << endl;
+            cout << "Buzz" << endl;

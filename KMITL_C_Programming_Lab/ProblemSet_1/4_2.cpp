@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    double usin;
+    float usin;
     cin >> usin;
 
     if (usin > 0) {

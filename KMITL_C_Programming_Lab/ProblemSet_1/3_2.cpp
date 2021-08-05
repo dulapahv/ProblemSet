@@ -1,6 +1,6 @@
 // Written by Dulapah Vibulsanti (64011388)
 
-// 3.1. Convert Celsius given by user to Farenheit
+// 3.2. Convert Celsius given by user to Farenheit
 
 #include <iostream>
 

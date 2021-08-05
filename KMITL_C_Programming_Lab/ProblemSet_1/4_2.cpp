@@ -11,7 +11,7 @@ int main() {
     cin >> usin;
 
     if (usin > 0) {
-        cout << usin << endl;
+        cout << "positive" << endl;
     }
     else if (usin < 0) {
         cout << "negative" << endl;

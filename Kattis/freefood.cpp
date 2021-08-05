@@ -29,7 +29,7 @@ int main() {
     sort(date, date + n);
 
     vector<int> result;
-    for (int i = 0; i < temp.size(); i++) {
+    for (int i = 0; i <= temp.size() - 1; i++) {
         if (date[i] != date[i + 1]) {
             result.push_back(date[i]);
         }

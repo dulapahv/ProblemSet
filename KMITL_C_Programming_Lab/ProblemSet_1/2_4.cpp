@@ -1,3 +1,7 @@
+// Written by Dulapah Vibulsanti (64011388)
+
+// 2.4. Find area from the radius given by user
+
 #include <iostream>
 
 #define PI 3.1416

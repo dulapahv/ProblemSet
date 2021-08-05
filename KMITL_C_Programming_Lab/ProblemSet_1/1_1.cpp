@@ -1,3 +1,7 @@
+// Written by Dulapah Vibulsanti (64011388)
+
+// 1.1. Find circumference from the given radius (2.0)
+
 #include <iostream>
 
 #define PI 3.1416

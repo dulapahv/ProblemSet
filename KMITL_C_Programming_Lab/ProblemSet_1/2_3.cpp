@@ -1,3 +1,7 @@
+// Written by Dulapah Vibulsanti (64011388)
+
+// 2.3. Find area from the given radius (1.5, 2.2, 3.5, 4.2)
+
 #include <iostream>
 
 #define PI 3.1416

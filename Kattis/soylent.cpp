@@ -7,7 +7,7 @@ int main() {
     int cases;
     cin >> cases;
 
-    int cal = 400, usin[cases], result[cases];
+    float cal = 400, usin[cases], result[cases];
     for (int i = 0; i < cases; i++) {
         cin >> usin[i];
         result[i] = ceil(usin[i] / cal);

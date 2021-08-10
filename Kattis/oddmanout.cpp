@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
@@ -8,17 +7,23 @@ int main() {
     int cases;
     cin >> cases;
 
-    int people;
+    int ppl[cases];
     vector<int> usin;
     for (int i = 0; i < cases; i++) {
-        cin >> people;
+        cin >> ppl[cases];
 
-        int temp;
-        for (int j = 0; j < cases; j++) {
+        for (int j = 0; j < ppl; j++) {
+            int temp;
             cin >> temp;
             usin.push_back(temp);
         }
     }
 
-    cout << usin[1] << endl;
+    for (int i = 0; i < cases; i++) {
+        for (int j = 0; j < ppl; j++) {
+            for (int k = 0; k < ppl; k++) {
+                if (usin[j] )
+            }
+        }
+    }
 }

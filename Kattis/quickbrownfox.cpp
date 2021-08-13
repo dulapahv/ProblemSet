@@ -1,20 +1,33 @@
 #include <iostream>
-#include <string.h>
+#include <vector>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
     int cases;
     cin >> cases;
+    cin.ignore();
 
+    vector<char> alphabet;
+    for (int i = 0; i < 26; i++) {
+        alphabet.push_back(char(i + 97));
+    }
+
+    string usin;
     for (int i = 0; i < cases; i++) {
-        string usin;
-        char bank[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        getline(cin, usin);
 
-        getsline(cin >> usin);
-        
-        for (int j = 0; j < sizeof(usin); j++) {
-            if (usin[j] == bank)
+        for (int j = 0; j < usin.size(); j++) {
+            if (count(alphabet.begin(), alphabet.end(), usin[j])) {
+                int location = usin[j];
+                alphabet.erase(alphabet.begin() + location);
+            }
         }
+    }
+
+    for (int i = 0; i < 26; i++) {
+        cout << alphabet[i];
     }
 }

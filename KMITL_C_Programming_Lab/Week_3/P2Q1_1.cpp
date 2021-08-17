@@ -6,10 +6,12 @@ int main() {
     int width, height;
     cin >> width >> height;
 
-    int sWidth = floor(width / 2), sHeight = floor(height / 2);
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            cout << "*";
+            if (i == 0 || i == height - 1 || j == 0 || j == width - 1)
+                cout << "*";
+            else
+                cout << " ";            
         }
         cout << endl;
     }

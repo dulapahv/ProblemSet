@@ -92,7 +92,7 @@ t.lt(90)
 t.fd(170)
 t.end_fill()
 
-# left house frame windows
+# left house window frame
 t.penup()
 t.setpos(-360, 60)
 t.pen(fillcolor = "#ADD8E6", pensize = 2)
@@ -109,7 +109,7 @@ t.rt(90)
 t.fd(189)
 t.end_fill()
 
-# right house frame windows
+# right house window frame
 x, y = t.pos()
 t.penup()
 t.setpos(x + 382, y)

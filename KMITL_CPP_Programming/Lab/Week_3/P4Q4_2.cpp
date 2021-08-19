@@ -1,53 +1,54 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
-void print_checker(char c1,char c2, int w, int h,int size){
-    int counth =0;
-    int countw =0;
-    for(int i=0; i<h;i++){
-            counth%=(size*2);
-            for(int j=0;j<w;j++){
-
-                if(counth<size){
-                    if(countw<size){
-                        cout<<c1;
-                        countw++;
-                    }
-                    else{
-                        cout<<c2;
-                        countw++;
-                    }
+void print_checker(char c1, char c2, int w, int h, int size) {
+    int countHeight = 0;
+    int countWidth = 0;
+    for (int i = 0; i < h; i++) {
+        countHeight %= (size * 2);
+        for (int j = 0; j < w; j++) {
+            if (countHeight < size) {
+                if (countWidth < size) {
+                    cout << c1;
+                    countWidth++;
                 }
-                else{
-                    if(countw<size){
-                        cout<<c2;
-                        countw++;
-                    }
-                    else{
-                        cout<<c1;
-                        countw++;
-                    }
+                else {
+                    cout << c2;
+                    countWidth++;
                 }
-                countw%=(size*2);
+            }
+            else {
+                if (countWidth < size) {
+                    cout << c2;
+                    countWidth++;
+                }
+                else {
+                    cout << c1;
+                    countWidth++;
+                }
+            }
+            countWidth %= (size * 2);
         }
-        countw=0;
-        cout<<endl;
-        counth+=1;
+        countWidth = 0;
+        cout << endl;
+        countHeight += 1;
     }
 }
 
-int main(){
-    int w,h,size;
-    char c1,c2;
-    cout << "Enter Width: ";
-    cin >> w;
-    cout << "Enter Height: ";
-    cin >> h;
-    cout << "Enter character 1: ";
-    cin >> c1;
-    cout << "Enter character 2: ";
-    cin >> c2;
-    cout <<"Enter Size: ";
+int main()
+{
+    int width, height, size;
+    char usinChar1, usinChar2;
+    cout << "Width: ";
+    cin >> width;
+    cout << "Height: ";
+    cin >> height;
+    cout << "Character 1: ";
+    cin >> usinChar1;
+    cout << "Character 2: ";
+    cin >> usinChar2;
+    cout << "Size: ";
     cin >> size;
-    print_checker(c1,c2,w,h,size);
+    print_checker(usinChar1, usinChar2, width, height, size);
 }

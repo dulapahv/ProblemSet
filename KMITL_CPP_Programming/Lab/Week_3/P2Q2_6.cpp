@@ -4,7 +4,7 @@ using namespace std;
 
 // Driver Code
 int main() {
-    int height, width;
+    int height;
     cin >> height;
  
     for (int i = height; i > 0; i--) {

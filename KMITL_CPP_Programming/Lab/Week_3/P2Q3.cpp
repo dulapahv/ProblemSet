@@ -1,48 +1,53 @@
-#include<iostream>
+#include <iostream>
 
+using namespace std;
 
-int main(){
-    int h;
+int main() {
+    int height;
     bool even = false;
-    std::cout <<"Enter size: ";
-    std::cin >> h;
-    if(h%2==0){
-        h-=1;
+    cout << "Size: ";
+    cin >> height;
+
+    if (height % 2 == 0) {
+        height -= 1;
         even = true;
     }
-    int star = 1;
-    for(int i=0;i<h/2;i++){
-        for(int space = 0;space<(h-star)/2;space++){
-            std::cout<<' ';
+    int pattern = 1;
+    
+    for (int i = 0; i < height / 2; i++) {
+        for (int j = 0; j < (height - pattern) / 2; j++) {
+            cout << ' ';
         }
-        for(int k =0;k<star;k++){
-            std::cout<<'*';
+        for (int j = 0; j < pattern; j++) {
+            cout << '*';
         }
-        for(int space = 0;space<(h-star)/2;space++){
-            std::cout<<' ';
+        for (int j = 0; j < (height - pattern) / 2; j++) {
+            cout << ' ';
         }
-        star+=2;
-        std::cout<<std::endl;
+        pattern += 2;
+        cout << endl;
     }
-    for(int z=0;z<h;z++){
-        std::cout<<'*';
+    for (int i = 0; i < height; i++) {
+        cout << '*';
     }
-    std::cout<<std::endl;
-    star-=2;
-    for(int i=0;i<h/2;i++){
-        for(int space = (h-star)/2 ;space>0;space--){
-            std::cout<<' ';
+    cout << endl;
+    pattern -= 2;
+
+    for (int i = 0; i < height / 2; i++) {
+        for (int j = (height - pattern) / 2; j > 0; j--) {
+            cout << ' ';
         }
-        for(int k =0;k<star;k++){
-            std::cout<<'*';
+        for (int j = 0; j < pattern; j++) {
+            cout << '*';
         }
-        for(int space = (h-star)/2 ;space>0;space--){
-            std::cout<<' ';
+        for (int j = (height - pattern) / 2; j > 0; j--) {
+            cout << ' ';
         }
-        star-=2;
-        std::cout<<std::endl;
+        pattern -= 2;
+        cout << endl;
     }
-    if (even){
-        std::cout<<std::endl;
+
+    if (even) {
+        cout << endl;
     }
 }

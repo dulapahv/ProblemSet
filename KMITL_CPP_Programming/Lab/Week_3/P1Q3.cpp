@@ -1,17 +1,18 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 
 using namespace std;
 
 int main() {
-    string usin;
-    getline(cin, usin);
+  int usin, usinEnd = '-';
 
-    string result;
-    int i = 0;
-    while (true)
-    {
-        if (usin[i] == ' ')
+  while ((usin = getchar()) != EOF) {
+    if (usin == ' ') {
+      if (usinEnd != ' ')
+        putchar(usin);
     }
-    
+    else
+      putchar(usin);
+    usinEnd = usin;
+  }
+  return 0;
 }

@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     int height;
     bool even = false;
-    cout << "Size: ";
+    cout << "Height: ";
     cin >> height;
 
     if (height % 2 == 0) {

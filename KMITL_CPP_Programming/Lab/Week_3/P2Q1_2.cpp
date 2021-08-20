@@ -2,10 +2,10 @@
 
 using namespace std;
 
-void print_rect1 (char chr, int width, int height) {
-    for (int i = 0; i < width; i++) {
-        for (int j = 0; j < height; j++) {
-            cout << chr;
+void print_rect1 (char c, int w, int h) {
+    for (int i = 0; i < w; i++) {
+        for (int j = 0; j < h; j++) {
+            cout << c;
         }
         cout << endl;
     }
@@ -13,7 +13,12 @@ void print_rect1 (char chr, int width, int height) {
 
 int main() {
     char usinChr;
-    int w, h;
-    cin >> usinChr >> w >> h; // example: # 4 6
-    print_rect1 (usinChr, w, h);
+    int width, height;
+    cout << "Character: ";
+    cin >> usinChr;
+    cout << "Width: ";
+    cin >> width;
+    cout << "Height: ";
+    cin >> height;
+    print_rect1 (usinChr, width, height);
 }

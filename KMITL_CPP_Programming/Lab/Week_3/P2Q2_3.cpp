@@ -14,6 +14,9 @@ void print_tri2(char c, int n) {
 int main() {
     char usinChar;
     int height;
-    cin >> usinChar >> height; // example: * 5
+    cout << "Character: ";
+    cin >> usinChar;
+    cout << "Height: ";
+    cin >> height;
     print_tri2(usinChar, height);
 }

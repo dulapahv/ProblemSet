@@ -16,6 +16,9 @@ void print(int w, int h) {
 
 int main() {
     int width, height;
-    cin >> width >> height;
+    cout << "Width: ";
+    cin >> width;
+    cout << "Height: ";
+    cin >> height;
     print(width, height);
 }

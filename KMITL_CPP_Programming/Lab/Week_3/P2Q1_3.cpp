@@ -17,6 +17,13 @@ void print_rect2(char sc, char fc, int w, int h) {
 int main() {
     char outline, fill;
     int width, height;
-    cin >> outline >> fill >> width >> height; // example: = - 6 4
+    cout << "Outline: ";
+    cin >> outline;
+    cout << "Fill: ";
+    cin >> fill;
+    cout << "Width: ";
+    cin >> width;
+    cout << "Height: ";
+    cin >> height;
     print_rect2(outline, fill, width, height);
 }

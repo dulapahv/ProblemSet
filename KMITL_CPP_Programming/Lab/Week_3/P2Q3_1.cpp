@@ -53,6 +53,9 @@ void print_diamond(char c, int n) {
 int main() {
     char usinChar;
     int height;
-    cin >> usinChar >> height;
+    cout << "Character: ";
+    cin >> usinChar;
+    cout << "Height: ";
+    cin >> height;
     print_diamond(usinChar, height);
 }

@@ -3,8 +3,8 @@
 using namespace std;
 
 void print_rect1 (char c, int w, int h) {
-    for (int i = 0; i < w; i++) {
-        for (int j = 0; j < h; j++) {
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
             cout << c;
         }
         cout << endl;

@@ -1,14 +1,23 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
     int usin;
-    while((usin = getchar()) != EOF) {
-        if (usin == '\t')
-            cout << "\\t ";
-        else if (usin == '\n')
-            cout << "\\n ";
+    cout << "Enter Text: ";
+
+    while ((usin = getchar()) != EOF) {
+        if (usin == '\t') {
+            putchar('\\');
+            putchar('t');
+        }
+        if (usin == '\\') {
+            putchar('\\');
+            putchar('\\');
+        }
+        else {
+            putchar(usin);
+        }
     }
-    return 0;
 }

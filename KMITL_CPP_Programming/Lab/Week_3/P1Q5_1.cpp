@@ -11,6 +11,7 @@ void to_lower(string str) {
 
 int main() {
     string usin;
+    cout << "Enter Text: ";
     getline(cin, usin);
     to_lower(usin);
 }

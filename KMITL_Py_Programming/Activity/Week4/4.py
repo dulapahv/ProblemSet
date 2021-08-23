@@ -3,11 +3,11 @@ import turtle
 t = turtle.Turtle()
 t.penup()
 t.setpos(-220, 0)
-t.pen(pensize = 10, speed = 0)
+r = float(input("Radius: "))
+t.pen(pensize = 10 * (r / 100), speed = 0)
 
-
-def drawCircle(color, i):
-    r, x, y = 100, 110, 100
+def drawCircle(color, r, i):
+    x, y = 110 * (r / 100), 100 * (r / 100)
     t.pencolor(color)
     t.pendown()
     t.circle(r)
@@ -18,11 +18,11 @@ def drawCircle(color, i):
     t.rt(90)
 
 
-drawCircle("#0085C7", -1)
-drawCircle("#F4C300", 1)
-drawCircle("#000000", -1)
-drawCircle("#009F3D", 1)
-drawCircle("#DF0024", -1)
+drawCircle("#0085C7", r, -1)
+drawCircle("#F4C300", r, 1)
+drawCircle("#000000", r, -1)
+drawCircle("#009F3D", r, 1)
+drawCircle("#DF0024", r, -1)
 
 t.hideturtle()
 turtle.done()

@@ -16,7 +16,7 @@ int main() {
             putchar('\\');
             putchar('\\');
         }
-        else {
+        if (usin != '\t' && usin != '\\') {
             putchar(usin);
         }
     }

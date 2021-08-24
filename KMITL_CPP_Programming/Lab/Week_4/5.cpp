@@ -1,3 +1,8 @@
+/* Pseudocode */
+// Get character from a file
+// Convert to lower case
+// Print out the converted character
+
 #include <iostream>
 
 using namespace std;

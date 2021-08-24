@@ -1,3 +1,8 @@
+/* Pseudocode */
+// Get character from a file
+// Check if character is blanks, tabs, or newlines. If so, count them in each category
+// Print out the number of counted blanks, tabs, and newlines
+
 #include <iostream>
 
 using namespace std;

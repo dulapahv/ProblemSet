@@ -1,3 +1,9 @@
+/* Pseudocode */
+// Create a column Celsius and Fahr
+// Generate values for Celsius from 0 - 280 with incremental of 40
+// Convert values from Celsius to Fahrenheit
+// Print values of Celsius and Fahrenheit in each column
+
 #include <iostream>
 #include <iomanip>
 

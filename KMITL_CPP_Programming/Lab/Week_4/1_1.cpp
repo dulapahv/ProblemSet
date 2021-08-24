@@ -1,3 +1,9 @@
+/* Pseudocode */
+// Create a column Fahr and Celsius
+// Generate values for Fahrenheit from 0 - 300 with incremental of 20
+// Convert values from Fahrenheit to Celsius
+// Print values of Fahrenheit and Celsius in each column
+
 #include <iostream>
 #include <iomanip>
 
@@ -15,4 +21,3 @@ int main() {
         cout << setprecision(1) << fixed << setw(3) << fahr << setw(11) << celsius << endl;
     }
 }
-

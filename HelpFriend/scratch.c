@@ -1,30 +1,26 @@
 #include <stdio.h>
 
-int main() {
-    float x, y;
-    int i;
-    scanf("%f%f%d", &x, &y, &i);
-
-    if (i <= 0 || i >= 5) {
-        printf("Invalid operation");
-        return 0;
+int main()
+{
+  int blank_char, tab_char, new_line;
+  blank_char = 0;
+  tab_char = 0;
+  new_line = 0;
+  int c;
+  while ((c = getchar()) != EOF)
+  {
+    if (c == ' ')
+    {
+      ++blank_char;
     }
-        
-    switch (i) {
-        case 1:
-            printf("%.2f", x + y);
-            break;
-        
-        case 2:
-            printf("%.2f", x - y);
-            break;
-
-        case 3:
-            printf("%.2f", x * y);
-            break;
-        
-        case 4:
-            printf("%.2f", x / y);
-            break;
+    if (c == '\t')
+    {
+      ++tab_char;
     }
+    if (c == '\n')
+    {
+      ++new_line;
+    }
+  }
+  printf("blank=%d,tab=%d,newline=%d\n", blank_char, tab_char, new_line);
 }

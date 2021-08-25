@@ -8,7 +8,7 @@ gross = rate * hour
 fedHold = gross * fedTax
 staHold = gross * staTax
 totalHold = fedHold + staHold
-print(f"Employee Name: {name}")
+print(f"\nEmployee Name: {name}")
 print(f"Hours Worked: {hour}")
 print(f"Pay Rate: {rate}")
 print(f"Gross Pay: {gross}")

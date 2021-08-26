@@ -1,5 +1,5 @@
 /* Pseudocode */
-// Create a column Celsius and Fahr
+// Create 2 columns, Celsius and Fahr
 // Generate values for Celsius from 300 - 0 with decremental of 20
 // Define a function to convert values from Celsius to Fahrenheit
 // Print values of Celsius and Fahrenheit in each column

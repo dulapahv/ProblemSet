@@ -2,8 +2,6 @@
 
 #define BUFFER_SIZE 81
 
-using namespace std;
-
 int get_line(FILE *fp, char *buffer, int size) {
     char *end = buffer + size;
     char *dst = buffer;

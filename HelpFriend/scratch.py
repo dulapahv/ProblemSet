@@ -1,21 +1,30 @@
-LAB = "turtlelab3x.py"
-import urllib.request
-urllib.request.urlretrieve(f"http://elab.cpe.ku.ac.th/turtlelab/{LAB}",LAB)
 
-from turtlelab3x import turtle,home,shop,check
-
-from math import degrees,atan
-distShop = (shop.x**2 + shop.y**2)**0.5
-angleShop = degrees(atan(abs(shop.y/shop.x)))
-
-turtle.left(angleShop)
-turtle.forward(distShop)
-
-distHouse = ((abs(home.x - turtle.x))**2 + (abs(home.y - turtle.y))**2)**0.5
-angleHouse = degrees(atan(abs(home.y - shop.y)/abs(home.x - shop.x)))
-
-turtle.right(angleShop)
-turtle.left(angleHouse)
-turtle.forward(distHouse)
-
-check()
+# Import module 
+from tkinter import *
+    
+# Create object 
+splash_root = Tk() 
+    
+# Adjust size 
+splash_root.geometry("200x200")
+  
+# Set Label
+splash_label = Label(splash_root,text="Splash Screen",font=18)
+splash_label.pack()
+  
+# main window function
+def main():  
+    # destory splash window
+    splash_root.destroy()
+  
+    # Execute tkinter 
+    root = Tk() 
+        
+    # Adjust size 
+    root.geometry("400x400") 
+  
+# Set Interval
+splash_root.after(3000,main)
+  
+# Execute tkinter 
+mainloop()

@@ -1,4 +1,2 @@
 
-    }
-
-    fclose(file);
+            sum += val;

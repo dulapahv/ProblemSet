@@ -5,7 +5,7 @@
 int get_line(FILE *fp, char *buffer, int size) {
     char *end = buffer + size, *dst = buffer;
     int c;
-    while ((c = fgetc(fp)) != EOF && c != '\n' && dst <= end) {
+    while ((c = fgetc(fp)) != EOF && c != '\n' && dst <= end) { // 
         *dst = c;
         dst++;
     }

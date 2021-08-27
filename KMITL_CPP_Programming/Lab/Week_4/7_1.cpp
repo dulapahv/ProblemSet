@@ -3,8 +3,7 @@
 #define BUFFER_SIZE 81
 
 int get_line(FILE *fp, char *buffer, int size) {
-    char *end = buffer + size;
-    char *dst = buffer;
+    char *end = buffer + size, *dst = buffer;
     int c;
     while ((c = fgetc(fp)) != EOF && c != '\n' && dst <= end) {
         *dst = c;
@@ -18,7 +17,6 @@ int main() {
     FILE *in_file = fopen("7_1in.txt", "rb");
     FILE *out_file = fopen("7_1out.txt", "wb");
     char *cur, *end, buffer[BUFFER_SIZE];
-    double partSum, temp;
     for (int len; !feof(in_file);) {
         len = get_line(in_file, buffer, BUFFER_SIZE);
         if (len == -1)

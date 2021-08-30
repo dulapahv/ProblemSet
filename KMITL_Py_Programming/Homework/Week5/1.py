@@ -38,18 +38,14 @@ t.setpos(float(p2x) * 10, float(p2y) * 10)
 t.dot(10)
 
 if float(p0x) <= float(p1x):
-    xLim1 = float(p0x)
-    xLim2 = float(p1x)
+    xLim1, xLim2 = float(p0x), float(p1x)
 else:
-    xLim1 = float(p1x)
-    xLim2 = float(p0x)
+    xLim1, xLim2 = float(p1x), float(p0x)
 
 if float(p0y) <= float(p1y):
-    yLim1 = float(p1y)
-    yLim2 = float(p0y)
+    yLim1, yLim2 = float(p1y), float(p0y)
 else:
-    yLim1 = float(p0y)
-    yLim2 = float(p1y)
+    yLim1, yLim2 = float(p0y), float(p1y)
 
 m = (float(p1y) - float(p0y)) / (float(p1x) - float(p0x))
 if (float(p2y) - float(p0y)) == m * ((float(p2x) - float(p0x))) and float(p2x) >= xLim1 and float(p2y) <= yLim1 and float(p2x) <= xLim2 and float(p2y) >= yLim2:

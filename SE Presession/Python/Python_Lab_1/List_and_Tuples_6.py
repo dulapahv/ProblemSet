@@ -23,3 +23,5 @@ print(list(set(num)))
 #         result.append(int(ListInput[i]))
 #
 # print(sorted(result))
+
+12

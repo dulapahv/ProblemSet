@@ -11,19 +11,19 @@ if age < 17:
         print(f"{name}, you are underweight.")
     elif 15 <= bmi <= 20:
         print(f"{name}, you are normal.")
-    if bmi > 20:
+    elif bmi > 20:
         print(f"{name}, you are overweight.")
 elif 17 <= age <= 35:
     if bmi < 18:
         print(f"{name}, you are underweight.")
     elif 18 <= bmi <= 24:
         print(f"{name}, you are normal.")
-    if bmi > 24:
+    elif bmi > 24:
         print(f"{name}, you are overweight.")
 elif age > 35:
     if bmi < 19:
         print(f"{name}, you are underweight.")
     elif 19 <= bmi <= 26:
         print(f"{name}, you are normal.")
-    if bmi > 26:
+    elif bmi > 26:
         print(f"{name}, you are overweight.")

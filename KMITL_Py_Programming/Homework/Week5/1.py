@@ -60,7 +60,7 @@ if ((float(p2y) - float(p0y)) >= (-1 / m) * ((float(p2x) - float(p0x))) and (flo
         else:
             msg = "P2 is on the right side of the line between P0 and P1."
 else:
-    msg = "P2 is neither on the line nor lies between P0 and P1."
+    msg = "P2 is not either on the line or lies between P0 and P1."
 t.dot(10)
 t.write(f"P2 ({p2x}, {p2y})\n{msg}", font=("Arial", 14))
 print(msg)

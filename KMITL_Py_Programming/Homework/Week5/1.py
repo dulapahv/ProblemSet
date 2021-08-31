@@ -23,6 +23,7 @@ t.write(f"P1 ({p1x}, {p1y})", font=("Arial", 14))
 
 t.shapesize(1.5)
 angle = math.degrees(math.atan((float(p1y) - float(p0y)) / (float(p1x) - float(p0x))))
+# orient the arrow for left/right reference
 if (float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0) or (float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0):
     t.lt(angle + 180)
 else:

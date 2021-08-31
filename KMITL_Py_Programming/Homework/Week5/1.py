@@ -23,9 +23,7 @@ t.write(f"P1 ({p1x}, {p1y})", font=("Arial", 14))
 
 t.shapesize(1.5)
 angle = math.degrees(math.atan((float(p1y) - float(p0y)) / (float(p1x) - float(p0x))))
-if float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0:
-    t.lt(angle + 180)
-elif float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0:
+if (float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0) or (float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0):
     t.lt(angle + 180)
 else:
     t.lt(angle)
@@ -33,40 +31,36 @@ t.clone()
 t.penup()
 t.hideturtle()
 
+t.pencolor("red")
 p2x, p2y = (input("Enter x,y coordinate for P2: ")).split(",")
 t.setpos(float(p2x) * 10, float(p2y) * 10)
-t.dot(10)
-
-if float(p0x) <= float(p1x):
-    xLim1, xLim2 = float(p0x), float(p1x)
-else:
-    xLim1, xLim2 = float(p1x), float(p0x)
-
-if float(p0y) <= float(p1y):
-    yLim1, yLim2 = float(p1y), float(p0y)
-else:
-    yLim1, yLim2 = float(p0y), float(p1y)
 
 m = (float(p1y) - float(p0y)) / (float(p1x) - float(p0x))
-if (float(p2y) - float(p0y)) == m * ((float(p2x) - float(p0x))) and float(p2x) >= xLim1 and float(p2y) <= yLim1 and float(p2x) <= xLim2 and float(p2y) >= yLim2:
-    msg = "P2 is on the line between P0 and P1."
-elif (float(p2y) - float(p0y)) > m * ((float(p2x) - float(p0x))) and float(p2x) >= xLim1 and float(p2y) <= yLim1 and float(p2x) <= xLim2 and float(p2y) >= yLim2:
-    if float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0:
-        msg = "P2 is on the right side of the line between P0 and P1."
-    elif float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0:
-        msg = "P2 is on the right side of the line between P0 and P1."
-    else:
-        msg = "P2 is on the left side of the line between P0 and P1."
-elif (float(p2y) - float(p0y)) < m * ((float(p2x) - float(p0x))) and float(p2x) >= xLim1 and float(p2y) <= yLim1 and float(p2x) <= xLim2 and float(p2y) >= yLim2:
-    if float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0:
-        msg = "P2 is on the left side of the line between P0 and P1."
-    elif float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0:
-        msg = "P2 is on the left side of the line between P0 and P1."
-    else:
-        msg = "P2 is on the right side of the line between P0 and P1."
+# check whether P2 lies between P0 and P1
+if ((float(p2y) - float(p0y)) >= (-1 / m) * ((float(p2x) - float(p0x))) and (float(p2y) - float(p1y)) <= (-1 / m) * ((float(p2x) - float(p1x)))) or (
+    ((float(p2y) - float(p0y)) <= (-1 / m) * ((float(p2x) - float(p0x))) and (float(p2y) - float(p1y)) >= (-1 / m) * ((float(p2x) - float(p1x))))):
+    t.pencolor("green")
+    # check whether P2 lies on the line between P0 and P1
+    if (float(p2y) - float(p0y)) == m * ((float(p2x) - float(p0x))):
+        msg = "P2 is on the line between P0 and P1."
+    # determine the location of P2
+    elif (float(p2y) - float(p0y)) > m * ((float(p2x) - float(p0x))) :
+        if float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0:
+            msg = "P2 is on the right side of the line between P0 and P1."
+        elif float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0:
+            msg = "P2 is on the right side of the line between P0 and P1."
+        else:
+            msg = "P2 is on the left side of the line between P0 and P1."
+    elif (float(p2y) - float(p0y)) < m * ((float(p2x) - float(p0x))) :
+        if float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) < 0:
+            msg = "P2 is on the left side of the line between P0 and P1."
+        elif float(p1x) - float(p0x) < 0 and float(p1y) - float(p0y) > 0:
+            msg = "P2 is on the left side of the line between P0 and P1."
+        else:
+            msg = "P2 is on the right side of the line between P0 and P1."
 else:
-    msg = "P2 is neither on the line nor located between P0 and P1."
-
+    msg = "P2 is neither on the line nor lies between P0 and P1."
+t.dot(10)
 t.write(f"P2 ({p2x}, {p2y})\n{msg}", font=("Arial", 14))
 print(msg)
 turtle.done()

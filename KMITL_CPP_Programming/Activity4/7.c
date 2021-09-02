@@ -17,12 +17,13 @@
 // }
 
 void find_two_largest(const int* a, int n, int* largest, int* second_largest) {
-    for (int i = 0; i < n; i++) {
-        if (a[i] > *largest) {
+    int* p;
+    for (p = (int*)a; p < a + n; ++p) {
+        if (*p > *largest) {
             *second_largest = *largest;
-            *largest = a[i];
+            *largest = *p;
         }
-        else if (a[i] <= *largest && a[i] > *second_largest)
-            *second_largest = a[i];
+        else if (*p <= *largest && *p > *second_largest)
+            *second_largest = *p;
     } 
 }

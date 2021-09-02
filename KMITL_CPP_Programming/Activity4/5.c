@@ -5,7 +5,7 @@
 int sum_array(const int a[], int n)
 {
     int *p, sum = 0;
-    for (p = (int *)a; p < a + n; ++p)
+    for (p = (int*)a; p < a + n; ++p)
         sum += *p;
     return sum;
 }

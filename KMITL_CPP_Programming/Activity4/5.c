@@ -12,5 +12,8 @@ int sum_array(const int a[], int n)
 
 int main() {
     int a[SIZE] = {1, 2, 3, 4, 5};
-    printf("Sum of array: %d", sum_array(a, SIZE));
+    printf("Elements in array are: ");
+    for (int i = 0; i < SIZE; ++i)
+        printf("%d ", a[i]);
+    printf("\nSum of array: %d", sum_array(a, SIZE));
 }

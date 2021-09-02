@@ -1,12 +1,10 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main() {
     int number[3][5];
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 5; j++) {
-            cin >> number[i][j];
+            scanf("%d", &number[i][j]);
         }
     }
 
@@ -19,6 +17,6 @@ int main() {
     }
     
     for (int i = 0; i < 15; i++) {
-        cout << result[i] << " ";
+        printf("%d ", result[i]);
     }
 }

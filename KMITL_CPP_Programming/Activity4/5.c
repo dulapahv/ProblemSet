@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define SIZE 5
+
 int sum_array(const int a[], int n)
 {
     int *p, sum = 0;
@@ -9,7 +11,6 @@ int sum_array(const int a[], int n)
 }
 
 int main() {
-    const int n = 5;
-    int a[n] = {1, 2, 3, 4, 5};
-    printf("%d", sum_array(a, n));
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    printf("Sum of array: %d", sum_array(a, SIZE));
 }

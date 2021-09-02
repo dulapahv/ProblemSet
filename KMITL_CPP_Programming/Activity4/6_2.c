@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define SIZE 5
+
 void avg_sum(double a[], int n, double* avg, double* sum)
 {
     int* p;
@@ -11,8 +13,7 @@ void avg_sum(double a[], int n, double* avg, double* sum)
 
 
 int main() {
-    const int n = 5;
-    double a[n] = {1, 2, 3, 4, 5}, avg, sum;
-    avg_sum(a, n, &avg, &sum);
+    double a[SIZE] = {1, 2, 3, 4, 5}, avg, sum;
+    avg_sum(a, SIZE, &avg, &sum);
     printf("%f\n%f", avg, sum);
 }

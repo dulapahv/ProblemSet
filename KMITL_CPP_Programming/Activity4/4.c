@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define SIZE 10
+
 void fill_zeros(int a[], int n) 
 {
     int *p;
@@ -8,10 +10,10 @@ void fill_zeros(int a[], int n)
 }
 
 int main() {
-    const int n = 10;
-    int a[n];
-    fill_zeros(a, n);
-    for (int i = 0; i < n; i++) {
+    int a[SIZE];
+    fill_zeros(a, SIZE);
+    printf("Elements in the array are: ");
+    for (int i = 0; i < SIZE; i++) {
         printf("%d", a[i]);
     }
 }

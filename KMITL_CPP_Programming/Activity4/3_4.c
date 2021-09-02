@@ -1,22 +1,43 @@
 #include <stdio.h>
 
-int main() {
-    int number[8][5];
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 5; j++) {
-            scanf("%d", &number[i][j]);
-        }
-    }
+#define HEIGHT 8
+#define WIDTH 5
 
-    int result[40], x = 0;
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 5; j++) {
+int main() {
+    int number[HEIGHT][WIDTH];
+    for (int i = 0; i < HEIGHT; i++)
+        for (int j = 0; j < WIDTH; j++)
+            scanf("%d", &number[i][j]);
+
+    int result[HEIGHT * WIDTH], x = 0;
+    for (int i = 0; i < HEIGHT; i++)
+        for (int j = 0; j < WIDTH; j++) {
             result[x] = number[i][j];
             x++;
         }
-    }
-    
-    for (int i = 0; i < 40; i++) {
+
+    printf("\nElements in one-dimensional array are:\n");
+    for (int i = 0; i < HEIGHT * WIDTH; i++)
         printf("%d ", result[i]);
+
+    printf("\n\nRow totals: ");
+    int a = 0;
+    for (int i = 0; i < HEIGHT; i++) {
+        int row = 0;
+        for (int j = 0; j < WIDTH; j++) {
+            row += result[a];
+            a++;
+        }
+        printf("%d ", row);
+    }
+
+    printf("\nColumn totals: ");
+    for (int i = 0; i < WIDTH; i++) {
+        int column = 0, b = 0;
+        for (int j = 0; j < HEIGHT; j++) {
+            column += result[b + i];
+            b += 5;
+        }
+        printf("%d ", column);
     }
 }

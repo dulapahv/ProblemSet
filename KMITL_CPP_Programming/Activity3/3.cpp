@@ -13,7 +13,7 @@ int main() {
     for (int c, cEnd; (c = fgetc(in_file)) != EOF;) {
         if (c == ' ') {
             if (cEnd != ' ')
-            fprintf(out_file, "%c", c);
+                fprintf(out_file, "%c", c);
         }
         else
             fprintf(out_file, "%c", c);

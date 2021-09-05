@@ -1,12 +1,11 @@
-def read_vector(msg):
-    print(msg)
-    x = float(input("x = "))
-    y = float(input("y = "))
-    return x,y
+def test(name, x, y):
+    print(name, x, y)
 
-def dot_product(x1,y1,x2,y2):
-    return (x1 * x2) + (y1 * y2)
+list = [["account", 500, 600], ["bg", 200, 600]]
+for i in range(len(list)):
+    test(list[i][0], list[i][1], list[i][2])
 
-x1, y1 = read_vector("Enter vector A")
-x2, y2 = read_vector("Enter vector B")
-print(f"Dot product of A and B is {dot_product(x1, y1, x2, y2):.2f}")
+
+list = [["account", 400, 600], ["bg", 400, 600]]
+for i in range(len(list)):
+    test(list[i][0], list[i][1], list[i][2])

@@ -3,21 +3,22 @@
 // Check if character is backslash. If so, print out another backslash to make it appeared "\\"
 // Check if character is a tab. If so, print out "\t"
 // If it is neither of them, print out the character itself
+// Output to another file
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main() {
-    FILE* file = fopen("4.txt", "r");
-    for (int c; (c = fgetc(file)) != EOF;) {
+    FILE* in_file = fopen("4_in.txt", "r");
+    FILE* out_file = fopen("4_out.txt", "w");
+    for (int c; (c = fgetc(in_file)) != EOF;) {
         if (c == '\\')
-            putchar('\\');
+            fprintf(out_file, "\\");
         if (c == '\t') {
-            putchar('\\');
-            putchar('t');
+            fprintf(out_file, "\\");
+            fprintf(out_file, "t");
         }
-        putchar(c);
+        fprintf(out_file, "%c", c);
     }
-    fclose(file);
+    fclose(in_file);
+    fclose(out_file);
 }

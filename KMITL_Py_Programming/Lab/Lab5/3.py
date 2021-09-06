@@ -4,10 +4,6 @@ t = turtle.Turtle()
 n = int(input("Enter number of N: "))
 
 t.pen(speed = 0, fillcolor = "darkgrey")
-for i in range(4):
-    t.fd(100)
-    t.rt(90)
-
 for i in range(n):
     for j in range(n):
         if (i + j) % 2 == 0:

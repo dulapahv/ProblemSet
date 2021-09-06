@@ -3,9 +3,8 @@ import turtle
 t = turtle.Turtle()
 
 turtle.tracer(0)
-#t.speed(0)
 t.penup()
-t.setpos(-525, 420) # -800, 420
+t.setpos(-525, 420)
 t.pendown()
 date = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
 row = [6, 5, 5, 5, 6, 5, 5, 5, 5, 6, 5, 5]

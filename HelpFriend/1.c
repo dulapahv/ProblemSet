@@ -1,42 +1,30 @@
 #include <stdio.h>
 
-int main()
-{
-    char ch, file1[50],file2[50],message[50];
-    FILE *fs,*ft;
-    printf("Enter source file name(with extension): ");
-    gets(file1);
-    fs = fopen(file1,"r");
-    printf("Enter target file name(with extension): ");
-    gets(file2);
-    ft = fopen(file2,"w");
-    for (int ch, b; (ch = fgetc(fs)) != EOF;)
-    {
-        if(ch == ' ')
-        {
-            if(b != ' '){
-                fputc(ch, ft);
-            }
-        }
-        else
-            fputc(ch, ft);
-        b = ch;
-    }
+struct S1 {
+    char f1;
+    int f2;
+    char f3;
+};
+
+struct S2 {
+    char f1;
+    char f2;
+    int f3;
+};
+
+struct S3 {
+    char text[4];
+    int val;
+};
+
+
+int main() {
+    struct S1 s1a, s1b;
+    struct S2 s2a, s2b;
+    struct S3 s3a, s3b;
+
+    printf("Address of s3a: %p\n", &s3a.val);
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-//     FILE* fs = fopen("in.txt","r");
-//     FILE* ft = fopen("out.txt","w");
-//     for (int ch, b; (ch = fgetc(fs)) != EOF;) {
-//         if(ch == ' ') {
-//             if(b != ' ')
-//                 fputc(ch, ft);
-//         }
-//         else
-//             fputc(ch, ft);
-//         b = ch;
-//     }
-// }
+    // printf("Size of struct A: %lu\n", sizeof(struct S1));
+    // printf("Size of object a: %lu\n", sizeof(s1b));

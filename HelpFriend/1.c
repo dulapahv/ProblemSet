@@ -22,7 +22,6 @@ int main() {
     struct S1 s1a, s1b;
     struct S2 s2a, s2b;
     struct S3 s3a, s3b;
-
     printf("Address of s3a: %p\n", &s3a.val);
 }
 

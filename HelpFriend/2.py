@@ -1,31 +1,18 @@
-import sys
+def conv_input(chk):
+    if chk == "A":
+        return 10
+    elif chk == "B":
+        return 11
+    elif chk == "C":
+        return 12
+    elif chk == "D":
+        return 13
+    elif chk == "E":
+        return 14
+    elif chk == "F":
+        return 15
+    return int(chk)
 
-def get_Input(msg):
-    usin = float(input(msg))
-    if usin == 0:
-        print("1st coefficient can't be zero. Program exits.")
-        sys.exit()
-    else:
-        return usin
-    
-
-a = get_Input("Value of 1st coefficient: ")
-b = get_Input("Value of 2nd coefficient: ")
-c = get_Input("Value of 3rd coefficient: ")
-
-dis = (b**2) - (4 * a * c)
-if dis > 0:
-    result1 = ((-1 * b) + (dis**0.5)) / (2 * a)
-    result2 = ((-1 * b) - (dis**0.5)) / (2 * a)
-    print(f"Two real roots: {result1:.3f} and {result2:.3f}")
-elif dis == 0:
-    result = (-1 * b) / (2 * a)
-    print(f"There is one real root: {result:.3f}")
-else:
-    result1 = (-1 * b) / (2 * a)
-    result2A = ((-1 * dis)**0.5) / (2 * a)
-    result2B = result2A * -1
-    if result2A >= 0:
-        print(f"Two complex roots: {result1:.3f}+{result2A:.3f}i and {result1:.3f}{result2B:.3f}i")
-    else:
-        print(f"Two complex roots: {result1:.3f}+{result2B:.3f}i and {result1:.3f}{result2A:.3f}i")
+w, x, y, z = input("Input: ").split(":")
+n = ((16**3) * conv_input(w)) + ((16**2) * conv_input(x)) + (16 * conv_input(y)) + conv_input(z)
+print(f"Output = {n}")

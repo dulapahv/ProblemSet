@@ -24,13 +24,11 @@ int main() {
             }
             else if (c >= 'P' && c <= 'Y') {
                 c -= 30;
-                firstDigit = (c / 100) + 48;
-                secondDigit = ((c / 10) % 10) + 48;
-                thirdDigit = (c % 10) + 48;
+                firstDigit = (c / 10) + 48;
+                secondDigit = (c % 10) + 48;
                 printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
-                fputc(thirdDigit, out_file);
             }
             else if ((c >= 'J' && c <= 'O') || c == 'Z') {
                 c -= 102;
@@ -52,13 +50,11 @@ int main() {
             }
             else if (c >= 'p' && c <= 'y') {
                 c -= 42;
-                firstDigit = (c / 100) + 48;
-                secondDigit = ((c / 10) % 10) + 48;
-                thirdDigit = (c % 10) + 48;
+                firstDigit = (c / 10) + 48;
+                secondDigit = (c % 10) + 48;
                 printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
-                fputc(thirdDigit, out_file);
             }
             else if ((c >= 'j' && c <= 'o') || c == 'z') {
                 c -= 102;
@@ -69,7 +65,6 @@ int main() {
             }
             fputc(' ', out_file);
         }
-        
         else if (c == '\n') {
             int arr[5] = {'0', 'D', ' ', '0', 'A'};
             for (int i = 0; i < 5; i++)

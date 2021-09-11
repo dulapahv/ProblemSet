@@ -9,7 +9,6 @@ int main() {
     char hex[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
     for (int c; (c = fgetc(in_file)) != EOF;) {
         if (count >= 8) {
-            printf("\n");
             fputc('\n', out_file);
             count = 0;
         }
@@ -18,7 +17,6 @@ int main() {
                 c -= 24;
                 firstDigit = (c / 10) + 48;
                 secondDigit = (c % 10) + 48;
-                printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
             }
@@ -26,14 +24,12 @@ int main() {
                 c -= 30;
                 firstDigit = (c / 10) + 48;
                 secondDigit = (c % 10) + 48;
-                printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
             }
             else if ((c >= 'J' && c <= 'O') || c == 'Z') {
                 c -= 102;
                 firstDigit = c + 48;
-                printf("%d%c ", c, hex[((c + 102) % 16) - 10]);
                 fputc(firstDigit, out_file);
                 fputc(hex[((c + 102) % 16) - 10], out_file);
             }
@@ -44,7 +40,6 @@ int main() {
                 c -= 36;
                 firstDigit = (c / 10) + 48;
                 secondDigit = (c % 10) + 48;
-                printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
             }
@@ -52,14 +47,12 @@ int main() {
                 c -= 42;
                 firstDigit = (c / 10) + 48;
                 secondDigit = (c % 10) + 48;
-                printf("%d ", c);
                 fputc(firstDigit, out_file);
                 fputc(secondDigit, out_file);
             }
             else if ((c >= 'j' && c <= 'o') || c == 'z') {
                 c -= 102;
                 firstDigit = c + 48;
-                printf("%d%c ", c, hex[((c + 102) % 16) - 10]);
                 fputc(firstDigit, out_file);
                 fputc(hex[((c + 102) % 16) - 10], out_file);
             }

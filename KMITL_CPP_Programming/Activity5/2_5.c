@@ -16,7 +16,7 @@ int main() {
             fputc('\n', out_file);
             count = 0;
         }
-        if (c >= 'A' && c < 'Z') {
+        if (c >= 'A' && c <= 'Z') {
             if (c >= 'A' && c <= 'G')
                 c += 36;
             else if (c >= 'H' && c <= 'O')

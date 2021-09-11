@@ -23,6 +23,12 @@ int main() {
                 c += 38;
             else if (c >= 'P' && c <= 'W')
                 c += 40;
+            separate_digit(c, &firstDigit, &secondDigit, &thirdDigit);
+            fputc('0', out_file);
+            fputc(firstDigit + 48, out_file);
+            fputc(secondDigit + 48, out_file);
+            fputc(thirdDigit + 48, out_file);
+            fputc(' ', out_file);
         }
         else if (c >= 'a' && c <= 'z') {
             if (c >= 'a' && c <= 'g')
@@ -31,18 +37,18 @@ int main() {
                 c += 46;
             else if (c >= 'p' && c <= 'w')
                 c += 48;
+            separate_digit(c, &firstDigit, &secondDigit, &thirdDigit);
+            fputc('0', out_file);
+            fputc(firstDigit + 48, out_file);
+            fputc(secondDigit + 48, out_file);
+            fputc(thirdDigit + 48, out_file);
+            fputc(' ', out_file);
         }
         else if (c == '\n') {
             int arr[10] = {'0', '0', '1', '5', ' ' , '0', '0', '1', '2', ' '};
             for (int i = 0; i < 10; i++)
                 fputc(arr[i], out_file);
         }
-        separate_digit(c, &firstDigit, &secondDigit, &thirdDigit);
-        fputc('0', out_file);
-        fputc(firstDigit + 48, out_file);
-        fputc(secondDigit + 48, out_file);
-        fputc(thirdDigit + 48, out_file);
-        fputc(' ', out_file);
         count++;
     }
     fclose(in_file);

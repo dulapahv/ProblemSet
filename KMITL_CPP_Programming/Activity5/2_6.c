@@ -13,21 +13,18 @@ int main() {
         if (c >= 10 && c < 100) {
             firstDigit = (c / 10) + 48;
             secondDigit = (c % 10) + 48;
-            printf("%d%d ", firstDigit, secondDigit);
             fputc(firstDigit, out_file);
             fputc(secondDigit, out_file);
-            fputc(' ', out_file);
         }
         else if (c >= 100) {
             firstDigit = (c / 100) + 48;
             secondDigit = ((c / 10) % 10) + 48;
             thirdDigit = (c % 10) + 48;
-            printf("%d%d%d ", firstDigit, secondDigit, thirdDigit);
             fputc(firstDigit, out_file);
             fputc(secondDigit, out_file);
             fputc(thirdDigit, out_file);
-            fputc(' ', out_file);
         }
+        fputc(' ', out_file);
         count++;
     }
     fclose(in_file);

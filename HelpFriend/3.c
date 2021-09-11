@@ -1,20 +1,20 @@
 #include <stdio.h>
-
-int main() {
-    int h;
-    scanf("%d", &h);
-    for (int i = 0; i < h; i++) {
-        for (int j = 0; j < i + 1; j++)
-            printf("1 ");
-        for (int j = h - i - 2; j >= 0; j--)
-            printf("0 ");
-        printf("\n");
+int main()
+{
+    //Ascii value of 1
+    int ch = 50;
+    FILE *fp = NULL;
+    //Open file in append mode
+    fp = fopen("out.txt", "a");
+    if(fp == NULL)
+    {
+        printf("Error in creating the file\n");
+        exit(1);
     }
-    for (int i = 1; i < h; i++) {
-        for (int j = h - i - 1; j >= 0; j--)
-            printf("1 ");
-        for (int j = 0; j < i; j++)
-            printf("0 ");
-        printf("\n");
-    }
+    //Write 1 in file
+    fputc(ch, fp);
+    //close the file
+    fclose(fp);
+    printf("Append 1 to the created file\n");
+    return 0;
 }

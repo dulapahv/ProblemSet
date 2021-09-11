@@ -1,18 +1,11 @@
-def conv_input(chk):
-    if chk == "A":
-        return 10
-    elif chk == "B":
-        return 11
-    elif chk == "C":
-        return 12
-    elif chk == "D":
-        return 13
-    elif chk == "E":
-        return 14
-    elif chk == "F":
-        return 15
-    return int(chk)
+import math
 
-w, x, y, z = input("Input: ").split(":")
-n = ((16**3) * conv_input(w)) + ((16**2) * conv_input(x)) + (16 * conv_input(y)) + conv_input(z)
-print(f"Output = {n}")
+t = float(input("Input t: "))
+N0 = float(input("Input N0: "))
+Nt = float(input("Input Nt: "))
+
+if Nt == N0:
+    print("invalid input")
+else:
+     T = (-693 * t) / math.log(N0 / Nt)
+     print(f"Output = {T:.4f}")

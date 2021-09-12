@@ -40,13 +40,9 @@ int main() {
     student[4].sub2 = 82.5;
     student[4].sub3 = 61.3;
 
-    float total[3] = {0};
+    int arr[] = {2, 4, 1, 0, 3};
     for (int i = 0; i < 5; i++) {
-        total[0] += student[i].sub1 / 5;
-        total[1] += student[i].sub2 / 5;
-        total[2] += student[i].sub3 / 5;
+        printf("%d %s\t%.1f %.1f %.1f\n", student[arr[i]].id, student[arr[i]].name, student[arr[i]].sub1, student[arr[i]].sub2, student[arr[i]].sub3);
     }
-    for (int i = 0; i < 3; i++)
-        printf("Sub%d average = %.1f\n", i, total[i]);
     return 0;
 }

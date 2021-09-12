@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
     FILE* in_file = fopen("2_4in.txt", "rb");
     FILE* out_file = fopen("2_4out.txt", "wb");
     int firstDigit, secondDigit, thirdDigit;
     int count = 0;
-    char hex[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
+    char hex[] = {'A', 'B', 'C', 'D', 'E', 'F'};
     for (int c; (c = fgetc(in_file)) != EOF;) {
         if (count >= 8) {
             fputc('\n', out_file);
@@ -59,10 +58,9 @@ int main() {
             fputc(' ', out_file);
         }
         else if (c == '\n') {
-            int arr[5] = {'0', 'D', ' ', '0', 'A'};
-            for (int i = 0; i < 5; i++)
+            int arr[6] = {'0', 'D', ' ', '0', 'A', ' '};
+            for (int i = 0; i < 6; i++)
                 fputc(arr[i], out_file);
-            fputc(' ', out_file);
         }
         count++;
     }

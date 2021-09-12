@@ -45,7 +45,7 @@ int main() {
             fputc(' ', out_file);
         }
         else if (c == '\n') {
-            int arr[10] = {'0', '0', '1', '5', ' ' , '0', '0', '1', '2', ' '};
+            int arr[] = {'0', '0', '1', '5', ' ' , '0', '0', '1', '2', ' '};
             for (int i = 0; i < 10; i++)
                 fputc(arr[i], out_file);
         }

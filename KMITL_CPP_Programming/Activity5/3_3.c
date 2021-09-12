@@ -41,8 +41,7 @@ int main() {
     student[4].sub3 = 61.3;
 
     int arr[] = {2, 4, 1, 0, 3};
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
         printf("%d %s\t%.1f %.1f %.1f\n", student[arr[i]].id, student[arr[i]].name, student[arr[i]].sub1, student[arr[i]].sub2, student[arr[i]].sub3);
-    }
     return 0;
 }

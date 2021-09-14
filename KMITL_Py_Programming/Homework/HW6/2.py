@@ -2,9 +2,9 @@ from turtle import *
 
 def calendar_of_2021(month):
     speed(0)
-    penup()
+    pu()
     setpos(-125, 100)
-    pendown()
+    pd()
     monthTxt = ["January", "February", "March", "April", "May", "June", "July", 'August', "September", "October", "November", "December"]
     dateTxt = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
     dateRange = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -32,7 +32,7 @@ def calendar_of_2021(month):
     rt(90)
     fd(30)
     lt(90)
-    penup()
+    pu()
     for i in range(7):
         write(f"  {dateTxt[i]}", font = ("Arial", 12))
         fd(250 / 7)

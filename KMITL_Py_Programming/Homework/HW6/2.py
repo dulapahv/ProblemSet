@@ -1,9 +1,7 @@
 from turtle import *
 
-speed(0)
-
 def calendar_of_2021(month):
-    
+    speed(0)
     penup()
     setpos(-125, 100)
     pendown()
@@ -64,8 +62,6 @@ def calendar_of_2021(month):
         rt(90)
         fd(30)
         lt(90)
-        fd(-250)
-        
-calendar_of_2021(12)
-hideturtle()
-done()
+        fd(-250)    
+    hideturtle()
+    done()

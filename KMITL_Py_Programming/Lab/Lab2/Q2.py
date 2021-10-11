@@ -2,7 +2,7 @@ import turtle
 
 t = turtle.Turtle()
 # turtle.tracer(0)
-t.pen(speed = 1)
+t.pen(speed = 0)
 
 # background
 t.penup()

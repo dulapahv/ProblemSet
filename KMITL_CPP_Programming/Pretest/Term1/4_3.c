@@ -14,7 +14,7 @@ int count_parens(const char *arr, double n) {
 int main() {
     int count = 0;
     double n = sizeof(text)/sizeof(text[0]);
-    count_parens(text, n);
+    count = count_parens(text, n);
     printf("Occurrences: %d\n", count);
     return 0;
 }

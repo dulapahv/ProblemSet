@@ -27,12 +27,12 @@ class Clock:
 
 
 class AlarmClock(Clock):
-    def __init__(self, hh, mm, ss, alarm_hh, alarm_mm, alarm_ss, alarm_on_off):
+    def __init__(self, hh, mm, ss):
         super().__init__(hh, mm, ss)
-        self.alarm_hh = int(alarm_hh)
-        self.alarm_mm = int(alarm_mm)
-        self.alarm_ss = int(alarm_ss)
-        self.alarm_on_off = bool(alarm_on_off)
+        self.alarm_hh = int(hh)
+        self.alarm_mm = int(mm)
+        self.alarm_ss = int(ss)
+        self.alarm_on_off = False
     
     def setAlarmTime(self, h, m, s):
         self.alarm_hh = int(h)

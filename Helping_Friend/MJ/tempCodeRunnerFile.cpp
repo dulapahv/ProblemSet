@@ -1,0 +1,2 @@
+
+                    fprintf(input, "empty\n");

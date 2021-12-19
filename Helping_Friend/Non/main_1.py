@@ -85,11 +85,11 @@ class cal_bmi(BMI):
             self.range = "Obesity"
         print(f"User BMI: {self.result:.2f} ")
         print(f"User range: {self.range} ")
-        display_bmi
+        display_bmi.display_bmi(self)
 
 
 class display_bmi(cal_bmi):
-    def __init__(self):
+    def display_bmi(self):
         self.window_result = Tk()
         self.window_result.title("Result")
         l1 = Label(self.window_result, text=self.range, font=("Bahnschrift", 12)).grid(

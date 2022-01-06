@@ -28,5 +28,6 @@ class Time:
     def __str__(self):
         return f"{self.hh:02d}:{self.mm:02d}:{self.ss:02d} Hrs."
 
-time1 = Time(9,90,0)
+time1 = Time(9,50,0)
+print(time1)
 

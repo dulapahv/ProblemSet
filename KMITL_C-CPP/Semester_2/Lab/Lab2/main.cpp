@@ -23,7 +23,7 @@ int main() {
 	
 	/* Creating a triangle object from 3 arrays of vertex coordinates */
 	/*
-	double p1[] = { 2, 2};
+	double p1[] = { 2, 2 };
 	double p2[] = { 3, 4 };
 	double p3[] = { 5, 6 };
 

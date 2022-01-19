@@ -4,7 +4,6 @@ class Triangle {
 private:
 	double p1x, p1y, p2x, p2y, p3x, p3y;
 public:
-	// Constructors
 	Triangle(double p1x, double p1y, double p2x, double p2y, double p3x, double p3y);
 	Triangle(double p1[2], double p2[2], double p3[2]);
 

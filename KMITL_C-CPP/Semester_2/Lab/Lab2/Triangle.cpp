@@ -3,6 +3,11 @@
 #include <cmath>
 #include "Triangle.h"
 
+/* Get distance between 2 vertices */
+double getEuclideanDistance(double p1x, double p1y, double p2x, double p2y) {
+	return sqrt(pow((p2x - p1x), 2) + pow((p2y - p1y), 2));
+}
+
 Triangle::Triangle(double ax, double ay, double bx, double by, double cx, double cy) {
 	/* Check whether the coordinates are numeric or not */
 	assert(!isnan(ax) || !isnan(ay));
@@ -41,9 +46,9 @@ double Triangle::getArea() {
 /* Get perimeter of the triangle */
 double Triangle::getPerimeter() {
 	double l1, l2, l3;
-	l1 = sqrt(pow((p2x - p1x), 2) + pow((p2y - p1y), 2));
-	l2 = sqrt(pow((p3x - p2x), 2) + pow((p3y - p2y), 2));
-	l3 = sqrt(pow((p3x - p1x), 2) + pow((p3y - p1y), 2));
+	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);
+	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
+	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
 	return l1 + l2 + l3;
 }
 
@@ -51,9 +56,9 @@ double Triangle::getPerimeter() {
 bool Triangle::isEquilateral() {
 	/* If all 3 vertices have the same distance then it is equilateral */
 	double l1, l2, l3;
-	l1 = sqrt(pow((p2x - p1x), 2) + pow((p2y - p1y), 2));
-	l2 = sqrt(pow((p3x - p2x), 2) + pow((p3y - p2y), 2));
-	l3 = sqrt(pow((p3x - p1x), 2) + pow((p3y - p1y), 2));
+	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);
+	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
+	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
 	if (l1 == l2 && l2 == l3 && l3 == l1)
 		return true;
 	else
@@ -64,9 +69,9 @@ bool Triangle::isEquilateral() {
 bool Triangle::isIsosceles() {
 	/* If ONLY 2 vertices have the same distance then it is isosceles */
 	double l1, l2, l3;
-	l1 = sqrt(pow((p2x - p1x), 2) + pow((p2y - p1y), 2));
-	l2 = sqrt(pow((p3x - p2x), 2) + pow((p3y - p2y), 2));
-	l3 = sqrt(pow((p3x - p1x), 2) + pow((p3y - p1y), 2));
+	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);
+	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
+	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
 	if (((l1 == l2) || (l2 == l3) || (l3 == l1)) && !isEquilateral())
 		return true;
 	else

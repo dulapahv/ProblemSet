@@ -40,7 +40,12 @@ double Triangle::getp3y() { return p3y; }
 
 /* Get area of the triangle */
 double Triangle::getArea() {
-	return 0.5 * ((p1x * (p2y - p3y)) + (p2x * (p3y - p1y)) + (p3x * (p1y - p2y)));
+	double s, l1, l2, l3;
+	s = getPerimeter() / 2;
+	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);
+	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
+	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
+	return sqrt(s * (s - l1) * (s - l2) * (s - l3));
 }
 
 /* Get perimeter of the triangle */
@@ -59,7 +64,9 @@ bool Triangle::isEquilateral() {
 	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);
 	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
 	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
-	if (l1 == l2 && l2 == l3 && l3 == l1)
+	/* If the difference between the length of 2 vertices is less than
+	the 0.001 threshold then it can be assume as equal */
+	if (l1 - l2 < 0.001 && l2 - l3 < 0.001 && l3 - l1 < 0.001)
 		return true;
 	else
 		return false;

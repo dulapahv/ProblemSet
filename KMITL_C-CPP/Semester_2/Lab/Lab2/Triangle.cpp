@@ -15,7 +15,7 @@ Triangle::Triangle(double ax, double ay, double bx, double by, double cx, double
 	assert(!isnan(cx) || !isnan(ay));
 	p1x = ax, p1y = ay, p2x = bx, p2y = by, p3x = cx, p3y = cy;
 	/* Check whether the coordinates are valid or not */
-	assert(getArea() > 0 && getPerimeter() > 0);
+	assert(getArea() < 0 || getPerimeter() < 0);
 }
 
 Triangle::Triangle(double a1[2], double a2[2], double a3[2]) {
@@ -65,7 +65,7 @@ bool Triangle::isEquilateral() {
 	l2 = getEuclideanDistance(p2x, p2y, p3x, p3y);
 	l3 = getEuclideanDistance(p3x, p3y, p1x, p1y);
 	/* If the difference between the length of 2 vertices is less than
-	the 0.001 threshold then it can be assume as equal */
+	0.001 threshold then it can be assume as equal */
 	if (l1 - l2 < 0.001 && l2 - l3 < 0.001 && l3 - l1 < 0.001)
 		return true;
 	else

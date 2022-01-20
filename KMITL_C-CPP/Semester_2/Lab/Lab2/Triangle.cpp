@@ -13,7 +13,9 @@ Triangle::Triangle(double ax, double ay, double bx, double by, double cx, double
 	assert(!isnan(ax) && !isnan(ay));
 	assert(!isnan(bx) && !isnan(ay));
 	assert(!isnan(cx) && !isnan(ay));
-	p1x = ax, p1y = ay, p2x = bx, p2y = by, p3x = cx, p3y = cy;
+	p1x = ax, p1y = ay;
+	p2x = bx, p2y = by;
+	p3x = cx, p3y = cy;
 	/* Check whether the coordinates are valid or not */
 	assert(getArea() > 0 && getPerimeter() > 0);
 }
@@ -23,9 +25,9 @@ Triangle::Triangle(double a1[2], double a2[2], double a3[2]) {
 	assert(!isnan(a1[0]) && !isnan(a1[1]));
 	assert(!isnan(a2[0]) && !isnan(a2[1]));
 	assert(!isnan(a3[0]) && !isnan(a3[1]));
-	p1x = a1[0]; p1y = a1[1];
-	p2x = a2[0]; p2y = a2[1];
-	p3x = a3[0]; p3y = a3[1];
+	p1x = a1[0], p1y = a1[1];
+	p2x = a2[0], p2y = a2[1];
+	p3x = a3[0], p3y = a3[1];
 	/* Check whether the coordinates are valid or not */
 	assert(getArea() > 0 && getPerimeter() > 0);
 }
@@ -40,6 +42,7 @@ double Triangle::getp3y() { return p3y; }
 
 /* Get area of the triangle */
 double Triangle::getArea() {
+	/* Heron's formula */
 	double s, l1, l2, l3;
 	s = getPerimeter() / 2;
 	l1 = getEuclideanDistance(p1x, p1y, p2x, p2y);

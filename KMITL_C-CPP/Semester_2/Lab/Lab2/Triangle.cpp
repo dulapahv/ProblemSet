@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include <assert.h>
 #include <cmath>
 #include "Triangle.h"

@@ -1,0 +1,5 @@
+﻿  Triangle.cpp
+  main.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\Helping_Friend\Fon\Triangle\main.cpp(26,14): warning C4930: 'Triangle t1(void)': prototyped function not called (was a variable definition intended?)
+  Generating Code...
+  Triangle.vcxproj -> C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\Helping_Friend\Fon\Triangle\Debug\Triangle.exe

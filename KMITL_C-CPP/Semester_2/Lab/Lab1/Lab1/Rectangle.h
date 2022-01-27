@@ -1,34 +1,39 @@
 ﻿/*** Specification for Rectangle class **/
 
+#pragma once
+
 #include <fstream> 
 
-#include "Point.h"
+#include "Pt.h"
 
 using namespace std;
 
-class Rectangle {
+template <typename T>
+class Rect {
 private:
-	Point tl, br;
+	Pt<T> tl, br;
 public:
 	/** Basic constructors **/
-	Rectangle(Point a, Point b);
-	Rectangle(float tl[2], float br[2]);
-	Rectangle(float xa, float ya, float xb, float yb);
+	Rect(T a, T b);
+	Rect(T tl[2], T br[2]);
+	Rect(T xa, T ya, T xb, T yb);
 
 	/** Constructors using an existing template rectangle **/
 	/* Make larger version of existing rectangle */
-	Rectangle(Rectangle* original, float scale = 1.0f);
+	Rect(Rect* original, T scale = 1.0f);
 	/* Copy existing rectangle, rotate and scale */
-	Rectangle(Rectangle* original, float rot = 0.0, float scale = 1.0f);
+	Rect(Rect* original, T rot = 0.0, T scale = 1.0f);
 
-	Point getTL();
-	Point getBR();
+	Pt<T> getTL();
+	Pt<T> getBR();
 
 	float getArea();
 	float getPerimeter();
 
-	void move(float dx, float dy);
-	void move(Point dx);
+	void move(T dx, T dy);
+	void move(Pt<T> dx);
+
+	Pt<T> print();
 };
 
 #ifdef OLD

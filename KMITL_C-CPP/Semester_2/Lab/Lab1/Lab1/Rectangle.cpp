@@ -4,22 +4,26 @@
 #include "assert.h"
 #include "Rectangle.h"
 
-Rectangle::Rectangle(Point a, Point b) {
+template <typename T>
+Rect<T>::Rect(T a, T b) {
 	tl = a; br = b;
 }
 
-Rectangle::Rectangle(float tlx[2], float brx[2]) {
+template <typename T>
+Rect<T>::Rect(T tlx[2], T brx[2]) {
 	tl.x = tlx[0]; tl.y = tlx[1];
 	br.x = brx[0]; br.y = brx[1];
 }
 
-Rectangle::Rectangle(float xa, float ya, float xb, float yb) {
-	tl = Point(xa, ya);
-	br = Point(xb, yb);
+template <typename T>
+Rect<T>::Rect(T xa, T ya, T xb, T yb) {
+	tl = Pt<T>(xa, ya);
+	br = Pt<T>(xb, yb);
 }
 
 /* Make larger version of existing rectangle */
-Rectangle::Rectangle(Rectangle* orig, float scale) {
+template <typename T>
+Rect<T>::Rect(Rect* orig, T scale) {
 	assert(orig != NULL);
 	assert(orig->getArea() > 0.0f);
 	assert(!isnan(scale));
@@ -31,35 +35,47 @@ Rectangle::Rectangle(Rectangle* orig, float scale) {
 	br.y = tl.y + h * scale;
 }
 
-Point Rectangle::getTL() { return tl; }
-Point Rectangle::getBR() { return br; }
+template <typename T>
+Pt<T> Rect<T>::getTL() { return tl; }
 
-float Rectangle::getArea() {
+template <typename T>
+Pt<T> Rect<T>::getBR() { return br; }
+
+template <typename T>
+float Rect<T>::getArea() {
 	float w = br.x - tl.x;
 	float h = br.y - tl.y;
 	return w * h;
 }
-float Rectangle::getPerimeter() {
+
+template <typename T>
+float Rect<T>::getPerimeter() {
 	float w = br.x - tl.x;
 	float h = br.y = tl.y;
 	return 2.0f * (w + h);
 }
 
-void Rectangle::move(float dx, float dy) {
+template <typename T>
+void Rect<T>::move(T dx, T dy) {
 	tl.x = tl.x + dx; br.x = br.x + dy;
 	tl.y = tl.y + dy; br.y = br.y + dy;
 }
 
-void Rectangle::move(Point dx) {
+template <typename T>
+void Rect<T>::move(Pt<T> dx) {
 	tl.x = tl.x + dx.x; br.x = br.x + dx.y;
 	tl.y = tl.y + dx.x; br.y = br.y + dx.y;
 }
 
-Point nextGridPoint(Rectangle& r) {
-	Point dx(1.0, 1.0);
+template <typename T>
+Pt<T> nextGridPoint(Rect<T>& r) {
+	Pt<T> dx(1.0, 1.0);
 	r.move(dx);
 	return r.getTL();
 }
+
+template <typename T>
+Pt<T> Rect<T>::print() { return Pt<T>(tl, br); }
 
 #ifdef OLD
 Point getNextGridPoint(const Rectangle& r) {

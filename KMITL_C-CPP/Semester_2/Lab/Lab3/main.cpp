@@ -14,14 +14,13 @@ int main() {
 
 	/* b) Add more elements in a loop with push_back() */
 	int add = 20;
-	cout << "Elements added: " << add <<endl;
+	cout << "Rectangles added: " << add <<endl;
 	for (int i = 0; i < add; i++) {
 		Rect<double> *rect = new Rect<double>(1.2 * i, 1.4 * i, 2.6 * i, 2.8 * i);
 		rectVector.push_back(*rect);
 		rect->print();
 	}
-
-	cout << "\nAll elements in rectangle vector: " << rectVector.size() << endl;
+	cout << "\nAll rectangles in rectangle vector: " << rectVector.size() << endl;
 	for (auto i = rectVector.begin(); i != rectVector.end(); i++) {
 		i->print();
 	}
@@ -29,12 +28,10 @@ int main() {
 	/* c) Use capacity() to see how many more where added */
 	vector<int> a;
 	cout << "\nSpace allocated for vector a: " << a.capacity() << endl;
-	a.push_back(1);
-	cout << "Space of vector a after 1 integer added: " << a.capacity() << endl;
 	for (int i = 0; i < 1000; i++) {
 		a.push_back(i);
 	}
-	cout << "Space of vector a after 1000 integers added: " << a.capacity() << endl;
+	cout << "Space of vector a after adding 1000 integers: " << a.capacity() << endl;
 
 	/* d) Use the reserve(new_capacity) */
 	vector<int> b;
@@ -43,7 +40,7 @@ int main() {
 	for (int i = 0; i < 1000; i++) {
 		b.push_back(i);
 	}
-	cout << "Space of vector b after 1000 integers added: " << b.capacity() << endl;
+	cout << "Space of vector b after adding 1000 integers: " << b.capacity() << endl;
 
 	return 0;
 }

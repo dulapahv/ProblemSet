@@ -28,8 +28,6 @@ int main() {
 	/* c) Use capacity() to see how many more where added */
 	vector<int> a;
 	cout << "\nSpace allocated for vector a: " << a.capacity() << endl;
-	a.push_back(1);
-	cout << "\nSpace of vector a after adding 1 integer:" << a.capacity() << endl;
 	for (int i = 0; i < 1000; i++) {
 		a.push_back(i);
 	}
@@ -39,8 +37,6 @@ int main() {
 	vector<int> b;
 	b.reserve(1000);
 	cout << "\nSpace reserved for vector b: " << b.capacity() << endl;
-	b.push_back(1);
-	cout << "\nSpace of vector b after adding 1 integer:" << a.capacity() << endl;
 	for (int i = 0; i < 1000; i++) {
 		b.push_back(i);
 	}

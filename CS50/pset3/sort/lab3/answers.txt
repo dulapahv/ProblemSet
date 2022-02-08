@@ -1,0 +1,16 @@
+sort1 uses: Bubble sort
+
+How do you know?: Sort1 took the most amount of time to sort. Running sort1 on random50000.txt for 3 times gives an average time of 16.574s which is the slowest.
+
+sort2 uses: Merge sort
+
+How do you know?: Sort2 took the least amount of time to sort. Running sort2 on random50000.txt for 3 times gives an average time of 16.574s which, compared to sort1 and sort2, gives the least amount of time. Moreover, running sort2 on different text files also gives the least amount of time.
+
+sort3 uses: Selection sort
+
+How do you know?: Sort3 took the 2nd least amount of time, following sort2. Running sort2 on random50000.txt for 3 times gives an average time of 8.742s which is faster than sort1 but slower than sort2.
+
+Time taken to sort random50000.txt 3 times:
+sort1: 16.223 16.782 16.716
+sort2: 3.828 3.284 3.727
+sort3: 8.431 8.820 8.957

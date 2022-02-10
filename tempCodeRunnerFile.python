@@ -1,17 +1,22 @@
-usin = int(input())
+w = input()
+s = input()
 
-GIGA = 10**9
-MEGA = 10**6
-KILO = 10**3
+cs = ""
 
-if len(str(usin)) >= len(str(GIGA)):
-    usin /= GIGA
-    print(f"{int(usin)}G") if usin % 1 == 0 else print(f"{round(usin, 1)}G")
-elif len(str(usin)) >= len(str(MEGA)):
-    usin /= MEGA
-    print(f"{int(usin)}M") if usin % 1 == 0 else print(f"{round(usin, 1)}M")
-elif len(str(usin)) >= len(str(KILO)):
-    usin /= KILO
-    print(f"{int(usin)}K") if usin % 1 == 0 else print(f"{round(usin, 1)}K")
-else:
-    print(usin)
+for c in s:
+    if c.lower() in "abcdefghijklmnopqrstuvwxyz ":
+        cs += c
+    if c == ".":
+        cs += " "
+
+cs = cs.split()
+
+print(cs)
+
+n = 0
+
+for sw in cs:
+    if sw == w:
+        n += 1
+
+print(n)

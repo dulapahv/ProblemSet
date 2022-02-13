@@ -51,7 +51,8 @@
         "random": "c",
         "*.tcc": "cpp",
         "array": "c",
-        "charconv": "c"
+        "charconv": "c",
+        "fstream": "cpp"
     },
     "git.ignoreLimitWarning": true
 }

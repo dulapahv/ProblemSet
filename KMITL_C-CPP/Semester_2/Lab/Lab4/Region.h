@@ -22,3 +22,27 @@ public:
 	double getArea();
 	double getPopulationDensity();
 };
+
+
+class Province : public Region {
+public:
+	Province();
+	Province(string key, string name, double latitude, double longitude, double population, double area);
+	string getProvince();
+};
+
+
+class Sub_District : public Region {
+public:
+	Sub_District();
+	Sub_District(string key, string name, double latitude, double longitude, double population, double area);
+	string getSub_District();
+};
+
+
+class Town : public Region {
+public:
+	Town();
+	Town(string key, string name, double latitude, double longitude, double population, double area);
+	string getTown();
+};

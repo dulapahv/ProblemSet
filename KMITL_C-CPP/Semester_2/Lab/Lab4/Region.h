@@ -4,6 +4,7 @@
 
 using namespace std;
 
+/* Abstract class */
 class Region {
 private:
 	string key;
@@ -38,7 +39,6 @@ public:
 	Sub_District(string key, string name, double latitude, double longitude, double population, double area);
 	string getSub_District();
 };
-
 
 class Town : public Region {
 public:

@@ -1,7 +1,6 @@
 #include "Region.h"
 
 Region::Region() {}
-
 Region::Region(string key, string name, double latitude, double longitude, double population, double area) {
     this->key = key;
     this->name = name;
@@ -18,3 +17,12 @@ double Region::getLongitude() { return this->longitude; }
 double Region::getPopulation() { return this->population; }
 double Region::getArea() { return this->area; }
 double Region::getPopulationDensity() { return this->population / this->area; }
+
+Province::Province() {}
+Province::Province(string key, string name, double latitude, double longitude, double population, double area) : Region(key, name, latitude, longitude, population, area) {}
+
+Sub_District::Sub_District() {}
+Sub_District::Sub_District(string key, string name, double latitude, double longitude, double population, double area) : Region(key, name, latitude, longitude, population, area) {}
+
+Town::Town() {}
+Town::Town(string key, string name, double latitude, double longitude, double population, double area) : Region(key, name, latitude, longitude, population, area) {}

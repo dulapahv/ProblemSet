@@ -10,11 +10,11 @@ private:
 	string key;
 	string name;
 	double latitude = 0.0, longitude = 0.0;
-	double population = 0;
+	long int population = 0;
 	double area = 0.0;
 public:
 	Region();
-	Region(string key, string name, double latitude, double longitude, double population, double area);
+	Region(string key, string name, double latitude, double longitude, long int population, double area);
 	string getKey();
 	string getName();
 	double getLatitude();
@@ -28,7 +28,7 @@ public:
 class Province : public Region {
 public:
 	Province();
-	Province(string key, string name, double latitude, double longitude, double population, double area);
+	Province(string key, string name, double latitude, double longitude, long int population, double area);
 	string getProvince();
 };
 
@@ -36,13 +36,6 @@ public:
 class Sub_District : public Region {
 public:
 	Sub_District();
-	Sub_District(string key, string name, double latitude, double longitude, double population, double area);
+	Sub_District(string key, string name, double latitude, double longitude, long int population, double area);
 	string getSub_District();
-};
-
-class Town : public Region {
-public:
-	Town();
-	Town(string key, string name, double latitude, double longitude, double population, double area);
-	string getTown();
 };

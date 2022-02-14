@@ -59,15 +59,18 @@ int main() {
 	for (unsigned int i = 0; i < province.size(); i++) {
 		double sum_province = 0;
 		double sum_sub_district = 0;
+		double difference;
 
 		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
 			sum_sub_district += sub_districtGroup[i][j].getPopulation();
 		sum_province += province[i].getPopulation();
+		difference = sum_province - sum_sub_district;
 
 		outFile << "Province " << province[i].getName() << setw(43 - province[i].getName().length()) << province[i].getPopulation() << " people" << endl;
 		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
 			outFile << "- " << sub_districtGroup[i][j].getName() << setw(50 - sub_districtGroup[i][j].getName().length()) << sub_districtGroup[i][j].getPopulation() << " people" << endl;
-		outFile << "Extra population from province: " << sum_province - sum_sub_district << " people" << endl;
+		if (difference != 0)
+			outFile << "Extra population from province: " << difference << " people" << endl;
 		outFile << endl;
 	}
 

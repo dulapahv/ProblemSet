@@ -22,6 +22,18 @@ Province SamutSongkhram                  0.000444998 people/sq.m.
 - BangKhonti                             0.000505587 people/sq.m.
 - MueangSamutSongkhram                   0.000574540 people/sq.m.
 
+Province PathumThani                     0.006775261 people/sq.m.
+- BangProk                               0.009210554 people/sq.m.
+- BangKhuWat                             0.007617135 people/sq.m.
+- BanMai                                 0.007894581 people/sq.m.
+- LakHok                                 0.000262028 people/sq.m.
+- BanKrachaeng                           0.009766213 people/sq.m.
+
+Province ChiangMai                       0.000080382 people/sq.m.
+- MueangChiangMai                        0.000177546 people/sq.m.
+- ChomThong                              0.000099954 people/sq.m.
+- MaeChaem                               0.000026556 people/sq.m.
+
 ============================================================
 [Summary Of Population In Each Provinces And Districts]
 
@@ -49,4 +61,17 @@ Province SamutSongkhram                       185564 people
 - BangKhonti                                   39183 people
 - MueangSamutSongkhram                         97130 people
 Extra population from province: -1 people
+
+Province PathumThani                         1033837 people
+- BangProk                                     78842 people
+- BangKhuWat                                   35422 people
+- BanMai                                      438006 people
+- LakHok                                        9313 people
+- BanKrachaeng                                472254 people
+
+Province ChiangMai                           1779254 people
+- MueangChiangMai                             685322 people
+- ChomThong                                   828832 people
+- MaeChaem                                    265104 people
+Extra population from province: -4 people
 

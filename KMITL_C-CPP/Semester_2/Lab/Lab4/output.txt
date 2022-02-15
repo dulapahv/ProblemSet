@@ -31,47 +31,47 @@ Province PathumThani                     0.006775261 people/sq.m.
 
 Province ChiangMai                       0.000080382 people/sq.m.
 - MueangChiangMai                        0.000177546 people/sq.m.
-- ChomThong                              0.000099954 people/sq.m.
+- ChomThong                              0.000099950 people/sq.m.
 - MaeChaem                               0.000026556 people/sq.m.
 
 ============================================================
 [Summary Of Population In Each Provinces And Districts]
 
-Province NakhonNayok                          246868 people
-- BanNa                                        64323 people
-- MueangNakhonNayok                            95965 people
-- Ongkharak                                    64064 people
-- PakPhli                                      22515 people
+Province NakhonNayok                                246868 people
+- BanNa                                              64323 people
+- MueangNakhonNayok                                  95965 people
+- Ongkharak                                          64064 people
+- PakPhli                                            22515 people
 Extra population from province: 1 people
 
-Province Phuket                               525709 people
-- Kathu                                       101410 people
-- MueangPhuket                                311585 people
-- Thalang                                     122714 people
+Province Phuket                                     525709 people
+- Kathu                                             101410 people
+- MueangPhuket                                      311585 people
+- Thalang                                           122714 people
 Extra population from province: -10000 people
 
-Province SamutSakhon                          887191 people
-- BanPhaeo                                     86663 people
-- KrathumBaen                                 264206 people
-- MueangSamutSakhon                           536323 people
+Province SamutSakhon                                887191 people
+- BanPhaeo                                           86663 people
+- KrathumBaen                                       264206 people
+- MueangSamutSakhon                                 536323 people
 Extra population from province: -1 people
 
-Province SamutSongkhram                       185564 people
-- Amphawa                                      49252 people
-- BangKhonti                                   39183 people
-- MueangSamutSongkhram                         97130 people
+Province SamutSongkhram                             185564 people
+- Amphawa                                            49252 people
+- BangKhonti                                         39183 people
+- MueangSamutSongkhram                               97130 people
 Extra population from province: -1 people
 
-Province PathumThani                         1033837 people
-- BangProk                                     78842 people
-- BangKhuWat                                   35422 people
-- BanMai                                      438006 people
-- LakHok                                        9313 people
-- BanKrachaeng                                472254 people
+Province PathumThani                               1033837 people
+- BangProk                                           78842 people
+- BangKhuWat                                         35422 people
+- BanMai                                            438006 people
+- LakHok                                              9313 people
+- BanKrachaeng                                      472254 people
 
-Province ChiangMai                           1779254 people
-- MueangChiangMai                             685322 people
-- ChomThong                                   828832 people
-- MaeChaem                                    265104 people
-Extra population from province: -4 people
+Province ChiangMai                                 1779254 people
+- MueangChiangMai                                   685322 people
+- ChomThong                                         828802 people
+- MaeChaem                                          265104 people
+Extra population from province: 26 people
 

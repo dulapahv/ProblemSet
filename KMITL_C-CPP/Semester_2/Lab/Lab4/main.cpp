@@ -21,7 +21,7 @@ int main() {
 	vector<Sub_District> sub_district;
 	string tempKey, tempName;
 	double tempLatitude, tempLongitude, tempArea;
-	long int tempPopulation;
+	long long int tempPopulation;
 
 	inFile.ignore(256, '\n');  // Move file pointer to the next line
 

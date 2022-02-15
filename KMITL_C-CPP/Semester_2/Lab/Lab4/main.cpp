@@ -24,24 +24,24 @@ int main() {
 	inFile.ignore(256, '\n');  // Move file pointer to the next line
 
 	/*
-    Algorithm:
+	Algorithm:
 
-    1. While it is not EOF, read the data according to the space separated column <name><lat long><population><area sq m> and store them into the temporary variables.
+	1. While it is not EOF, read the data according to the space separated column <name><lat long><population><area sq m> and store them into the temporary variables.
 	2. Determine the type of region using a temporary variable that holds the key value.
-    3. If it is a "Province", create a Province object using the data from the temporary variables and add it to the province vector.
-    4. If it is a "Sub" (Sub-District), create a Sub_District object using the data from the temporary variables, then add it to the sub_district vector.
-    5. Since there could be more than 1 sub-district in each province, if the new read data (<key>) is "Sub", then go to number 4. But if the new read data is
-       () is "Province", then add the sub_district vector (which contains all the sub-districts in each province) into the sub_districtGroup vector.
-       sub_districtGroup vector is now acting like a 2D array storing the index of provinces that contain sub-districts, and each of them stores
-       each sub-district's data.
-    6. Once the data sub_district vector is now stored inside the Sub_DistrictGroup vector, clear the sub_district vector in order to prepare it to receive
-       new set of sub-districts in the next province.
-    7. Because the algorithm will store the sub_district vector inside the sub_districtGroup vector every time the <key> is "Province". If there is no
-       preceding "Province" then the last sub_district vector will not be added into the sub_districtGroup vector, thus it should be added once the
-       algorithm finishes parsing the input file.
-    8. Because the algorithm will store the sub_district vector inside the sub_districtGroup vector every time the <key> is "Province". And given that "Province" will
-       appear before "Sub" (since the province has a higher hierarchy than the sub-district), this will make the first element of the sub_districtGroup vector
-       empty, which should be removed.
+	3. If it is a "Province", create a Province object using the data from the temporary variables and add it to the province vector.
+	4. If it is a "Sub" (sub-district), create a Sub_District object using the data from the temporary variables, then add it to the sub_district vector.
+	5. Since there could be more than 1 sub-district in each province, if the new read data (<key>) is "Sub", then go to number 4. But if the new read data is
+	   is "Province", then add the sub_district vector (which contains all the sub-districts in each province) into the sub_districtGroup vector.
+	   Now, sub_districtGroup vector is acting like a 2D array storing the index of provinces that contain sub-districts, and each of them stores
+	   each sub-district's data.
+	6. Once the data sub_district vector is now stored inside the Sub_DistrictGroup vector, clear the sub_district vector in order to prepare it to receive
+	   new set of sub-districts in the next province.
+	7. Because the algorithm will store the sub_district vector inside the sub_districtGroup vector every time the <key> is "Province". If there is no
+	   preceding "Province" then the last sub_district vector will not be added into the sub_districtGroup vector, thus it should be added once the
+	   algorithm finishes parsing the input file.
+	8. Because the algorithm will store the sub_district vector inside the sub_districtGroup vector every time the <key> is "Province". And given that "Province" will
+	   appear before "Sub" (since the province has a higher hierarchy than the sub-district), this will make the first element of the sub_districtGroup vector
+	   empty, which should be removed.
 	*/
 
 	while (inFile >> tempKey >> tempName >> tempLatitude >> tempLongitude >> tempPopulation >> tempArea) {  // 1
@@ -86,13 +86,13 @@ int main() {
 
 		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
 			sum_sub_district += sub_districtGroup[i][j].getPopulation();
-		difference = province[i].getPopulation(); - sum_sub_district;
+		difference = province[i].getPopulation() - sum_sub_district;
 
 		/* Output result to a file */
 		outFile << "Province " << province[i].getName() << setw(49 - province[i].getName().length()) << province[i].getPopulation() << " people" << endl;
 		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
 			outFile << "- " << sub_districtGroup[i][j].getName() << setw(56 - sub_districtGroup[i][j].getName().length()) << sub_districtGroup[i][j].getPopulation() << " people" << endl;
-		
+
 		/* If the population of the province does not match the sum of population in sub_districts, report extra population */
 		if (difference != 0)
 			outFile << "Extra population from province: " << difference << " people" << endl;

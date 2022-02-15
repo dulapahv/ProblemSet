@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -13,6 +14,7 @@ using namespace std;
 int main() {
 	/** Read input file and store data in vector **/
 	ifstream inFile(INFILE);
+	assert(inFile);  // Check whether input file exists or not
 
 	vector<Province> province;
 	vector<vector<Sub_District>> sub_districtGroup;
@@ -45,6 +47,9 @@ int main() {
 	*/
 
 	while (inFile >> tempKey >> tempName >> tempLatitude >> tempLongitude >> tempPopulation >> tempArea) {  // 1
+		// Disallow population and area value to be negative
+		assert(tempPopulation >= 0);
+		assert(tempArea >= 0);
 		// 2
 		if (tempKey.compare("Province") == 0) {  // 3
 			province.push_back(Province(tempKey, tempName, tempLatitude, tempLongitude, tempPopulation, tempArea));
@@ -61,9 +66,10 @@ int main() {
 	/** Compute and output statistics to a file **/
 	/* Compare the population density in each provinces and sub_districts */
 	ofstream outFile(OUTFILE);
+	assert(outFile);  // Check whether output file is writable or not (not read-only, has enough disk space, etc.)
 
-	outFile << "============================================================" << endl;
-	outFile << "[Summary Of Population Density In Each Provinces And Districts]\n" << endl;
+	outFile << "======================================================================" << endl;
+	outFile << "[Summary Of Population Density In Each Provinces And Sub-Districts]\n" << endl;
 	outFile << setprecision(9) << fixed;
 
 	/* Output result to a file */
@@ -75,8 +81,8 @@ int main() {
 	}
 
 	/* Compare the sum of population in each provinces to the sum of population in sub_districts */
-	outFile << "============================================================" << endl;
-	outFile << "[Summary Of Population In Each Provinces And Districts]\n" << endl;
+	outFile << "======================================================================" << endl;
+	outFile << "[Summary Of Population In Each Provinces And Sub-Districts]\n" << endl;
 	outFile << setprecision(0);
 
 	for (unsigned int i = 0; i < province.size(); i++) {
@@ -94,7 +100,9 @@ int main() {
 			outFile << "- " << sub_districtGroup[i][j].getName() << setw(56 - sub_districtGroup[i][j].getName().length()) << sub_districtGroup[i][j].getPopulation() << " people" << endl;
 
 		/* If the population of the province does not match the sum of population in sub_districts, report extra population */
-		if (difference != 0)
+		if ((difference == 1) || (difference == -1))
+			outFile << "Extra population from province: " << difference << " person" << endl;
+		else if (difference != 0)
 			outFile << "Extra population from province: " << difference << " people" << endl;
 		outFile << endl;
 	}

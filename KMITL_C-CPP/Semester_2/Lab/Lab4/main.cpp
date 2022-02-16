@@ -14,7 +14,7 @@ using namespace std;
 int main() {
 	/** Read input file and store data in vector **/
 	ifstream inFile(INFILE);
-	assert(inFile);  // Check whether input file exists or not
+	assert(inFile);  // Check whether input file is accessible or not
 
 	vector<Province> province;
 	vector<vector<Sub_District>> sub_districtGroup;
@@ -66,7 +66,7 @@ int main() {
 	/** Compute and output statistics to a file **/
 	/* Compare the population density in each provinces and sub_districts */
 	ofstream outFile(OUTFILE);
-	assert(outFile);  // Check whether output file is writable or not (not read-only, has enough disk space, etc.)
+	assert(outFile);  // Check whether output file is accessible or not
 
 	outFile << "======================================================================" << endl;
 	outFile << "[Summary Of Population Density In Each Provinces And Sub-Districts]\n" << endl;
@@ -87,17 +87,20 @@ int main() {
 
 	for (unsigned int i = 0; i < province.size(); i++) {
 		/* Get the difference between sum of each population in sub_districts */
-		double sum_sub_district = 0;
-		double difference;
+		long long int sum_sub_district = 0;
+		long long int difference;
 
 		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
 			sum_sub_district += sub_districtGroup[i][j].getPopulation();
 		difference = province[i].getPopulation() - sum_sub_district;
 
 		/* Output result to a file */
-		outFile << "Province " << province[i].getName() << setw(49 - province[i].getName().length()) << province[i].getPopulation() << " people" << endl;
-		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++)
-			outFile << "- " << sub_districtGroup[i][j].getName() << setw(56 - sub_districtGroup[i][j].getName().length()) << sub_districtGroup[i][j].getPopulation() << " people" << endl;
+		outFile << "Province " << province[i].getName() << setw(49 - province[i].getName().length()) << province[i].getPopulation();
+		(province[i].getPopulation() == 1) ? outFile << " person" << endl : outFile << " people" << endl;
+		for (unsigned int j = 0; j < sub_districtGroup[i].size(); j++) {
+			outFile << "- " << sub_districtGroup[i][j].getName() << setw(56 - sub_districtGroup[i][j].getName().length()) << sub_districtGroup[i][j].getPopulation();
+			(sub_districtGroup[i][j].getPopulation() == 1) ? outFile << " person" << endl : outFile << " people" << endl;
+		}
 
 		/* If the population of the province does not match the sum of population in sub_districts, report extra population */
 		if ((difference == 1) || (difference == -1))

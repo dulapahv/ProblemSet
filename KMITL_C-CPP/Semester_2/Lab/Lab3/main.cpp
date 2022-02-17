@@ -103,7 +103,7 @@ int main() {
 		}
 
 		/* If the population of the province does not match the sum of population in sub_districts, report extra population */
-		if ((difference == 1) || (difference == -1))
+		if (abs(difference) == 1)
 			outFile << "Extra population from province: " << difference << " person" << endl;
 		else if (difference != 0)
 			outFile << "Extra population from province: " << difference << " people" << endl;

@@ -1,2 +1,1 @@
-usin = input()
-print(usin.remove(" "))
+print(int('0b100', base=4))

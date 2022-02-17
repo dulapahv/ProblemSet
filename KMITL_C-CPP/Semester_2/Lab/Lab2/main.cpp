@@ -1,78 +1,46 @@
-/*
-Test cases for:
-
-1. Equilateral Triangle
-Vertex 1 - (1.2, 5.148)
-Vertex 2 - (-3.1, -2.3)
-Vertex 3 - (5.5, -2.3)
-
-2. Isoscles Triangle
-Vertex 1 - (-1.2, -3.5)
-Vertex 2 - (5.2, -3.5)
-Vertex 3 - (2, 7.265)
-
-3. Scalene Triangle
-Vertex 1 - (-2.6, 1.2)
-Vertex 2 - (5.2, 1.7)
-Vertex 3 - (0.78, 7.13)
-
-4. Invalid Triangle (area <= 0 or perimeter <= 0)
-Vertex 1 - (1, 2)
-Vertex 2 - (3, 4)
-Vertex 3 - (5, 6)  // Program terminates
-
-5. Invalid Input (not numeric)
-Vertex 1 - (1, a)  // Program terminates
-*/
-
 #include <iostream>
-#include "Triangle.h"
+#include <vector>
+#include "Rectangle.h"
+
+#define N_LARGE 1000
 
 using namespace std;
 
 int main() {
-	/* Creating a triangle object from user-input coordinates of 3 vertices */
-	double p1x, p1y, p2x, p2y, p3x, p3y;
-	cout << "Enter x-coordinate for vertex 1/3: ";
-	cin >> p1x;
-	cout << "Enter y-coordinate for vertex 1/3: ";
-	cin >> p1y;
-	cout << "Enter x-coordinate for vertex 2/3: ";
-	cin >> p2x;
-	cout << "Enter y-coordinate for vertex 2/3: ";
-	cin >> p2y;
-	cout << "Enter x-coordinate for vertex 3/3: ";
-	cin >> p3x;
-	cout << "Enter y-coordinate for vertex 3/3: ";
-	cin >> p3y;
-	cout << endl;
+	/* a) Create a small (or default) vector. Check its allocated space with v.capacity(); */
+	vector<Rect<double>> rectVector;
+	rectVector.reserve(N_LARGE);
+	cout << "Space reserved for rectangle vector: " << rectVector.capacity() << endl;
 
-	Triangle* t = new Triangle(p1x, p1y, p2x, p2y, p3x, p3y);
+	/* b) Add more elements in a loop with push_back() */
+	int add = 20;
+	cout << "Rectangles added: " << add <<endl;
+	for (int i = 0; i < add; i++) {
+		Rect<double> *rect = new Rect<double>(1.2 * i, 1.4 * i, 2.6 * i, 2.8 * i);
+		rectVector.push_back(*rect);
+		rect->print();
+	}
+	cout << "\nAll rectangles in rectangle vector: " << rectVector.size() << endl;
+	for (auto i = rectVector.begin(); i != rectVector.end(); i++) {
+		i->print();
+	}
 
-	/* Creating a triangle object from 3 arrays of vertex coordinates */
-	/*
-	double p1[] = {1.2, 5.148};
-	double p2[] = {-3.1, -2.3};
-	double p3[] = {5.5, -2.3};
+	/* c) Use capacity() to see how many more where added */
+	vector<int> a;
+	cout << "\nSpace allocated for vector a: " << a.capacity() << endl;
+	for (int i = 0; i < 1000; i++) {
+		a.push_back(i);
+	}
+	cout << "Space of vector a after adding 1000 integers: " << a.capacity() << endl;
 
-	Triangle* t1 = new Triangle(p1, p2, p3);
-	*/
+	/* d) Use the reserve(new_capacity) */
+	vector<int> b;
+	b.reserve(1000);
+	cout << "\nSpace reserved for vector b: " << b.capacity() << endl;
+	for (int i = 0; i < 1000; i++) {
+		b.push_back(i);
+	}
+	cout << "Space of vector b after adding 1000 integers: " << b.capacity() << endl;
 
-	/* Displaying the triangle property. */
-	cout << "Triangle properties:" << endl;
-
-	cout << "Vertex 1: (" << t->getp1x() << ", " << t->getp1y() << ")" << endl;
-	cout << "Vertex 2: (" << t->getp2x() << ", " << t->getp2y() << ")" << endl;
-	cout << "Vertex 3: (" << t->getp3x() << ", " << t->getp3y() << ")" << endl;
-
-	cout << "Area: " << t->getArea() << " px^2" << endl;
-	cout << "Perimeter " << t->getPerimeter() << " px" << endl;
-
-	cout << boolalpha;
-	cout << "Is equilateral? " << t->isEquilateral() << endl;
-	cout << "Is isosceles? " << t->isIsosceles() << endl;
-	cout << "Is scalene? " << t->isScalene() << endl;
-
-	delete t;
 	return 0;
 }

@@ -1,0 +1,77 @@
+============================================================
+[Summary Of Population Density In Each Provinces And Districts]
+
+Province NakhonNayok                     0.000116337 people/sq.m.
+- BanNa                                  0.000165610 people/sq.m.
+- MueangNakhonNayok                      0.000131802 people/sq.m.
+- Ongkharak                              0.000131711 people/sq.m.
+- PakPhli                                0.000043373 people/sq.m.
+
+Province Phuket                          0.000968157 people/sq.m.
+- Kathu                                  0.001511552 people/sq.m.
+- MueangPhuket                           0.001391004 people/sq.m.
+- Thalang                                0.000486960 people/sq.m.
+
+Province SamutSakhon                     0.001017421 people/sq.m.
+- BanPhaeo                               0.000353682 people/sq.m.
+- KrathumBaen                            0.001953089 people/sq.m.
+- MueangSamutSakhon                      0.001089999 people/sq.m.
+
+Province SamutSongkhram                  0.000444998 people/sq.m.
+- Amphawa                                0.000289438 people/sq.m.
+- BangKhonti                             0.000505587 people/sq.m.
+- MueangSamutSongkhram                   0.000574540 people/sq.m.
+
+Province PathumThani                     0.006775261 people/sq.m.
+- BangProk                               0.015973901 people/sq.m.
+- BangKhuWat                             0.015133201 people/sq.m.
+- BanMai                                 0.006266625 people/sq.m.
+- LakHok                                 0.010940753 people/sq.m.
+- BanKrachaeng                           0.001865067 people/sq.m.
+
+Province ChiangMai                       0.000080382 people/sq.m.
+- MueangChiangMai                        0.000177546 people/sq.m.
+- ChomThong                              0.000099950 people/sq.m.
+- MaeChaem                               0.000026556 people/sq.m.
+
+============================================================
+[Summary Of Population In Each Provinces And Districts]
+
+Province NakhonNayok                                246868 people
+- BanNa                                              64323 people
+- MueangNakhonNayok                                  95965 people
+- Ongkharak                                          64064 people
+- PakPhli                                            22515 people
+Extra population from province: 1 people
+
+Province Phuket                                     525709 people
+- Kathu                                             101410 people
+- MueangPhuket                                      311585 people
+- Thalang                                           122714 people
+Extra population from province: -10000 people
+
+Province SamutSakhon                                887191 people
+- BanPhaeo                                           86663 people
+- KrathumBaen                                       264206 people
+- MueangSamutSakhon                                 536323 people
+Extra population from province: -1 people
+
+Province SamutSongkhram                             185564 people
+- Amphawa                                            49252 people
+- BangKhonti                                         39183 people
+- MueangSamutSongkhram                               97130 people
+Extra population from province: -1 people
+
+Province PathumThani                               1033837 people
+- BangProk                                          136736 people
+- BangKhuWat                                         70374 people
+- BanMai                                            347684 people
+- LakHok                                            388856 people
+- BanKrachaeng                                       90187 people
+
+Province ChiangMai                                 1779254 people
+- MueangChiangMai                                   685322 people
+- ChomThong                                         828802 people
+- MaeChaem                                          265104 people
+Extra population from province: 26 people
+

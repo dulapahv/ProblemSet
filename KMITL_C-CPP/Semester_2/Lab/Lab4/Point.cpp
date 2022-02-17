@@ -12,8 +12,6 @@
 
 #include <iostream>
 
-
-
 #include "Point.h"
 
 void Point::move(Point dx) {

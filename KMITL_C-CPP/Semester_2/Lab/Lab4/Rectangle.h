@@ -5,7 +5,6 @@
 #include "Point.h"
 
 
-
 class Rectangle {
 private:
 	Point tl, br;

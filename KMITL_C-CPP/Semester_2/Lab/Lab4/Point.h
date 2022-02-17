@@ -14,7 +14,6 @@
 #include <fstream>
 
 
-
 class Point {
 public:
 	float x, y;

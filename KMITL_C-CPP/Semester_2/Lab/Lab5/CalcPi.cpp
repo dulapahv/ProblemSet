@@ -1,8 +1,8 @@
 // CalcPi.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
 #define _USE_MATH_DEFINES
+#include <iostream>
 #include <cmath>
 
 #include "Rectangle.h"
@@ -27,9 +27,15 @@ Pt<double> randomPt() {
 
 /* Is p inside the unit circle? - if outside, throw an exception */
 bool inside(Pt<double> p) {
-    /********* add your code *********/
-    return true;
+    double distance = sqrt((p.x * p.x) + (p.y * p.y));
+    if (distance <= 1) {
+        return true;
+    }
+    else {
+        throw OverflowException();
+    }
 }
+
 
 double pi_est(int n_in, int n_tot) {
     return 4.0 * (double)n_in / (double)n_tot;
@@ -48,24 +54,32 @@ int main()
     /* Random seed */
     srand((unsigned int)time(0));
     n_inside = 0;
-    n_total = 0;
+    n_total = 200;
     n_report = 100; /* Report at regular intervals */
-    //for (int j = 0; j < max_tries; j++) {
-    //    p = randomPt();
-    //    /** Add a try-catch block */
-    //    /************ count n_inside and n_total ***************************/
+    for (int j = 0; j < max_tries; j++) {
+        p = randomPt();
+        /** Add a try-catch block */
+        try {
+            /************ count n_inside and n_total ***************************/
+            if (n_total > n_report) {
+                pi_v = pi_est(n_inside, n_total);
+                fprintf(stderr, "Tries %d pi %20.12f err %10.4g %%\n",
+                    n_total, pi_v, 100.0 * (M_PI - pi_v) / M_PI);
+                n_report = n_report * 3 / 2; /* Increment the reporting interval */
+                pi_calcs.push_back(pi_v);
+                n_trials.push_back(n_total);
+            }
+        }
+        catch (OverflowException e) {
+            fprintf(stderr, "OverflowException\n");
+        }
+        catch (DivideByZeroException e) {
+            fprintf(stderr, "DivideByZeroException\n");
+        }
+        
+    }
 
-    //    if (n_total > n_report) {
-    //        pi_v = pi_est(n_inside, n_total);
-    //        fprintf(stderr, "Tries %d pi %20.12f err %10.4g %%\n",
-    //            n_total, pi_v, 100.0 * (M_PI - pi_v) / M_PI);
-    //        n_report = n_report * 3 / 2; /* Increment the reporting interval */
-    //        pi_calcs.push_back(pi_v);
-    //        n_trials.push_back(n_total);
-    //    }
-    //}
-
-    ///* Print a summary of your trials */
-    ///*****************************/
+    /* Print a summary of your trials */
+    /*****************************/
 
 }

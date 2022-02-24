@@ -41,7 +41,7 @@ double pi_est(int n_in, int n_tot) {
     return 4.0 * (double)n_in / (double)n_tot;
 }
 
-const int max_tries = 10000; /* Set as large as you like */
+const int max_tries = 1000000000; /* Set as large as you like */
 
 int main()
 {
@@ -58,28 +58,31 @@ int main()
     n_report = 100; /* Report at regular intervals */
     for (int j = 0; j < max_tries; j++) {
         p = randomPt();
+        n_total += 1;
         /** Add a try-catch block */
         try {
-            /************ count n_inside and n_total ***************************/
-            if (n_total > n_report) {
-                pi_v = pi_est(n_inside, n_total);
-                fprintf(stderr, "Tries %d pi %20.12f err %10.4g %%\n",
-                    n_total, pi_v, 100.0 * (M_PI - pi_v) / M_PI);
-                n_report = n_report * 3 / 2; /* Increment the reporting interval */
-                pi_calcs.push_back(pi_v);
-                n_trials.push_back(n_total);
+            if (inside(p)) {
+                n_inside += 1;
             }
         }
-        catch (OverflowException e) {
-            fprintf(stderr, "OverflowException\n");
-        }
-        catch (DivideByZeroException e) {
-            fprintf(stderr, "DivideByZeroException\n");
-        }
+        catch (OverflowException &overflowException){
         
+        }
+        /************ count n_inside and n_total ***************************/
+        if (n_total > n_report) {
+            pi_v = pi_est(n_inside, n_total);
+            fprintf(stderr, "Tries %d pi %20.12f err %10.4g %%\n",
+                n_total, pi_v, 100.0 * (M_PI - pi_v) / M_PI);
+            n_report = n_report * 3 / 2; /* Increment the reporting interval */
+            pi_calcs.push_back(pi_v);
+            n_trials.push_back(n_total);
+        }
     }
 
     /* Print a summary of your trials */
     /*****************************/
-
+    printf("Trial No.\t\tValue\n");
+    for (int i = 0; i < pi_calcs.size(); i++) {
+        printf("%d\t\t%.12f\n", n_trials[i], pi_calcs[i]);
+    }
 }

@@ -12,8 +12,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 #include "Point.h"
 
 void Point::move(Point dx) {
@@ -28,9 +26,9 @@ float Point::distance(Point& b) {
 	return (float)d;
 }
 
-void Point::print(ofstream& f) {
+void Point::print(std::ofstream& f) {
 	f << '(' << x << ',' << y << ')';
 }
 void Point::print() {
-	cout << '(' << x << ',' << y << ')';
+	std::cout << '(' << x << ',' << y << ')';
 }

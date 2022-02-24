@@ -13,8 +13,6 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
 class Point {
 public:
 	float x, y;
@@ -35,7 +33,7 @@ public:
 	float distance(Point& b);
 
 	// Add a point to a stream
-	void print(ofstream& f);
+	void print(std::ofstream& f);
 	// Add a point to the std output stream cout
 	void print();
 };

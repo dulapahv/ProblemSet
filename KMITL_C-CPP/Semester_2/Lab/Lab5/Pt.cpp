@@ -2,10 +2,10 @@
 
 /** This is a very simple class and programs would often
 	want to manipulate the attributes directly
-	So there are no private attributes ..
-	there is only a Point.h file .. C++ allows the implementations in
+	So there are no private attributes .. 
+	there is only a Point.h file .. C++ allows the implementations in 
 	header files ..
-	violating the information hiding principle -
+	violating the information hiding principle - 
 	acceptable for THIS SIMPLE CASE only
 	**/
 #pragma once
@@ -18,8 +18,8 @@ using namespace std;
 
 template <typename T>
 void Pt<T>::move(Pt<T> dx) {
-	x = x + dx.x; y = y + dx.y;
-}
+		x = x + dx.x; y = y + dx.y;
+	}
 
 template <typename T>
 Pt<T> Pt<T>::operator+(Pt<T> b) {
@@ -29,7 +29,7 @@ Pt<T> Pt<T>::operator+(Pt<T> b) {
 	return c;
 }
 template <typename T>
-T Pt<T>::distance(Pt<T>& b) {
+T Pt<T>::distance(Pt<T> &b) {
 	double d;
 	double dx = (double)(b.x - x);
 	double dy = (double)(b.y - y);
@@ -39,13 +39,13 @@ T Pt<T>::distance(Pt<T>& b) {
 
 template <typename T>
 void Pt<T>::print(ofstream& f) {
-	f << '(' << x << ',' << y << ')';
-}
+		f << '(' << x << ',' << y << ')';
+		}
 
 template <typename T>
 void Pt<T>::print() {
 	cout << '(' << x << ',' << y << ')';
-}
+	}
 
 template class Pt<float>;
 template class Pt<double>;

@@ -4,8 +4,6 @@
 
 #include "Point.h"
 
-using namespace std;
-
 class Rectangle {
 private:
 	Point tl, br;

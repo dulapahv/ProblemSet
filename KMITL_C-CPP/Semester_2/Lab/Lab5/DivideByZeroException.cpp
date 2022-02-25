@@ -2,7 +2,9 @@
 
 #include <iostream>
 #include <stdexcept>
+
 using namespace std;
+
 //user defined class for handling exception
 class Exception : public runtime_error {
 public:

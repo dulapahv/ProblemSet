@@ -1,1 +1,25 @@
-print(int('0b100', base=4))
+import math
+
+p=37; q=73; c=5; n=p*q; L=math.lcm(p-1,q-1); d=math.inverse_mod(c,L)
+print ('L: ', L)
+print ('d: ', d)
+x=33
+print ('Original message: ', x)
+r = x^c%n; r
+print ('Encrypted message: ', r)
+dm=r^d%n;
+print ('Decrypted message: ', dm)
+
+symbols=[chr(i) for i in range(ord('A'),ord('Z')+1)]
+symbols.append('.'); symbols.append(','); symbols.append('!'); symbols.append(' ');
+def encrypt(s):
+    ms = [1+symbols.index(s[i]) for i in range(0,len(s))];
+    es = list(map(lambda x: x^c%n,ms))
+    return es
+def decrypt(x):
+    ds = map(lambda x: x^d%n, x)
+    return ''.join([symbols[i-1] for i in ds])
+
+message = "THE TIME HAS COME, THE WALRUS SAID..."
+emessage = encrypt(message)
+print (*emessage)

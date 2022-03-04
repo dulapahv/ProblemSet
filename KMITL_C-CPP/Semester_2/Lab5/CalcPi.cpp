@@ -76,7 +76,7 @@ int main() {
 	/* Print a summary of your trials */
 	/*****************************/
 	cout << "Attempt No.\t\t Value" << endl;
-	for (unsigned int i = 0; i < pi_calcs.size(); i++)
+	for (int i = 0; i < pi_calcs.size(); i++)
 		cout << n_trials[i] << "\t\t" << setprecision(12) << fixed << pi_calcs[i] << endl;
 	
 	return 0;

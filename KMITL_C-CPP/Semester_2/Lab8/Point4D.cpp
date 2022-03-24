@@ -1,4 +1,4 @@
-/** Point3D class **/
+/** Point4D class **/
 
 #include <iostream>
 #include "math.h"
@@ -8,108 +8,62 @@
 
 using namespace std;
 
+const int MAX_INT = 2147483647;
+const float MAX_FLOAT = 3.402823466e+38F;
+const double MAX_DOUBLE = 1.7976931348623158e+308;
+
 template <typename T>
 void Point4D<T>::print(ofstream& f) {
-	f << '(' << getX() << ',' << getY() << ',' << z4 << ')';
+	f << "(" << getX() << ", " << getY() << ", " << z4 << ")";
 }
 
 template <typename T>
 void Point4D<T>::print() {
-	cout << '(' << getX() << ', ' << getY() << ', ' << z4 << ')';
+	cout << "(" << getX() << ", " << getY() << ", " << getZ() << ", " << z4 << ")";
 }
 
 /* + operator method */
 template <typename T>
-Point4D<T> operator+(Point4D<T> p, T scale) {
-	if (p.getX() + scale > numeric_limits<T>::max() || p.getX() + scale < numeric_limits<T>::min()) {
-		throw OverflowException();
-	}
-	return Point4D<T>(p.getX() + scale, p.getY() + scale, p.getZ() + scale, p.z4 + scale);
-}
-
-template <typename T>
-Point4D<T> operator+(Point4D<T> p1, Point4D<T> p2) {
-	if (p1.getX() + p2.getX() > numeric_limits<T>::max() || p1.getX() + p2.getX() < numeric_limits<T>::min()) {
-		throw OverflowException();
-	}
-	return Point4D<T>(p1.getX() + p2.getX(), p1.getY() + p2.getY(), p1.getZ() + p2.getZ(), p1.z4 + p2.z4);
+Point4D<T> Point4D<T>::operator+(Point4D<T>& p) {
+	return Point4D<T>(getX() + p.getX(), getY() + p.getY(), getZ() + p.getZ(), z4 + p.getZ());
 }
 
 /* - operator method */
 template <typename T>
-Point4D<T> operator-(Point4D<T> p, T scale) {
-	if (p.getX() - scale > numeric_limits<T>::max() || p.getX() - scale < numeric_limits<T>::min()) {
-		throw OverflowException();
-	}
-	return Point4D<T>(p.getX() - scale, p.getY() - scale, p.getZ() - scale, p.z4 - scale);
-}
-
-template <typename T>
-Point4D<T> operator-(Point4D<T> p1, Point4D<T> p2) {
-	if (p1.getX() - p2.getX() > numeric_limits<T>::max() || p1.getX() - p2.getX() < numeric_limits<T>::min()) {
-		throw OverflowException();
-	}
-	return Point4D<T>(p1.getX() - p2.getX(), p1.getY() - p2.getY(), p1.getZ() - p2.getZ(), p1.z4 - p2.z4);
+Point4D<T> Point4D<T>::operator-(Point4D<T>& p) {
+	return Point4D<T>(getX() - p.getX(), getY() - p.getY(), getZ() - p.getZ(), z4 - p.getZ());
 }
 
 /* * operator method */
 template <typename T>
-Point4D<T> operator*(Point4D<T> p, T scale) {
-	if ((p.getX() > 0) && (p.getX() * scale > numeric_limits<T>::max())) {
-		throw OverflowException();
+Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
+	if (typeid(T) == typeid(int)) {
+		if ((getX() * p.getX() > MAX_INT) || (getY() * p.getY() > MAX_INT) || (getZ() * p.getZ() > MAX_INT) || (z4 * p.getZ() > MAX_INT)) {
+			throw OverflowException();
+		}
 	}
-	else if ((p.getX() < 0) && (p.getX() * scale < numeric_limits<T>::min())) {
-		throw OverflowException();
+	else if (typeid(T) == typeid(float)) {
+		if ((getX() * p.getX() > MAX_FLOAT) || (getY() * p.getY() > MAX_FLOAT) || (getZ() * p.getZ() > MAX_FLOAT) || (z4 * p.getZ() > MAX_FLOAT)) {
+			throw OverflowException();
+		}
 	}
-	return Point4D<T>(p.getX() * scale, p.getY() * scale, p.getZ() * scale, p.z4 * scale);
-}
+	else {
+		if ((getX() * p.getX() > MAX_DOUBLE) || (getY() * p.getY() > MAX_DOUBLE) || (getZ() * p.getZ() > MAX_DOUBLE) || (z4 * p.getZ() > MAX_DOUBLE)) {
+			throw OverflowException();
+		}
+	}
 
-template <typename T>
-Point4D<T> operator*(Point4D<T> p1, Point4D<T> p2) {
-	if ((p1.getX() > 0) && (p1.getX() * p2.getX() > numeric_limits<T>::max())) {
-		throw OverflowException();
-	}
-	else if ((p1.getX() < 0) && (p1.getX() * p2.getX() < numeric_limits<T>::min())) {
-		throw OverflowException();
-	}
-	return Point4D<T>(p1.getX() * p2.getX(), p1.getY() * p2.getY(), p1.getZ() * p2.getZ(), p1.z4 * p2.z4);
+	return Point4D<T>(getX() * p.getX(), getY() * p.getY(), getZ() * p.getZ(), z4 * p.getZ());
 }
 
 /* / operator method */
 template <typename T>
-Point4D<T> operator/(Point4D<T> p, T scale) {
-	if (scale == 0) {
-		throw DivideByZeroException();
-	}
-	return Point4D<T>(p.getX() / scale, p.getY() / scale, p.getZ() / scale, p.z4 / scale);
-}
+Point4D<T> Point4D<T>::operator/(Point4D<T>& p) {
+	if (p.getX() == 0 || p.getY() == 0 || p.getZ() == 0 || z4 == 0) { throw DivideByZeroException(); }
 
-template <typename T>
-Point4D<T> operator/(Point4D<T> p1, Point4D<T> p2) {
-	if ((p2.getX() == 0) || (p2.getY() == 0) || (p2.getZ() == 0) || (p2.z4 == 0)) {
-		throw DivideByZeroException();
-	}
-	return Point4D<T>(p1.getX() / p2.getX(), p1.getY() / p2.getY(), p1.getZ() / p2.getZ(), p1.z4 / p2.z4);
+	return Point4D<T>(getX() / p.getX(), getY() / p.getY(), getZ() / p.getZ(), z4 / p.getZ());
 }
 
 template class Point4D<int>;
 template class Point4D<float>;
 template class Point4D<double>;
-
-/* / operator method */
-// template <typename T>
-// Point4D<T> operator/(Point4D<T> p, T scale) {
-// 	if (scale == 0) {
-// 		throw DivideByZeroException();
-// 	}
-// 	return Point4D<T>(p.getX() / scale, p.getY() / scale, p.getZ() / scale, p.z4 / scale);
-// }
-
-// template <typename T>
-// Point4D<T> operator/(Point4D<T> p1, Point4D<T> p2) {
-// 	if ((p2.getX() == 0) || (p2.getY() == 0) || (p2.getZ() == 0) || (p2.z4 == 0)) {
-// 		throw DivideByZeroException();
-// 	}
-// 	return Point4D<T>(p1.getX() / p2.getX(), p1.getY() / p2.getY(), p1.getZ() / p2.getZ(), p1.z4 / p2.z4);
-// }
-

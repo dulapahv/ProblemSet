@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "math.h"
+#include "OverflowException.h"
+#include "DivideByZeroException.h"
 
 using namespace std;
 
@@ -17,24 +19,18 @@ public:
 	}
 
 	/* + operator method */
-	Point4D<T> operator+(T scale);
-	Point4D<T> operator+(Point4D<T> p);
-	//Point4D<T> operator+(Point4D<T> p1, Point4D<T> p2) { }
+	Point4D<T> operator+(Point4D<T>& p);
 
 	/* - operator method */
-	Point4D<T> operator-(T scale);
-	Point4D<T> operator-(Point4D<T> p);
-	//Point4D<T> operator-(Point4D<T> p1, Point4D<T> p2) { }
+	Point4D<T> operator-(Point4D<T>& p);
 
 	/* * operator method */
-	Point4D<T> operator*(Point4D<T> p);
-	Point4D<T> operator*(T scale);
-	//Point4D<T> operator*(Point4D<T> p1, Point4D<T> p2) { }
+	Point4D<T> operator*(Point4D<T>& p);
 
 	/* / operator method */
-	Point4D<T> operator/(Point4D<T> p);
-	Point4D<T> operator/(T scale);
-	//Point4D<T> operator/(Point4D<T> p1, Point4D<T> p2) { }
+	Point4D<T> operator/(Point4D<T>& p);
+
+	//T getZ() { return z; }
 
 	void print(ofstream& f);
 	void print();

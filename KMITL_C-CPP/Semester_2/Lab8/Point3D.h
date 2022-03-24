@@ -15,6 +15,8 @@ public:
 		this->z = z;
 	}
 
+	double getZ() { return z; }
+
 	void print(ofstream& f);
 	void print();
 };

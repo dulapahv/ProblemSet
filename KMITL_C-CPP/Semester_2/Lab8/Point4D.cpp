@@ -1,12 +1,15 @@
 /** Point4D class **/
 
 #include <iostream>
+#include "assert.h"
 #include "math.h"
-#include "Point4D.h"
-#include "DivideByZeroException.h"
-#include "OverflowException.h"
 
 using namespace std;
+
+#include "Point4D.h"
+
+#include "DivideByZeroException.h"
+#include "OverflowException.h"
 
 const int MAX_INT = 2147483647;
 const float MAX_FLOAT = 3.402823466e+38F;
@@ -14,7 +17,8 @@ const double MAX_DOUBLE = 1.7976931348623158e+308;
 
 template <typename T>
 void Point4D<T>::print(ofstream& f) {
-	f << "(" << getX() << ", " << getY() << ", " << z4 << ")";
+	assert(f);
+	f << "(" << getX() << ", " << getY() << ", " << getZ() << ", " << z4 << ")";
 }
 
 template <typename T>

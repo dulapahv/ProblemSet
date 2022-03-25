@@ -1,16 +1,19 @@
 /** PointND class **/
 
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include <assert.h>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include "assert.h"
 #include "math.h"
+
+using namespace std;
+
 #include "PointND.h"
+
 #include "DivideByZeroException.h"
 #include "OverflowException.h"
 #include "QuadrantException.h"
-
-using namespace std;
 
 const int MAX_INT = 2147483647;
 const float MAX_FLOAT = 3.402823466e+38F;
@@ -24,6 +27,7 @@ int PointND<T>::YLIMIT = 50;
 
 template <typename T>
 void PointND<T>::print(ofstream& f) {
+	assert(f);
 	f << "(";
 	for (int i = 0; i < nd; i++) {
 		f << x[i];

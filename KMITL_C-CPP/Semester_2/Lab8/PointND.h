@@ -7,15 +7,15 @@
 
 using namespace std;
 
-const int XLIMIT = 50;
-const int YLIMIT = 50;
-
 template <typename T>
 class PointND {
 private:
     double nd;
     vector<T> x;
 public:
+    static int XLIMIT;
+    static int YLIMIT;
+
     PointND(vector<T> x) {
         this->nd = x.size();
         this->x.resize(nd);

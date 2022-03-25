@@ -17,6 +17,12 @@ const float MAX_FLOAT = 3.402823466e+38F;
 const double MAX_DOUBLE = 1.7976931348623158e+308;
 
 template <typename T>
+int PointND<T>::XLIMIT = 50;
+
+template <typename T>
+int PointND<T>::YLIMIT = 50;
+
+template <typename T>
 void PointND<T>::print(ofstream& f) {
 	f << "(";
 	for (int i = 0; i < nd; i++) {

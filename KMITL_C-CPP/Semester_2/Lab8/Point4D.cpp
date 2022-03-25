@@ -38,21 +38,14 @@ Point4D<T> Point4D<T>::operator-(Point4D<T>& p) {
 template <typename T>
 Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
 	if (typeid(T) == typeid(int)) {
-		if ((getX() * p.getX() > MAX_INT) || (getY() * p.getY() > MAX_INT) || (getZ() * p.getZ() > MAX_INT) || (z4 * p.getZ() > MAX_INT)) {
-			throw OverflowException();
-		}
+		if ((getX() * p.getX() > MAX_INT) || (getY() * p.getY() > MAX_INT) || (getZ() * p.getZ() > MAX_INT) || (z4 * p.getZ() > MAX_INT)) { throw OverflowException(); }
 	}
 	else if (typeid(T) == typeid(float)) {
-		if ((getX() * p.getX() > MAX_FLOAT) || (getY() * p.getY() > MAX_FLOAT) || (getZ() * p.getZ() > MAX_FLOAT) || (z4 * p.getZ() > MAX_FLOAT)) {
-			throw OverflowException();
-		}
+		if ((getX() * p.getX() > MAX_FLOAT) || (getY() * p.getY() > MAX_FLOAT) || (getZ() * p.getZ() > MAX_FLOAT) || (z4 * p.getZ() > MAX_FLOAT)) { throw OverflowException(); }
 	}
 	else {
-		if ((getX() * p.getX() > MAX_DOUBLE) || (getY() * p.getY() > MAX_DOUBLE) || (getZ() * p.getZ() > MAX_DOUBLE) || (z4 * p.getZ() > MAX_DOUBLE)) {
-			throw OverflowException();
-		}
+		if ((getX() * p.getX() > MAX_DOUBLE) || (getY() * p.getY() > MAX_DOUBLE) || (getZ() * p.getZ() > MAX_DOUBLE) || (z4 * p.getZ() > MAX_DOUBLE)) { throw OverflowException();  }
 	}
-
 	return Point4D<T>(getX() * p.getX(), getY() * p.getY(), getZ() * p.getZ(), z4 * p.getZ());
 }
 
@@ -60,7 +53,6 @@ Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
 template <typename T>
 Point4D<T> Point4D<T>::operator/(Point4D<T>& p) {
 	if (p.getX() == 0 || p.getY() == 0 || p.getZ() == 0 || z4 == 0) { throw DivideByZeroException(); }
-
 	return Point4D<T>(getX() / p.getX(), getY() / p.getY(), getZ() / p.getZ(), z4 / p.getZ());
 }
 

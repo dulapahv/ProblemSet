@@ -1,5 +1,7 @@
 /** Point4D class **/
 
+#pragma once
+
 #include <iostream>
 #include "math.h"
 

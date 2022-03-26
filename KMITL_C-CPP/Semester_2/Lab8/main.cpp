@@ -44,23 +44,23 @@ int main() {
 
 	/* + operator method */
 	Point4D<int> sum = setInt1 + setInt2;
-	outFile << "+ operator method: setInt1 + setInt2 = "; sum.print(outFile); outFile << endl;
+	outFile << "+ operator method: (setInt1 + setInt2) = "; sum.print(outFile); outFile << endl;
 
 	/* - operator method */
 	Point4D<float> diff = setFloat1 - setFloat2;
-	outFile << "- operator method: setFloat1 - setFloat2 = "; diff.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat1 - setFloat2) = "; diff.print(outFile); outFile << endl;
 
 	/* * operator method */
 	Point4D<double> prod = setDouble1 * setDouble2;
-	outFile << "* operator method: setDouble1 * setDouble2 = "; prod.print(outFile); outFile << endl;
+	outFile << "* operator method: (setDouble1 * setDouble2) = "; prod.print(outFile); outFile << endl;
 
 	/* / operator method */
 	Point4D<double> quot = setDouble1 / setDouble2;
-	outFile << "/ operator method: setDouble1 / setDouble2 = "; quot.print(outFile); outFile << endl;
+	outFile << "/ operator method: (setDouble1 / setDouble2) = "; quot.print(outFile); outFile << endl;
 
 	/* Combining operator methods */
 	Point4D<double> mix1 = (((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2;
-	outFile << "Combining operator methods: (((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2 = "; mix1.print(outFile); outFile << endl;
+	outFile << "Combining operator methods: ((((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2) = "; mix1.print(outFile); outFile << endl;
 	
 	outFile << endl;
 
@@ -68,7 +68,7 @@ int main() {
 	outFile << "Testing Exceptions" << endl;
 
 	/* Test DivideByZeroException */
-	outFile << "Dividing by zero: setDouble1 / setZero = ";
+	outFile << "Dividing by zero: (setDouble1 / setZero) = ";
 	try {
 		Point4D<double> testQuot = setDouble1 / setZero;
 	}
@@ -77,7 +77,7 @@ int main() {
 	}
 
 	/* Test OverflowException */
-	outFile << "Overflowing a data type: setInt1 * setIntLimit = ";
+	outFile << "Overflowing a data type: (setInt1 * setIntLimit) = ";
 	try {
 		Point4D<int> testProd = setInt1 * setIntLimit;
 	}
@@ -118,23 +118,23 @@ int main() {
 
 	/* + operator method */
 	PointND<int> sum2 = setInt3 + setInt4;
-	outFile << "+ operator method: setInt3 + setInt4 = "; sum2.print(outFile); outFile << endl;
+	outFile << "+ operator method: (setInt3 + setInt4) = "; sum2.print(outFile); outFile << endl;
 
 	/* - operator method */
 	PointND<float> diff2 = setFloat3 - setFloat4;
-	outFile << "- operator method: setFloat3 - setFloat4 = "; diff2.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat3 - setFloat4) = "; diff2.print(outFile); outFile << endl;
 
 	/* * operator method */
 	PointND<double> prod2 = setDouble3 * setDouble4;
-	outFile << "* operator method: setDouble3 * setDouble4 = "; prod2.print(outFile); outFile << endl;
+	outFile << "* operator method: (setDouble3 * setDouble4) = "; prod2.print(outFile); outFile << endl;
 
 	/* / operator method */
 	PointND<double> quot2 = setDouble3 / setDouble4;
-	outFile << "/ operator method: setDouble3 / setDouble4 = "; quot2.print(outFile); outFile << endl;
+	outFile << "/ operator method: (setDouble3 / setDouble4) = "; quot2.print(outFile); outFile << endl;
 
 	/* Combining operator methods */
 	PointND<double> mix2 = (((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4;
-	outFile << "Combining operator methods: (((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4 = "; mix2.print(outFile); outFile << endl;
+	outFile << "Combining operator methods: ((((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4) = "; mix2.print(outFile); outFile << endl;
 
 	outFile << endl;
 
@@ -142,7 +142,7 @@ int main() {
 	outFile << "Testing Exceptions" << endl;
 
 	/* Test DivideByZeroException */
-	outFile << "Dividing by zero: setDouble3 / setZero2 = ";
+	outFile << "Dividing by zero: (setDouble3 / setZero2) = ";
 	try {
 		PointND<double> testQuot2 = setDouble3 / setZero2;
 	}
@@ -151,7 +151,7 @@ int main() {
 	}
 
 	/* Test OverflowException */
-	outFile << "Overflowing a data type: setInt3 * setIntLimit2 = ";
+	outFile << "Overflowing a data type: (setInt3 * setIntLimit2) = ";
 	try {
 		PointND<int> testProd2 = setInt3 * setIntLimit2;
 	}
@@ -167,7 +167,7 @@ int main() {
 	outFile << "Testing Whether The Point Lies In The First Quadrant Or Not (XLIMIT = 50, YLIMIT = 50)" << endl;
 
 	/* In the first quadrant */
-	outFile << "pt1 + pt2 = ";
+	outFile << "(pt1 + pt2) = ";
 	try {
 		PointND<int> ptAns1 = pt1 + pt2;
 		outFile << "Point is in the first quadrant" << endl;
@@ -177,7 +177,7 @@ int main() {
 	}
 
 	/* Not in the first quadrant */
-	outFile << "pt1 - pt2 = ";
+	outFile << "(pt1 - pt2) = ";
 	try {
 		PointND<int> ptAns2 = pt1 - pt2;
 		outFile << "Point is in the first quadrant" << endl;
@@ -187,7 +187,7 @@ int main() {
 	}
 
 	/* Exceeding the limit in the first quadrant */
-	outFile << "pt1 * pt2 = ";
+	outFile << "(pt1 * pt2) = ";
 	try {
 		PointND<int> ptAns3 = pt1 * pt2;
 		outFile << "Point is in the first quadrant" << endl;

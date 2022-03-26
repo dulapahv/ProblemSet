@@ -10,15 +10,15 @@ class Point4D<double> setDouble2(5.87, 6.65, 7.43, 8.21)
 class Point4D<double> setZero(0, 0, 0, 0)
 
 Testing Operator Methods
-+ operator method: setInt1 + setInt2 = (6, 8, 10, 11)
-- operator method: setFloat1 - setFloat2 = (-3.34, -3.78, -4.22, -3.44)
-* operator method: setDouble1 * setDouble2 = (7.1027, 16.1595, 27.1195, 36.1841)
-/ operator method: setDouble1 / setDouble2 = (0.206133, 0.365414, 0.491252, 0.655451)
-Combining operator methods: (((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2 = (6.87387, 8.71459, 10.5887, 11.8087)
++ operator method: (setInt1 + setInt2) = (6, 8, 10, 12)
+- operator method: (setFloat1 - setFloat2) = (-3.34, -3.78, -4.22, -3.44)
+* operator method: (setDouble1 * setDouble2) = (7.1027, 16.1595, 27.1195, 36.1841)
+/ operator method: (setDouble1 / setDouble2) = (0.206133, 0.365414, 0.491252, 0.655451)
+Combining operator methods: ((((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2) = (6.87387, 8.71459, 10.5887, 12.5887)
 
 Testing Exceptions
-Dividing by zero: setDouble1 / setZero = Math error: Attempted to divide by Zero
-Overflowing a data type: setInt1 * setIntLimit = Math error: Stack overflow
+Dividing by zero: (setDouble1 / setZero) = Math error: Attempted to divide by Zero
+Overflowing a data type: (setInt1 * setIntLimit) = Math error: Stack overflow
 
 ==[Testing PointND Class]===========================================
 Declared Points
@@ -32,17 +32,17 @@ class PointND<double> setDouble4(5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.
 class PointND<double> setZero2(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 Testing Operator Methods
-+ operator method: setInt3 + setInt4 = (8, 10, 12, 14, 16, 18, 20, 22, 24, 26)
-- operator method: setFloat3 - setFloat4 = (-3.34, -3.78, -4.22, -4.66, -4.98, -4, -4.02, -4.04, -4.06, -4.08)
-* operator method: setDouble3 * setDouble4 = (7.1027, 16.1595, 27.1195, 39.9827, 53.9699, 61.7721, 81.0483, 102.788, 126.993, 153.661)
-/ operator method: setDouble3 / setDouble4 = (0.206133, 0.365414, 0.491252, 0.593179, 0.664817, 0.604352, 0.64496, 0.67831, 0.706189, 0.729841)
-Combining operator methods: (((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4 = (6.87387, 8.71459, 10.5887, 12.4868, 14.3352, 15.6156, 17.795, 19.9817, 22.1738, 24.3702)
++ operator method: (setInt3 + setInt4) = (8, 10, 12, 14, 16, 18, 20, 22, 24, 26)
+- operator method: (setFloat3 - setFloat4) = (-3.34, -3.78, -4.22, -4.66, -4.98, -4, -4.02, -4.04, -4.06, -4.08)
+* operator method: (setDouble3 * setDouble4) = (7.1027, 16.1595, 27.1195, 39.9827, 53.9699, 61.7721, 81.0483, 102.788, 126.993, 153.661)
+/ operator method: (setDouble3 / setDouble4) = (0.206133, 0.365414, 0.491252, 0.593179, 0.664817, 0.604352, 0.64496, 0.67831, 0.706189, 0.729841)
+Combining operator methods: ((((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4) = (6.87387, 8.71459, 10.5887, 12.4868, 14.3352, 15.6156, 17.795, 19.9817, 22.1738, 24.3702)
 
 Testing Exceptions
-Dividing by zero: setDouble3 / setZero2 = Math error: Attempted to divide by Zero
-Overflowing a data type: setInt3 * setIntLimit2 = Math error: Stack overflow
+Dividing by zero: (setDouble3 / setZero2) = Math error: Attempted to divide by Zero
+Overflowing a data type: (setInt3 * setIntLimit2) = Math error: Stack overflow
 
 Testing Whether The Point Lies In The First Quadrant Or Not (XLIMIT = 50, YLIMIT = 50)
-pt1 + pt2 = Point is in the first quadrant
-pt1 - pt2 = Quadrant error: Point is not in the first quadrant
-pt1 * pt2 = Quadrant error: Point is not in the first quadrant
+(pt1 + pt2) = Point is in the first quadrant
+(pt1 - pt2) = Quadrant error: Point is not in the first quadrant
+(pt1 * pt2) = Quadrant error: Point is not in the first quadrant

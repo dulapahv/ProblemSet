@@ -22,31 +22,6 @@ int PointND<T>::XLIMIT = 50;
 template <typename T>
 int PointND<T>::YLIMIT = 50;
 
-template <typename T>
-void PointND<T>::print(ofstream& f) {
-	assert(f);
-	f << "(";
-	for (int i = 0; i < nd; i++) {
-		f << x[i];
-		if (i < nd - 1) {
-			f << ", ";
-		}
-	}
-	f << ")";
-}
-
-template <typename T>
-void PointND<T>::print() {
-	cout << "(";
-	for (int i = 0; i < nd; i++) {
-		cout << x[i];
-		if (i < nd - 1) {
-			cout << ", ";
-		}
-	}
-	cout << ")";
-}
-
 /* + operator method */
 template <typename T>
 inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
@@ -56,8 +31,8 @@ inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
 	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
-		if ((p.x[i] > 0) && (x[i] > numeric_limits<T>::max() - p.x[i])) { throw OverflowException(); }
-		if ((p.x[i] < 0) && (x[i] < numeric_limits<T>::lowest() - p.x[i])) { throw OverflowException(); }
+		if ((p.x[i] > 0) && (x[i] > numeric_limits<T>::max() - p.x[i])) { throw OverflowException(); }  // overflow
+		if ((p.x[i] < 0) && (x[i] < numeric_limits<T>::lowest() - p.x[i])) { throw OverflowException(); }  // underflow
 
 		p1.push_back(x[i] + p.x[i]);
 	}
@@ -79,8 +54,8 @@ inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
 	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
-		if ((p.x[i] < 0) && (x[i] > numeric_limits<T>::max() + p.x[i])) { throw OverflowException(); }
-		if ((p.x[i] > 0) && (x[i] < numeric_limits<T>::lowest() + p.x[i])) { throw OverflowException(); }
+		if ((p.x[i] < 0) && (x[i] > numeric_limits<T>::max() + p.x[i])) { throw OverflowException(); }  // overflow
+		if ((p.x[i] > 0) && (x[i] < numeric_limits<T>::lowest() + p.x[i])) { throw OverflowException(); }  // underflow
 
 		p1.push_back(x[i] - p.x[i]);
 	}
@@ -102,10 +77,10 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
-		if ((x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }
-		if ((x[i] == -1) && (p.x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }
-		if (p.x[i] > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }
-		if ((p.x[i] < numeric_limits<T>::lowest() / x[i])) { throw OverflowException(); }
+		if ((x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
+		if ((x[i] == -1) && (p.x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
+		if (p.x[i] > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
+		if ((p.x[i] < numeric_limits<T>::lowest() / x[i])) { throw OverflowException(); }  // underflow
 
 		p1.push_back(x[i] * p.x[i]);
 	}
@@ -138,6 +113,31 @@ inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
 	}
 
 	return PointND(p1);
+}
+
+template <typename T>
+void PointND<T>::print(ofstream& f) {
+	assert(f);
+	f << "(";
+	for (int i = 0; i < nd; i++) {
+		f << x[i];
+		if (i < nd - 1) {
+			f << ", ";
+		}
+	}
+	f << ")";
+}
+
+template <typename T>
+void PointND<T>::print() {
+	cout << "(";
+	for (int i = 0; i < nd; i++) {
+		cout << x[i];
+		if (i < nd - 1) {
+			cout << ", ";
+		}
+	}
+	cout << ")";
 }
 
 template class PointND<int>;

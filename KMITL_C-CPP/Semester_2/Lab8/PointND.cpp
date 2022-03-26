@@ -49,11 +49,11 @@ void PointND<T>::print() {
 
 /* + operator method */
 template <typename T>
-PointND<T> PointND<T>::operator+(PointND<T>& p) {
+inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
 	assert(nd == p.nd);
 
-	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
 		if ((p.x[i] > 0) && (x[i] > numeric_limits<T>::max() - p.x[i])) { throw OverflowException(); }
@@ -72,11 +72,11 @@ PointND<T> PointND<T>::operator+(PointND<T>& p) {
 
 /* - operator method */
 template <typename T>
-PointND<T> PointND<T>::operator-(PointND<T>& p) {
+inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
 	assert(nd == p.nd);
 
-	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
 		if ((p.x[i] < 0) && (x[i] > numeric_limits<T>::max() + p.x[i])) { throw OverflowException(); }
@@ -95,11 +95,11 @@ PointND<T> PointND<T>::operator-(PointND<T>& p) {
 
 /* * operator method */
 template <typename T>
-PointND<T> PointND<T>::operator*(PointND<T>& p) {
+inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
 	assert(nd == p.nd);
 
-	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type. If it does not overflow, compute the result */
 	vector<T> p1;
 	for (int i = 0; i < nd; i++) {
 		if ((x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }
@@ -120,7 +120,7 @@ PointND<T> PointND<T>::operator*(PointND<T>& p) {
 
 /* / operator method */
 template <typename T>
-PointND<T> PointND<T>::operator/(PointND<T>& p) {
+inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
 	assert(nd == p.nd);
 

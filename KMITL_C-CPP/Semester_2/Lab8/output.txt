@@ -11,10 +11,10 @@ class Point4D<double> setZero(0, 0, 0, 0)
 
 Testing Operator Methods
 + operator method: (setInt1 + setInt2) = (6, 8, 10, 12)
-- operator method: (setFloat1 - setFloat2) = (-3.34, -3.78, -4.22, -3.44)
-* operator method: (setDouble1 * setDouble2) = (7.1027, 16.1595, 27.1195, 36.1841)
-/ operator method: (setDouble1 / setDouble2) = (0.206133, 0.365414, 0.491252, 0.655451)
-Combining operator methods: ((((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2) = (6.87387, 8.71459, 10.5887, 12.5887)
+- operator method: (setFloat1 - setFloat2) = (-3.34, -3.78, -4.22, -4.66)
+* operator method: (setDouble1 * setDouble2) = (7.1027, 16.1595, 27.1195, 39.9827)
+/ operator method: (setDouble1 / setDouble2) = (0.206133, 0.365414, 0.491252, 0.593179)
+Combining operator methods: ((((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2) = (6.87387, 8.71459, 10.5887, 12.4868)
 
 Testing Exceptions
 Dividing by zero: (setDouble1 / setZero) = Math error: Attempted to divide by Zero
@@ -30,6 +30,8 @@ class PointND<float> setFloat4(5.21, 6.43, 7.65, 8.87, 9.99, 10.11, 11.23, 12.35
 class PointND<double> setDouble3(1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59)
 class PointND<double> setDouble4(5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51)
 class PointND<double> setZero2(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+class PointND<int> pt1(12, 2)
+class PointND<int> pt2(5, 8)
 
 Testing Operator Methods
 + operator method: (setInt3 + setInt4) = (8, 10, 12, 14, 16, 18, 20, 22, 24, 26)

@@ -64,6 +64,7 @@ int main() {
 	
 	outFile << endl;
 
+
 	/** Testing Exceptions **/
 	outFile << "Testing Exceptions" << endl;
 
@@ -97,6 +98,8 @@ int main() {
 	PointND<double> setDouble3(vector<double> { 1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59 });
 	PointND<double> setDouble4(vector<double> { 5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51 });
 	PointND<double> setZero2(vector<double> (10, 0));
+	PointND<int> pt1(vector<int> { 12, 2 });
+	PointND<int> pt2(vector<int> { 5, 8 });
 
 	outFile << "==[Testing PointND Class]===========================================" << endl;
 	outFile << "Declared Points" << endl;
@@ -108,8 +111,8 @@ int main() {
 	outFile << typeid(setDouble3).name() << " setDouble3"; setDouble3.print(outFile); outFile << endl;
 	outFile << typeid(setDouble4).name() << " setDouble4"; setDouble4.print(outFile); outFile << endl;
 	outFile << typeid(setZero2).name() << " setZero2"; setZero2.print(outFile); outFile << endl;
-	PointND<int> pt1(vector<int> { 12, 2 });
-	PointND<int> pt2(vector<int> { 5, 8 });
+	outFile << typeid(pt1).name() << " pt1"; pt1.print(outFile); outFile << endl;
+	outFile << typeid(pt2).name() << " pt2"; pt2.print(outFile); outFile << endl;
 
 	outFile << endl;
 
@@ -137,6 +140,7 @@ int main() {
 	outFile << "Combining operator methods: ((((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4) = "; mix2.print(outFile); outFile << endl;
 
 	outFile << endl;
+
 
 	/** Testing Exceptions **/
 	outFile << "Testing Exceptions" << endl;

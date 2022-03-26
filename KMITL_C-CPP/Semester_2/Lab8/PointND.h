@@ -10,7 +10,7 @@ using namespace std;
 template <typename T>
 class PointND {
 private:
-    double nd;
+    unsigned int nd;
     vector<T> x;
 public:
     static int XLIMIT;

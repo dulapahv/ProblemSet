@@ -1,6 +1,7 @@
 /** Point4D class **/
 
 #include <iostream>
+#include <limits>
 #include "assert.h"
 #include "math.h"
 
@@ -10,10 +11,6 @@ using namespace std;
 
 #include "DivideByZeroException.h"
 #include "OverflowException.h"
-
-const int MAX_INT = 2147483647;
-const float MAX_FLOAT = 3.402823466e+38F;
-const double MAX_DOUBLE = 1.7976931348623158e+308;
 
 template <typename T>
 void Point4D<T>::print(ofstream& f) {
@@ -29,34 +26,53 @@ void Point4D<T>::print() {
 /* + operator method */
 template <typename T>
 Point4D<T> Point4D<T>::operator+(Point4D<T>& p) {
-	return Point4D<T>(getX() + p.getX(), getY() + p.getY(), getZ() + p.getZ(), z4 + p.getZ());
+	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	T chk[4] = { getX(), getY(), getZ(), z4 };
+	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
+	for (int i = 0; i < 4; i++) {
+		if ((pChk[i] > 0) && (chk[i]) > numeric_limits<T>::max() - pChk[i]) { throw OverflowException(); }
+		if ((pChk[i] < 0) && (chk[i]) < numeric_limits<T>::lowest() - pChk[i]) { throw OverflowException(); }
+	}
+
+	return Point4D<T>(getX() + p.getX(), getY() + p.getY(), getZ() + p.getZ(), z4 + p.z4);
 }
 
 /* - operator method */
 template <typename T>
 Point4D<T> Point4D<T>::operator-(Point4D<T>& p) {
+	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	T chk[4] = { getX(), getY(), getZ(), z4 };
+	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
+	for (int i = 0; i < 4; i++) {
+		if ((pChk[i] < 0) && (chk[i]) > numeric_limits<T>::max() + pChk[i]) { throw OverflowException(); }
+		if ((pChk[i] > 0) && (chk[i]) < numeric_limits<T>::lowest() + pChk[i]) { throw OverflowException(); }
+	}
+
 	return Point4D<T>(getX() - p.getX(), getY() - p.getY(), getZ() - p.getZ(), z4 - p.getZ());
 }
 
 /* * operator method */
 template <typename T>
 Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
-	if (typeid(T) == typeid(int)) {
-		if ((getX() * p.getX() > MAX_INT) || (getY() * p.getY() > MAX_INT) || (getZ() * p.getZ() > MAX_INT) || (z4 * p.getZ() > MAX_INT)) { throw OverflowException(); }
+	/* Check for OverflowException of given data type. If it does not overflow, compute the result */
+	T chk[4] = { getX(), getY(), getZ(), z4 };
+	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
+	for (int i = 0; i < 4; i++) {
+		if ((chk[i] == -1) && (chk[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }
+		if ((chk[i] == -1) && (pChk[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }
+		if (pChk[i] > numeric_limits<T>::max() / chk[i]) { throw OverflowException(); }
+		if ((pChk[i] < numeric_limits<T>::lowest() / chk[i])) { throw OverflowException(); }
 	}
-	else if (typeid(T) == typeid(float)) {
-		if ((getX() * p.getX() > MAX_FLOAT) || (getY() * p.getY() > MAX_FLOAT) || (getZ() * p.getZ() > MAX_FLOAT) || (z4 * p.getZ() > MAX_FLOAT)) { throw OverflowException(); }
-	}
-	else {
-		if ((getX() * p.getX() > MAX_DOUBLE) || (getY() * p.getY() > MAX_DOUBLE) || (getZ() * p.getZ() > MAX_DOUBLE) || (z4 * p.getZ() > MAX_DOUBLE)) { throw OverflowException();  }
-	}
+	
 	return Point4D<T>(getX() * p.getX(), getY() * p.getY(), getZ() * p.getZ(), z4 * p.getZ());
 }
 
 /* / operator method */
 template <typename T>
 Point4D<T> Point4D<T>::operator/(Point4D<T>& p) {
+	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
 	if (p.getX() == 0 || p.getY() == 0 || p.getZ() == 0 || z4 == 0) { throw DivideByZeroException(); }
+
 	return Point4D<T>(getX() / p.getX(), getY() / p.getY(), getZ() / p.getZ(), z4 / p.getZ());
 }
 

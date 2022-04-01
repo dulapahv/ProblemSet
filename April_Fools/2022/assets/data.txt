@@ -1,0 +1,9 @@
+dataPath = assets
+character = chocola
+sceneNum = 1
+countdownTimer = 5
+targetScore = 100
+startScore = 0
+scoreboardLimit = 10
+username = nan
+time = 15.87s

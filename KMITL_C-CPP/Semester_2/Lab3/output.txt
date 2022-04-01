@@ -1,5 +1,5 @@
-======================================================================
-[Summary Of Population Density In Each Provinces And Sub-Districts]
+============================================================
+[Summary Of Population Density In Each Provinces And Districts]
 
 Province NakhonNayok                     0.000116337 people/sq.m.
 - BanNa                                  0.000165610 people/sq.m.
@@ -34,15 +34,15 @@ Province ChiangMai                       0.000080382 people/sq.m.
 - ChomThong                              0.000099950 people/sq.m.
 - MaeChaem                               0.000026556 people/sq.m.
 
-======================================================================
-[Summary Of Population In Each Provinces And Sub-Districts]
+============================================================
+[Summary Of Population In Each Provinces And Districts]
 
 Province NakhonNayok                                246868 people
 - BanNa                                              64323 people
 - MueangNakhonNayok                                  95965 people
 - Ongkharak                                          64064 people
 - PakPhli                                            22515 people
-Extra population from province: 1 person
+Extra population from province: 1 people
 
 Province Phuket                                     525709 people
 - Kathu                                             101410 people
@@ -54,13 +54,13 @@ Province SamutSakhon                                887191 people
 - BanPhaeo                                           86663 people
 - KrathumBaen                                       264206 people
 - MueangSamutSakhon                                 536323 people
-Extra population from province: -1 person
+Extra population from province: -1 people
 
 Province SamutSongkhram                             185564 people
 - Amphawa                                            49252 people
 - BangKhonti                                         39183 people
 - MueangSamutSongkhram                               97130 people
-Extra population from province: -1 person
+Extra population from province: -1 people
 
 Province PathumThani                               1033837 people
 - BangProk                                          136736 people

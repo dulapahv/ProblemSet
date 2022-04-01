@@ -1,0 +1,23 @@
+﻿  PointND.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.h(22,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.h(19): message : while compiling class template member function 'PointND<double>::PointND(std::vector<T,std::allocator<T>>)'
+          with
+          [
+              T=double
+          ]
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(145): message : see reference to class template instantiation 'PointND<double>' being compiled
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(33,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(27): message : while compiling class template member function 'PointND<int> PointND<int>::operator +(PointND<int> &)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(56,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(50): message : while compiling class template member function 'PointND<int> PointND<int>::operator -(PointND<int> &)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(73): message : while compiling class template member function 'PointND<int> PointND<int>::operator *(PointND<int> &)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(104,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(98): message : while compiling class template member function 'PointND<int> PointND<int>::operator /(PointND<int> &)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(134,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(132): message : while compiling class template member function 'void PointND<int>::print(void)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(136,9): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(122,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(119): message : while compiling class template member function 'void PointND<int>::print(std::ofstream &)'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\PointND.cpp(124,9): warning C4018: '<': signed/unsigned mismatch
+  Lab8.vcxproj -> C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab8\Debug\Lab8.exe

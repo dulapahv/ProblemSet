@@ -1,0 +1,33 @@
+//create a program to compute gravitational force between two bodies
+
+using System;
+
+namespace Gravity
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //constants
+            const double G = 6.67e-11;
+            const double M1 = 5.97e24;
+            const double M2 = 7.35e22;
+
+            //variables
+            double r, F;
+
+            //input
+            Console.WriteLine("Enter the distance between the two bodies:");
+            r = Convert.ToDouble(Console.ReadLine());
+
+            //processing
+            F = (G * M1 * M2) / (r * r);
+
+            //output
+            Console.WriteLine("The gravitational force between the two bodies is F = {0}", F);
+
+            //wait for user to press a key
+            Console.ReadKey();
+        }
+    }
+}

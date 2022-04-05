@@ -10,6 +10,6 @@ using namespace std;
 class QuadrantException : public runtime_error {
 public:
 	QuadrantException()
-		: runtime_error("Quadrant error: Point is not in the first quadrant\n") {
+		: runtime_error("Quadrant error: Point is not in the first quadrant and/or in the specified limit\n") {
 	}
 };

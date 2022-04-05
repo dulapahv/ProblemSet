@@ -11,6 +11,7 @@ using namespace std;
 #include "DivideByZeroException.h"
 #include "OverflowException.h"
 #include "QuadrantException.h"
+#include "UnderflowException.h"
 
 int main() {
 	ofstream outFile("output.txt");
@@ -20,7 +21,7 @@ int main() {
 	Point4D<int> setInt1(1, 2, 3, 4);
 	Point4D<int> setInt2(5, 6, 7, 8);
 	Point4D<int> setIntLimit(2147483647, 2147483647, 2147483647, 2147483647);
-	Point4D<float> setFloat1(1.87, 2.65, 3.43, 4.21);
+	Point4D<float> setFloat1(10.87, 20.65, 30.43, 40.21);
 	Point4D<float> setFloat2(5.21, 6.43, 7.65, 8.87);
 	Point4D<double> setDouble1(1.21, 2.43, 3.65, 4.87);
 	Point4D<double> setDouble2(5.87, 6.65, 7.43, 8.21);
@@ -77,10 +78,10 @@ int main() {
 		outFile << e.what();
 	}
 
-	/* Test OverflowException */
+	/* Test OverflowException and UnderflowException */
 	outFile << "Overflowing a data type: (setInt1 * setIntLimit) = ";
 	try {
-		Point4D<int> testProd = setInt1 * setIntLimit;
+		Point4D<int> testOver = setInt1 * setIntLimit;
 	}
 	catch (OverflowException e) {
 		outFile << e.what();
@@ -93,7 +94,7 @@ int main() {
 	PointND<int> setInt3(vector<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
 	PointND<int> setInt4(vector<int> { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 });
 	PointND<int> setIntLimit2(vector<int> (10, 2147483647));
-	PointND<float> setFloat3(vector<float> { 1.87, 2.65, 3.43, 4.21, 5.01, 6.11, 7.21, 8.31, 9.41, 10.51 });
+	PointND<float> setFloat3(vector<float> { 10.87, 20.65, 30.43, 40.21, 50.01, 60.11, 70.21, 80.31, 90.41, 100.51 });
 	PointND<float> setFloat4(vector<float> { 5.21, 6.43, 7.65, 8.87, 9.99, 10.11, 11.23, 12.35, 13.47, 14.59 });
 	PointND<double> setDouble3(vector<double> { 1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59 });
 	PointND<double> setDouble4(vector<double> { 5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51 });
@@ -154,10 +155,10 @@ int main() {
 		outFile << e.what();
 	}
 
-	/* Test OverflowException */
+	/* Test OverflowException and UnderflowException */
 	outFile << "Overflowing a data type: (setInt3 * setIntLimit2) = ";
 	try {
-		PointND<int> testProd2 = setInt3 * setIntLimit2;
+		PointND<int> testOver2 = setInt3 * setIntLimit2;
 	}
 	catch (OverflowException e) {
 		outFile << e.what();

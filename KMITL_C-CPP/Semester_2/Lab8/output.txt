@@ -3,7 +3,7 @@ Declared Points
 class Point4D<int> setInt1(1, 2, 3, 4)
 class Point4D<int> setInt2(5, 6, 7, 8)
 class Point4D<int> setIntLimit(2.14748e+09, 2.14748e+09, 2.14748e+09, 2147483647)
-class Point4D<float> setFloat1(1.87, 2.65, 3.43, 4.21)
+class Point4D<float> setFloat1(10.87, 20.65, 30.43, 40.21)
 class Point4D<float> setFloat2(5.21, 6.43, 7.65, 8.87)
 class Point4D<double> setDouble1(1.21, 2.43, 3.65, 4.87)
 class Point4D<double> setDouble2(5.87, 6.65, 7.43, 8.21)
@@ -11,7 +11,7 @@ class Point4D<double> setZero(0, 0, 0, 0)
 
 Testing Operator Methods
 + operator method: (setInt1 + setInt2) = (6, 8, 10, 12)
-- operator method: (setFloat1 - setFloat2) = (-3.34, -3.78, -4.22, -4.66)
+- operator method: (setFloat1 - setFloat2) = (5.66, 14.22, 22.78, 31.34)
 * operator method: (setDouble1 * setDouble2) = (7.1027, 16.1595, 27.1195, 39.9827)
 / operator method: (setDouble1 / setDouble2) = (0.206133, 0.365414, 0.491252, 0.593179)
 Combining operator methods: ((((setDouble1 + setDouble2) * setDouble2) - setDouble1) / setDouble2) = (6.87387, 8.71459, 10.5887, 12.4868)
@@ -25,7 +25,7 @@ Declared Points
 class PointND<int> setInt3(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 class PointND<int> setInt4(7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
 class PointND<int> setIntLimit2(2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647)
-class PointND<float> setFloat3(1.87, 2.65, 3.43, 4.21, 5.01, 6.11, 7.21, 8.31, 9.41, 10.51)
+class PointND<float> setFloat3(10.87, 20.65, 30.43, 40.21, 50.01, 60.11, 70.21, 80.31, 90.41, 100.51)
 class PointND<float> setFloat4(5.21, 6.43, 7.65, 8.87, 9.99, 10.11, 11.23, 12.35, 13.47, 14.59)
 class PointND<double> setDouble3(1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59)
 class PointND<double> setDouble4(5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51)
@@ -35,7 +35,7 @@ class PointND<int> pt2(5, 8)
 
 Testing Operator Methods
 + operator method: (setInt3 + setInt4) = (8, 10, 12, 14, 16, 18, 20, 22, 24, 26)
-- operator method: (setFloat3 - setFloat4) = (-3.34, -3.78, -4.22, -4.66, -4.98, -4, -4.02, -4.04, -4.06, -4.08)
+- operator method: (setFloat3 - setFloat4) = (5.66, 14.22, 22.78, 31.34, 40.02, 50, 58.98, 67.96, 76.94, 85.92)
 * operator method: (setDouble3 * setDouble4) = (7.1027, 16.1595, 27.1195, 39.9827, 53.9699, 61.7721, 81.0483, 102.788, 126.993, 153.661)
 / operator method: (setDouble3 / setDouble4) = (0.206133, 0.365414, 0.491252, 0.593179, 0.664817, 0.604352, 0.64496, 0.67831, 0.706189, 0.729841)
 Combining operator methods: ((((setDouble3 + setDouble4) * setDouble4) - setDouble3) / setDouble4) = (6.87387, 8.71459, 10.5887, 12.4868, 14.3352, 15.6156, 17.795, 19.9817, 22.1738, 24.3702)
@@ -46,5 +46,5 @@ Overflowing a data type: (setInt3 * setIntLimit2) = Math error: Stack overflow
 
 Testing Whether The Point Lies In The First Quadrant Or Not (XLIMIT = 50, YLIMIT = 50)
 (pt1 + pt2) = Point is in the first quadrant
-(pt1 - pt2) = Quadrant error: Point is not in the first quadrant
-(pt1 * pt2) = Quadrant error: Point is not in the first quadrant
+(pt1 - pt2) = Quadrant error: Point is not in the first quadrant and/or in the specified limit
+(pt1 * pt2) = Quadrant error: Point is not in the first quadrant and/or in the specified limit

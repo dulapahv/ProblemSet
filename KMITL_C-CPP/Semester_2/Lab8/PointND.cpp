@@ -15,6 +15,7 @@ using namespace std;
 #include "DivideByZeroException.h"
 #include "OverflowException.h"
 #include "QuadrantException.h"
+#include "UnderflowException.h"
 
 template <typename T>
 int PointND<T>::XLIMIT = 50;
@@ -22,25 +23,34 @@ int PointND<T>::XLIMIT = 50;
 template <typename T>
 int PointND<T>::YLIMIT = 50;
 
+template <typename T>
+unsigned int PointND<T>::size() {
+	return this->nd;
+}
+
 /* + operator method */
 template <typename T>
 inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
-	assert(nd == p.nd);
+	assert(x.size() == p.size());
 
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
-	vector<T> p1;
-	for (int i = 0; i < nd; i++) {
+	vector<T> p1(p.size());
+	for (int i = 0; i < p.size(); i++) {
+		/* Check for overflow of given data type */
 		if ((p.x[i] > 0) && (x[i] > numeric_limits<T>::max() - p.x[i])) { throw OverflowException(); }  // overflow
-		if ((p.x[i] < 0) && (x[i] < numeric_limits<T>::lowest() - p.x[i])) { throw OverflowException(); }  // underflow
+		if ((p.x[i] < 0) && (x[i] < numeric_limits<T>::lowest() - p.x[i])) { throw UnderflowException(); }  // underflow
 
-		p1.push_back(x[i] + p.x[i]);
+		/* Compute the result */
+		p1[i] = x[i] + p.x[i];
+
+		/* Check whether the point lies in the first quadrant and inside the limit or not */
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	/* check whether 2 points lie in the first quadrant and inside the limit */
-	if (nd == 2) {
+	/*if (p.size() == 2) {
 		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
-	}
+	}*/
 
 	return PointND(p1);
 }
@@ -49,19 +59,23 @@ inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
 template <typename T>
 inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
-	assert(nd == p.nd);
+	assert(x.size() == p.size());
 
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
-	vector<T> p1;
-	for (int i = 0; i < nd; i++) {
+	vector<T> p1(p.size());
+	for (int i = 0; i < p.size(); i++) {
+		/* Check for overflow of given data type */
 		if ((p.x[i] < 0) && (x[i] > numeric_limits<T>::max() + p.x[i])) { throw OverflowException(); }  // overflow
-		if ((p.x[i] > 0) && (x[i] < numeric_limits<T>::lowest() + p.x[i])) { throw OverflowException(); }  // underflow
+		if ((p.x[i] > 0) && (x[i] < numeric_limits<T>::lowest() + p.x[i])) { throw UnderflowException(); }  // underflow
 
-		p1.push_back(x[i] - p.x[i]);
+		/* Compute the result */
+		p1[i] = x[i] - p.x[i];
+
+		/* Check whether the point lies in the first quadrant and inside the limit or not */
+		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	/* check whether 2 points lie in the first quadrant and inside the limit */
-	if (nd == 2) {
+	if (p.size() == 2) {
 		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
@@ -72,21 +86,25 @@ inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
 template <typename T>
 inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
-	assert(nd == p.nd);
+	assert(x.size() == p.size());
 
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
-	vector<T> p1;
-	for (int i = 0; i < nd; i++) {
-		if ((x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
+	vector<T> p1(p.size());
+	for (int i = 0; i < p.size(); i++) {
+		/* Check for overflow of given data type */
+		if ((p.x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if ((x[i] == -1) && (p.x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if (p.x[i] > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
-		if ((p.x[i] < numeric_limits<T>::lowest() / x[i])) { throw OverflowException(); }  // underflow
+		if ((p.x[i] < numeric_limits<T>::lowest() / x[i])) { throw UnderflowException(); }  // underflow
 
-		p1.push_back(x[i] * p.x[i]);
+		/* Compute the result */
+		p1[i] = x[i] * p.x[i];
+
+		/* Check whether the point lies in the first quadrant and inside the limit or not */
+		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	/* check whether 2 points lie in the first quadrant and inside the limit */
-	if (nd == 2) {
+	if (p.size() == 2) {
 		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
@@ -97,18 +115,23 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 template <typename T>
 inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
-	assert(nd == p.nd);
+	assert(x.size() == p.size());
 
 	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
-	vector<T> p1;
-	for (int i = 0; i < nd; i++) {
+	vector<T> p1(p.size());
+	for (int i = 0; i < p.size(); i++) {
+		/* Check whether the divisor is equal to zero or not */
 		if (p.x[i] == 0) { throw DivideByZeroException(); }
 
-		p1.push_back(x[i] / p.x[i]);
+		/* Compute the result */
+		p1[i] = x[i] * (1 / p.x[i]);
+
+		/* Check whether the point lies in the first quadrant and inside the limit or not */
+		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	/* Check whether 2 points lie in the first quadrant and inside the limit */
-	if (nd == 2) {
+	if (p.size() == 2) {
 		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
@@ -119,9 +142,9 @@ template <typename T>
 void PointND<T>::print(ofstream& f) {
 	assert(f);
 	f << "(";
-	for (int i = 0; i < nd; i++) {
+	for (int i = 0; i < x.size(); i++) {
 		f << x[i];
-		if (i < nd - 1) {
+		if (i < x.size() - 1) {
 			f << ", ";
 		}
 	}
@@ -131,9 +154,9 @@ void PointND<T>::print(ofstream& f) {
 template <typename T>
 void PointND<T>::print() {
 	cout << "(";
-	for (int i = 0; i < nd; i++) {
+	for (int i = 0; i < x.size(); i++) {
 		cout << x[i];
-		if (i < nd - 1) {
+		if (i < x.size() - 1) {
 			cout << ", ";
 		}
 	}

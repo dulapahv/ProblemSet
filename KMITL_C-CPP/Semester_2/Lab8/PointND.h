@@ -36,6 +36,8 @@ public:
     /* / operator method */
     PointND<T> operator/(PointND<T>& p);
 
+    unsigned int size();
+
     void print(ofstream& f);
 	void print();
 };

@@ -1,20 +1,56 @@
-# foodDatabase = {
-#     "กระเพราไข่ดาว": ["rice", "pork", "egg", "vegetable"],
-#     "้ข้าวไข่เจียว": ["rice", "egg"],
-#     "คาโบนารา": ["spaghetti", "pork", "egg"],
-# }
+import random
 
-# choosenList = []
+foodDatabase = {
+    "กระเพราไข่ดาว": ["rice", "pork", "egg", "basil", "onion"],
+    "ข้าวไข่เจียว": ["rice", "egg"],
+    "คาโบนารา": ["noodle", "pork", "egg"],
+    "ปลากระพงทอดน้ำปลา": ["rice", "fish", "celery", "onion"],
+    "ข้าวหน้าหมูคัตสึดง": ["rice", "pork", "onion", "egg"],
+    "ทาโกะยากิ": ["squid", "carrot"],
+    "ราเมน": ["noodle", "celery", "onion", "egg", "pork"],
+    "ซูชิ": ["rice", "cucumber", "fish"],
+    "ไข่ตุ๋น": ["egg", "shrimp", "pork", "celery"],
+    "ผัดวุ้นเส้น": ["noodle", "shrimp", "pork", "onion"],
+    "ผัดฟักทอง": ["pumpkin", "onion", "celery", "egg"],
+    "ข้าวต้มปลา": ["fish", "rice", "onion", "onion"],
+    "ลาบหมู": ["pork", "onion", "basil", "celery"],
+}
+vegetableList = ["basil", "celery", "onion", "carrot", "cucumber"]
 
-# first = input("Do you prefer rice or spaghetti?\n1. rice\n2. spaghetti\n")
-# if first == "1":
-#     choosenList = [food for food in foodDatabase if "rice" in foodDatabase[food]]
-# else:
-#     choosenList = [food for food in foodDatabase if "spaghetti" in foodDatabase[food]]
+"""Create a list of unique ingredients from the food database"""
+ingredientList = ["vegetable"]
+for ingredient in foodDatabase.values():
+    ingredientList.extend(ingredient)
+randomIngredientList = list(set(ingredientList))
 
-# print(choosenList)
+"""Select a specified amount of random ingredient from the unique ingredients list to ask user"""
+amount = 3  # Change this number to modify the amount of random ingredient to be selected
 
-test = "sol la ti"
-test = test.split(" ")
-print(test)
-print(*test)
+randomChosenIngredientList = []
+n = 0
+while n != amount:
+    if randomIngredientList[n] not in vegetableList and randomIngredientList[n] not in randomChosenIngredientList:
+        randomChosenIngredientList.append(randomIngredientList[n])
+        n += 1
+    else:
+        randomIngredientList = random.sample(ingredientList, amount)
+
+"""Prompt user to deicide the ingredients they prefer"""
+chosenIngredientList = randomChosenIngredientList.copy()
+for ingredient in randomChosenIngredientList:
+    usin = input(f"Do you like {ingredient}? (y/n) ").lower()
+    if usin == "n":
+        chosenIngredientList.remove(ingredient)
+    elif ingredient == "vegetable" and usin == "y":
+        print(*vegetableList, sep=", ")
+        usinVegtetable = input(f"What vegetables do you like? (separated by coma) ").lower().replace(" ", "").split(",")
+        for veg in usinVegtetable:
+            chosenIngredientList.append(veg)
+        chosenIngredientList.remove(ingredient)
+
+"""Create a rank of food based on user chosen ingredient"""
+rankingNum = 1
+for food, ingredient in foodDatabase.items():
+    if set(chosenIngredientList) <= set(ingredient):
+        print(f"{rankingNum}. {food}")
+        rankingNum += 1

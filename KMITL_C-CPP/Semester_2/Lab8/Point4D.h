@@ -19,16 +19,20 @@ public:
 	}
 
 	/* + operator method */
-	Point4D<T> operator+(Point4D<T>& p);
+	Point4D<T> operator+(Point4D<T>& p); // Element-wise addition
+	Point4D<T> operator+(T a); // Scalar addition
 
 	/* - operator method */
-	Point4D<T> operator-(Point4D<T>& p);
+	Point4D<T> operator-(Point4D<T>& p); // Element-wise subtraction
+	Point4D<T> operator-(T a); // Scalar subtraction
 
 	/* * operator method */
-	Point4D<T> operator*(Point4D<T>& p);
+	Point4D<T> operator*(Point4D<T>& p); // Element-wise multiplication
+	Point4D<T> operator*(T a); // Scalar multiplication
 
 	/* / operator method */
-	Point4D<T> operator/(Point4D<T>& p);
+	Point4D<T> operator/(Point4D<T>& p); // Element-wise division
+	Point4D<T> operator/(T a); // Scalar division
 
 	void print(ofstream& f);
 	void print();

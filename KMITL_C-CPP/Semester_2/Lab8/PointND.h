@@ -25,16 +25,20 @@ public:
     }
 
     /* + operator method */
-    PointND<T> operator+(PointND<T>& p);
+    PointND<T> operator+(PointND<T>& p);  // Element-wise addition
+    PointND<T> operator+(T a);  // Scalar addition
 
     /* - operator method */
-    PointND<T> operator-(PointND<T>& p);
+    PointND<T> operator-(PointND<T>& p);  // Element-wise subtraction
+    PointND<T> operator-(T a);  // Scalar subtraction
 
     /* * operator method */
-    PointND<T> operator*(PointND<T>& p);
+    PointND<T> operator*(PointND<T>& p);  // Element-wise multiplication
+    PointND<T> operator*(T a);  // Scalar multiplication
 
     /* / operator method */
-    PointND<T> operator/(PointND<T>& p);
+    PointND<T> operator/(PointND<T>& p);  // Element-wise division
+    PointND<T> operator/(T a);  // Scalar division
 
     unsigned int size();
 

@@ -28,7 +28,8 @@ unsigned int PointND<T>::size() {
 	return this->nd;
 }
 
-/* + operator method */
+/** + operator method **/
+/* Element-wise addition */
 template <typename T>
 inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
@@ -52,7 +53,29 @@ inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
 	return PointND(p1);
 }
 
-/* - operator method */
+/* Scalar addition */
+template <typename T>
+inline PointND<T> PointND<T>::operator+(T s) {
+	vector<T> p1(x.size());
+	for (int i = 0; i < x.size(); i++) {
+		/* Check for overflow of given data type */
+		if ((s > 0) && (x[i] > numeric_limits<T>::max() - s)) { throw OverflowException(); }  // overflow
+		if ((s < 0) && (x[i] < numeric_limits<T>::lowest() - s)) { throw UnderflowException(); }  // underflow
+
+		/* Compute the result */
+		p1[i] = x[i] + s;
+	}
+	
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < x.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
+	}
+
+	return PointND(p1);
+}
+
+/** - operator method **/
+/* Element-wise subtraction */
 template <typename T>
 inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
@@ -76,7 +99,30 @@ inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
 	return PointND(p1);
 }
 
-/* * operator method */
+/* Scalar subtraction */
+template <typename T>
+inline PointND<T> PointND<T>::operator-(T s) {
+	vector<T> p1(x.size());
+	for (int i = 0; i < x.size(); i++) {
+		/* Check for overflow of given data type */
+		if ((s < 0) && (x[i] > numeric_limits<T>::max() + s)) { throw OverflowException(); }  // overflow
+		if ((s > 0) && (x[i] < numeric_limits<T>::lowest() + s)) { throw UnderflowException(); }  // underflow
+	
+		/* Compute the result */
+		p1[i] = x[i] - s;
+	}
+
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < x.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
+	}
+
+	return PointND(p1);
+}
+
+
+/** * operator method **/
+/* Element-wise multiplication */
 template <typename T>
 inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
@@ -102,7 +148,32 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 	return PointND(p1);
 }
 
-/* / operator method */
+/* Scalar multiplication */
+template <typename T>
+inline PointND<T> PointND<T>::operator*(T s) {
+	vector<T> p1(x.size());
+	/* Check for overflow of given data type */
+	for (int i = 0; i < x.size(); i++) {
+		if ((s == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
+		if ((x[i] == -1) && (s == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
+		if (s > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
+		if ((s < numeric_limits<T>::lowest() / x[i])) { throw UnderflowException(); }  // underflow
+
+		/* Compute the result */
+		p1[i] = x[i] * s;
+	}
+
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < x.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
+	}
+
+	return PointND(p1);
+}
+
+
+/** / operator method **/
+/* Element-wise division */
 template <typename T>
 inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
     /* Check whether 2 points have the same dimensions */
@@ -125,6 +196,27 @@ inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
 
 	return PointND(p1);
 }
+
+/* Scalar division */
+template <typename T>
+inline PointND<T> PointND<T>::operator/(T s) {
+	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
+	if (s == 0) { throw DivideByZeroException(); }
+
+	vector<T> p1(x.size());
+	/* Compute the result */
+	for (int i = 0; i < x.size(); i++) {
+		p1[i] = x[i] / s;
+	}
+
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < x.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
+	}
+
+	return PointND(p1);
+}
+
 
 template <typename T>
 void PointND<T>::print(ofstream& f) {

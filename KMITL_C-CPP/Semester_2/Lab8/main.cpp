@@ -53,7 +53,7 @@ int main() {
 	Point4D<float> diff1 = setFloat1 - setFloat2;
 	Point4D<float> diffS1 = setFloat1 - 5.0F;
 	outFile << "- operator method: (setFloat1 - setFloat2) = "; diff1.print(outFile); outFile << endl;
-	outFile << "- operator method: (setFloat1 - 5.0) = "; diffS1.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat1 - 5.0F) = "; diffS1.print(outFile); outFile << endl;
 
 	/* * operator method */
 	Point4D<double> prod1 = setDouble1 * setDouble2;
@@ -138,7 +138,7 @@ int main() {
 	PointND<float> diff2 = setFloat3 - setFloat4;
 	PointND<float> diffS2 = setFloat3 - 5.0F;
 	outFile << "- operator method: (setFloat3 - setFloat4) = "; diff2.print(outFile); outFile << endl;
-	outFile << "- operator method: (setFloat3 - 5.0) = "; diffS2.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat3 - 5.0F) = "; diffS2.print(outFile); outFile << endl;
 
 
 	/* * operator method */

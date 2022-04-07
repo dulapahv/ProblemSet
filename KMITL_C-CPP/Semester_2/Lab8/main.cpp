@@ -44,24 +44,32 @@ int main() {
 	outFile << "Testing Operator Methods" << endl;
 
 	/* + operator method */
-	Point4D<int> sum = setInt1 + setInt2;
-	outFile << "+ operator method: (setInt1 + setInt2) = "; sum.print(outFile); outFile << endl;
+	Point4D<int> sum1 = setInt1 + setInt2;
+	Point4D<int> sumS1 = setInt1 + 5;
+	outFile << "+ operator method: (setInt1 + setInt2) = "; sum1.print(outFile); outFile << endl;
+	outFile << "+ operator method: (setInt1 + 5) = "; sumS1.print(outFile); outFile << endl;
 
 	/* - operator method */
-	Point4D<float> diff = setFloat1 - setFloat2;
-	outFile << "- operator method: (setFloat1 - setFloat2) = "; diff.print(outFile); outFile << endl;
+	Point4D<float> diff1 = setFloat1 - setFloat2;
+	Point4D<float> diffS1 = setFloat1 - 5.0F;
+	outFile << "- operator method: (setFloat1 - setFloat2) = "; diff1.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat1 - 5.0) = "; diffS1.print(outFile); outFile << endl;
 
 	/* * operator method */
-	Point4D<double> prod = setDouble1 * setDouble2;
-	outFile << "* operator method: (setDouble1 * setDouble2) = "; prod.print(outFile); outFile << endl;
+	Point4D<double> prod1 = setDouble1 * setDouble2;
+	Point4D<double> prodS1 = setDouble1 * 5.0;
+	outFile << "* operator method: (setDouble1 * setDouble2) = "; prod1.print(outFile); outFile << endl;
+	outFile << "* operator method: (setDouble1 * 5.0) = "; prodS1.print(outFile); outFile << endl;
 
 	/* / operator method */
-	Point4D<double> quot = setDouble1 / setDouble2;
-	outFile << "/ operator method: (setDouble1 / setDouble2) = "; quot.print(outFile); outFile << endl;
+	Point4D<double> quot1 = setDouble1 / setDouble2;
+	Point4D<double> quotS1 = setDouble1 / 5.0;
+	outFile << "/ operator method: (setDouble1 / setDouble2) = "; quot1.print(outFile); outFile << endl;
+	outFile << "/ operator method: (setDouble1 / 5.0) = "; quotS1.print(outFile); outFile << endl;
 
 	/* Combining operator methods */
-	Point4D<double> mix1 = (((setDouble1 + setDouble2) - setDouble2) * setDouble1) / setDouble2;
-	outFile << "Combining operator methods: ((((setDouble1 + setDouble2) - setDouble2) * setDouble1) / setDouble2) = "; mix1.print(outFile); outFile << endl;
+	Point4D<double> mix1 = (((setDouble1 + setDouble2) - 5.0) * setDouble1) / 10.0;
+	outFile << "Combining operator methods: ((((setDouble1 + setDouble2) - 5.0) * setDouble1) / 10.0) = "; mix1.print(outFile); outFile << endl;
 	
 	outFile << endl;
 
@@ -122,23 +130,32 @@ int main() {
 
 	/* + operator method */
 	PointND<int> sum2 = setInt3 + setInt4;
+	PointND<int> sumS2 = setInt3 + 5;
 	outFile << "+ operator method: (setInt3 + setInt4) = "; sum2.print(outFile); outFile << endl;
+	outFile << "+ operator method: (setInt3 + 5) = "; sumS2.print(outFile); outFile << endl;
 
 	/* - operator method */
 	PointND<float> diff2 = setFloat3 - setFloat4;
+	PointND<float> diffS2 = setFloat3 - 5.0F;
 	outFile << "- operator method: (setFloat3 - setFloat4) = "; diff2.print(outFile); outFile << endl;
+	outFile << "- operator method: (setFloat3 - 5.0) = "; diffS2.print(outFile); outFile << endl;
+
 
 	/* * operator method */
 	PointND<double> prod2 = setDouble3 * setDouble4;
+	PointND<double> prodS2 = setDouble3 * 5.0;
 	outFile << "* operator method: (setDouble3 * setDouble4) = "; prod2.print(outFile); outFile << endl;
+	outFile << "* operator method: (setDouble3 * 5.0) = "; prodS2.print(outFile); outFile << endl;
 
 	/* / operator method */
 	PointND<double> quot2 = setDouble3 / setDouble4;
+	PointND<double> quotS2 = setDouble3 / 5.0;
 	outFile << "/ operator method: (setDouble3 / setDouble4) = "; quot2.print(outFile); outFile << endl;
+	outFile << "/ operator method: (setDouble3 / 5.0) = "; quotS2.print(outFile); outFile << endl;
 
 	/* Combining operator methods */
-	PointND<double> mix2 = (((setDouble3 + setDouble4) - setDouble4) * setDouble3) / setDouble4;
-	outFile << "Combining operator methods: ((((setDouble3 + setDouble4) - setDouble4) * setDouble3) / setDouble4) = "; mix2.print(outFile); outFile << endl;
+	PointND<double> mix2 = (((setDouble3 + setDouble4) - 5.0) * setDouble3) / 10.0;
+	outFile << "Combining operator methods: ((((setDouble3 + setDouble4) - 5.0) * setDouble3) / 10.0) = "; mix2.print(outFile); outFile << endl;
 
 	outFile << endl;
 
@@ -164,7 +181,7 @@ int main() {
 		outFile << e.what();
 	}
 	catch (QuadrantException e) {
-		noexcept(e);  // This exception is intentionally ignored because we want to test for overflow/underflow exception
+		noexcept(e);  // This exception is intentionally ignored since we want to test for overflow/underflow exception
 	}
 
 	outFile << endl;

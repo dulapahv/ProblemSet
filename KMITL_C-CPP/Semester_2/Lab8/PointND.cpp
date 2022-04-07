@@ -18,10 +18,10 @@ using namespace std;
 #include "UnderflowException.h"
 
 template <typename T>
-int PointND<T>::XLIMIT = 50;
+int PointND<T>::XLIMIT = 500;
 
 template <typename T>
-int PointND<T>::YLIMIT = 50;
+int PointND<T>::YLIMIT = 500;
 
 template <typename T>
 unsigned int PointND<T>::size() {
@@ -42,15 +42,12 @@ inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
 
 		/* Compute the result */
 		p1[i] = x[i] + p.x[i];
-
-		/* Check whether the point lies in the first quadrant and inside the limit or not */
-		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
-	/* check whether 2 points lie in the first quadrant and inside the limit */
-	/*if (p.size() == 2) {
-		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
-	}*/
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < p.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
+	}
 
 	return PointND(p1);
 }
@@ -69,14 +66,11 @@ inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
 
 		/* Compute the result */
 		p1[i] = x[i] - p.x[i];
-
-		/* Check whether the point lies in the first quadrant and inside the limit or not */
-		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
-	/* check whether 2 points lie in the first quadrant and inside the limit */
-	if (p.size() == 2) {
-		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < p.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	return PointND(p1);
@@ -89,8 +83,8 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 	assert(x.size() == p.size());
 
 	vector<T> p1(p.size());
+	/* Check for overflow of given data type */
 	for (int i = 0; i < p.size(); i++) {
-		/* Check for overflow of given data type */
 		if ((p.x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if ((x[i] == -1) && (p.x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if (p.x[i] > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
@@ -98,14 +92,11 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 
 		/* Compute the result */
 		p1[i] = x[i] * p.x[i];
-
-		/* Check whether the point lies in the first quadrant and inside the limit or not */
-		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
-	/* check whether 2 points lie in the first quadrant and inside the limit */
-	if (p.size() == 2) {
-		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < p.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	return PointND(p1);
@@ -125,14 +116,11 @@ inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
 
 		/* Compute the result */
 		p1[i] = x[i] * (1 / p.x[i]);
-
-		/* Check whether the point lies in the first quadrant and inside the limit or not */
-		// if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
-	/* Check whether 2 points lie in the first quadrant and inside the limit */
-	if (p.size() == 2) {
-		if (!((p1[0] >= 0) && (p1[1] >= 0) && (p1[0] <= XLIMIT) && (p1[1] <= YLIMIT))) { throw QuadrantException(); }
+	/* Check whether the point lies in the first quadrant and inside the limit or not */
+	for (int i = 0; i < p.size(); i++) {
+		if (!((p1[i] >= 0) && (p1[i] <= XLIMIT) && (p1[i] <= YLIMIT))) { throw QuadrantException(); }
 	}
 
 	return PointND(p1);

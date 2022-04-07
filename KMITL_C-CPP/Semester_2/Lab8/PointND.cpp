@@ -25,23 +25,22 @@ int PointND<T>::YLIMIT = 500;
 
 template <typename T>
 unsigned int PointND<T>::size() {
-	return this->nd;
+	return x.size();
 }
 
 /** + operator method **/
 /* Element-wise addition */
 template <typename T>
 inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
-    /* Check whether 2 points have the same dimensions */
-	assert(x.size() == p.size());
+	assert(x.size() == p.size());  // Check whether 2 points have the same dimensions
 
-	vector<T> p1(p.size());
+	vector<T> p1(p.size());  // initialize vector to store answer
+
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < p.size(); i++) {
-		/* Check for overflow of given data type */
 		if ((p.x[i] > 0) && (x[i] > numeric_limits<T>::max() - p.x[i])) { throw OverflowException(); }  // overflow
 		if ((p.x[i] < 0) && (x[i] < numeric_limits<T>::lowest() - p.x[i])) { throw UnderflowException(); }  // underflow
 
-		/* Compute the result */
 		p1[i] = x[i] + p.x[i];
 	}
 
@@ -56,13 +55,13 @@ inline PointND<T> PointND<T>::operator+(PointND<T>& p) {
 /* Scalar addition */
 template <typename T>
 inline PointND<T> PointND<T>::operator+(T s) {
-	vector<T> p1(x.size());
+	vector<T> p1(x.size());  // initialize vector to store answer
+
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < x.size(); i++) {
-		/* Check for overflow of given data type */
 		if ((s > 0) && (x[i] > numeric_limits<T>::max() - s)) { throw OverflowException(); }  // overflow
 		if ((s < 0) && (x[i] < numeric_limits<T>::lowest() - s)) { throw UnderflowException(); }  // underflow
 
-		/* Compute the result */
 		p1[i] = x[i] + s;
 	}
 	
@@ -74,20 +73,20 @@ inline PointND<T> PointND<T>::operator+(T s) {
 	return PointND(p1);
 }
 
+
 /** - operator method **/
 /* Element-wise subtraction */
 template <typename T>
 inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
-    /* Check whether 2 points have the same dimensions */
-	assert(x.size() == p.size());
+	assert(x.size() == p.size());  // Check whether 2 points have the same dimensions
+	
+	vector<T> p1(p.size());  // initialize vector to store answer
 
-	vector<T> p1(p.size());
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < p.size(); i++) {
-		/* Check for overflow of given data type */
 		if ((p.x[i] < 0) && (x[i] > numeric_limits<T>::max() + p.x[i])) { throw OverflowException(); }  // overflow
 		if ((p.x[i] > 0) && (x[i] < numeric_limits<T>::lowest() + p.x[i])) { throw UnderflowException(); }  // underflow
 
-		/* Compute the result */
 		p1[i] = x[i] - p.x[i];
 	}
 
@@ -102,13 +101,13 @@ inline PointND<T> PointND<T>::operator-(PointND<T>& p) {
 /* Scalar subtraction */
 template <typename T>
 inline PointND<T> PointND<T>::operator-(T s) {
-	vector<T> p1(x.size());
+	vector<T> p1(x.size());  // initialize vector to store answer
+
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < x.size(); i++) {
-		/* Check for overflow of given data type */
 		if ((s < 0) && (x[i] > numeric_limits<T>::max() + s)) { throw OverflowException(); }  // overflow
 		if ((s > 0) && (x[i] < numeric_limits<T>::lowest() + s)) { throw UnderflowException(); }  // underflow
 	
-		/* Compute the result */
 		p1[i] = x[i] - s;
 	}
 
@@ -125,18 +124,17 @@ inline PointND<T> PointND<T>::operator-(T s) {
 /* Element-wise multiplication */
 template <typename T>
 inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
-    /* Check whether 2 points have the same dimensions */
-	assert(x.size() == p.size());
+	assert(x.size() == p.size());  // Check whether 2 points have the same dimensions
+	
+	vector<T> p1(p.size());  // initialize vector to store answer
 
-	vector<T> p1(p.size());
-	/* Check for overflow of given data type */
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < p.size(); i++) {
 		if ((p.x[i] == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if ((x[i] == -1) && (p.x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if (p.x[i] > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
 		if ((p.x[i] < numeric_limits<T>::lowest() / x[i])) { throw UnderflowException(); }  // underflow
 
-		/* Compute the result */
 		p1[i] = x[i] * p.x[i];
 	}
 
@@ -151,15 +149,15 @@ inline PointND<T> PointND<T>::operator*(PointND<T>& p) {
 /* Scalar multiplication */
 template <typename T>
 inline PointND<T> PointND<T>::operator*(T s) {
-	vector<T> p1(x.size());
-	/* Check for overflow of given data type */
+	vector<T> p1(x.size());  // initialize vector to store answer
+
+	/* Check for overflow of given data type then compute the result */
 	for (int i = 0; i < x.size(); i++) {
 		if ((s == -1) && (x[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if ((x[i] == -1) && (s == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
 		if (s > numeric_limits<T>::max() / x[i]) { throw OverflowException(); }  // overflow
 		if ((s < numeric_limits<T>::lowest() / x[i])) { throw UnderflowException(); }  // underflow
 
-		/* Compute the result */
 		p1[i] = x[i] * s;
 	}
 
@@ -176,16 +174,14 @@ inline PointND<T> PointND<T>::operator*(T s) {
 /* Element-wise division */
 template <typename T>
 inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
-    /* Check whether 2 points have the same dimensions */
-	assert(x.size() == p.size());
+	assert(x.size() == p.size());  // Check whether 2 points have the same dimensions
+	
+	vector<T> p1(p.size());  // initialize vector to store answer
 
-	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
-	vector<T> p1(p.size());
+	/* Check whether the divisor is equal to zero or not then compute the result */
 	for (int i = 0; i < p.size(); i++) {
-		/* Check whether the divisor is equal to zero or not */
 		if (p.x[i] == 0) { throw DivideByZeroException(); }
 
-		/* Compute the result */
 		p1[i] = x[i] * (1 / p.x[i]);
 	}
 
@@ -200,10 +196,10 @@ inline PointND<T> PointND<T>::operator/(PointND<T>& p) {
 /* Scalar division */
 template <typename T>
 inline PointND<T> PointND<T>::operator/(T s) {
-	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
-	if (s == 0) { throw DivideByZeroException(); }
+	if (s == 0) { throw DivideByZeroException(); }  // Check whether the divisor is equal to zero or not then compute the result
 
-	vector<T> p1(x.size());
+	vector<T> p1(x.size());  // initialize vector to store answer
+
 	/* Compute the result */
 	for (int i = 0; i < x.size(); i++) {
 		p1[i] = x[i] / s;

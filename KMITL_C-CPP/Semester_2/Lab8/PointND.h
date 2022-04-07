@@ -10,16 +10,14 @@ using namespace std;
 template <typename T>
 class PointND {
 private:
-    unsigned int nd;
     vector<T> x;
 public:
     static int XLIMIT;
     static int YLIMIT;
 
     PointND(vector<T> x) {
-        this->nd = x.size();
-        this->x.resize(nd);
-        for (int i = 0; i < nd; i++) {
+        this->x.resize(x.size());
+        for (int i = 0; i < x.size(); i++) {
             this->x[i] = x[i];
         }
     }

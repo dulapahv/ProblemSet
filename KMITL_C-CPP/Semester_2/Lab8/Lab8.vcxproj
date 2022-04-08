@@ -153,6 +153,7 @@
     <ClInclude Include="Point4D.h" />
     <ClInclude Include="PointND.h" />
     <ClInclude Include="QuadrantException.h" />
+    <ClInclude Include="UnderflowException.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="output.txt" />

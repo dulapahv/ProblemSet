@@ -53,6 +53,9 @@
     <ClInclude Include="PointND.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UnderflowException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="output.txt">

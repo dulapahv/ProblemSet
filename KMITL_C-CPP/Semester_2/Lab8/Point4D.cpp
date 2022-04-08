@@ -28,7 +28,7 @@ void Point4D<T>::print() {
 /* Element-wise addition */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator+(Point4D<T>& p) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
 	for (int i = 0; i < 4; i++) {
@@ -42,7 +42,7 @@ inline Point4D<T> Point4D<T>::operator+(Point4D<T>& p) {
 /* Scalar addition */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator+(T s) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	for (int i = 0; i < 4; i++) {
 		if ((s > 0) && (chk[i] > numeric_limits<T>::max() - s)) { throw OverflowException(); }  // overflow
@@ -57,7 +57,7 @@ inline Point4D<T> Point4D<T>::operator+(T s) {
 /* Element-wise subtraction */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator-(Point4D<T>& p) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
 	for (int i = 0; i < 4; i++) {
@@ -71,7 +71,7 @@ inline Point4D<T> Point4D<T>::operator-(Point4D<T>& p) {
 /* Scalar subtraction */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator-(T s) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	for (int i = 0; i < 4; i++) {
 		if ((s < 0) && (chk[i] > numeric_limits<T>::max() + s)) { throw OverflowException(); }  // overflow
@@ -86,7 +86,7 @@ inline Point4D<T> Point4D<T>::operator-(T s) {
 /* Element-wise multiplication */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	T pChk[4] = { p.getX(), p.getY(), p.getZ(), p.z4 };
 	for (int i = 0; i < 4; i++) {
@@ -102,7 +102,7 @@ inline Point4D<T> Point4D<T>::operator*(Point4D<T>& p) {
 /* Scalar multiplication */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator*(T s) {
-	/* Check for overflow of given data type. If it does not overflow, compute the result */
+	/* Check for overflow of given data type then compute the result */
 	T chk[4] = { getX(), getY(), getZ(), z4 };
 	for (int i = 0; i < 4; i++) {
 		if ((s == -1) && (chk[i] == numeric_limits<T>::lowest())) { throw OverflowException(); }  // overflow
@@ -119,8 +119,8 @@ inline Point4D<T> Point4D<T>::operator*(T s) {
 /* Element-wise division */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator/(Point4D<T>& p) {
-	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
-	if (p.getX() == 0 || p.getY() == 0 || p.getZ() == 0 || z4 == 0) { throw DivideByZeroException(); }
+	/* Check for overflow of given data type then compute the result */
+	if ((p.getX() == 0) || (p.getY() == 0) || (p.getZ() == 0) || (z4 == 0)) { throw DivideByZeroException(); }
 
 	return Point4D<T>(getX() * (1 / p.getX()), getY() * (1 / p.getY()), getZ() * (1 / p.getZ()), z4 * (1 / p.z4));
 }
@@ -128,12 +128,11 @@ inline Point4D<T> Point4D<T>::operator/(Point4D<T>& p) {
 /* Scalar division */
 template <typename T>
 inline Point4D<T> Point4D<T>::operator/(T s) {
-	/* Check whether the divisor is equal to zero or not. If so, throw DivideByZeroException */
+	/* Check for overflow of given data type then compute the result */
 	if (s == 0) { throw DivideByZeroException(); }
 
 	return Point4D<T>(getX() / s, getY() / s, getZ() / s, z4 / s);
 }
-
 
 template class Point4D<int>;
 template class Point4D<float>;

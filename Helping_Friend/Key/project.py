@@ -15,6 +15,7 @@ foodDatabase = {
     "ข้าวต้มปลา": ["fish", "rice", "onion", "onion"],
     "ลาบหมู": ["pork", "onion", "basil", "celery"],
 }
+
 vegetableList = ["basil", "celery", "onion", "carrot", "cucumber"]
 
 """Create a list of unique ingredients from the food database"""
@@ -49,8 +50,14 @@ for ingredient in randomChosenIngredientList:
         chosenIngredientList.remove(ingredient)
 
 """Create a rank of food based on user chosen ingredient"""
-rankingNum = 1
-for food, ingredient in foodDatabase.items():
-    if set(chosenIngredientList) <= set(ingredient):
-        print(f"{rankingNum}. {food}")
-        rankingNum += 1
+rank = {}
+for food in foodDatabase:
+    rank[food] = 0
+    for ingredient in chosenIngredientList:
+        if ingredient in foodDatabase[food]:
+            rank[food] += 1
+
+# print(rank)  # debug for viewing score of each food
+
+for index, food in enumerate(sorted(rank, key=rank.get, reverse=True)):
+    print(f"{index + 1}. {food}")

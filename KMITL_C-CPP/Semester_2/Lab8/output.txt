@@ -1,13 +1,13 @@
 ==[Testing Point4D Class]===========================================
 Declared Points
-class Point4D<int> setInt1(1, 2, 3, 4)
-class Point4D<int> setInt2(5, 6, 7, 8)
-class Point4D<int> setIntLimit(2.14748e+09, 2.14748e+09, 2.14748e+09, 2147483647)
-class Point4D<float> setFloat1(10.87, 20.65, 30.43, 40.21)
-class Point4D<float> setFloat2(5.21, 6.43, 7.65, 8.87)
-class Point4D<double> setDouble1(1.21, 2.43, 3.65, 4.87)
-class Point4D<double> setDouble2(5.87, 6.65, 7.43, 8.21)
-class Point4D<double> setZero(0, 0, 0, 0)
+7Point4DIiE setInt1(1, 2, 3, 4)
+7Point4DIiE setInt2(5, 6, 7, 8)
+7Point4DIiE setIntLimit(2.14748e+09, 2.14748e+09, 2.14748e+09, 2147483647)
+7Point4DIfE setFloat1(10.87, 20.65, 30.43, 40.21)
+7Point4DIfE setFloat2(5.21, 6.43, 7.65, 8.87)
+7Point4DIdE setDouble1(1.21, 2.43, 3.65, 4.87)
+7Point4DIdE setDouble2(5.87, 6.65, 7.43, 8.21)
+7Point4DIdE setZero(0, 0, 0, 0)
 
 Testing Operator Methods
 + operator method: (setInt1 + setInt2) = (6, 8, 10, 12)
@@ -26,16 +26,16 @@ Overflowing a data type: (setInt1 * setIntLimit) = Math error: Stack overflow
 
 ==[Testing PointND Class]===========================================
 Declared Points
-class PointND<int> setInt3(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-class PointND<int> setInt4(7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
-class PointND<int> setIntLimit2(2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647)
-class PointND<float> setFloat3(10.87, 20.65, 30.43, 40.21, 50.01, 60.11, 70.21, 80.31, 90.41, 100.51)
-class PointND<float> setFloat4(5.21, 6.43, 7.65, 8.87, 9.99, 10.11, 11.23, 12.35, 13.47, 14.59)
-class PointND<double> setDouble3(1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59)
-class PointND<double> setDouble4(5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51)
-class PointND<double> setZero2(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-class PointND<int> pt1(58, 13)
-class PointND<int> pt2(9, 60)
+7PointNDIiE setInt3(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+7PointNDIiE setInt4(7, 8, 9, 10, 11, 12, 13, 14, 15, 16)
+7PointNDIiE setIntLimit2(2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647)
+7PointNDIfE setFloat3(10.87, 20.65, 30.43, 40.21, 50.01, 60.11, 70.21, 80.31, 90.41, 100.51)
+7PointNDIfE setFloat4(5.21, 6.43, 7.65, 8.87, 9.99, 10.11, 11.23, 12.35, 13.47, 14.59)
+7PointNDIdE setDouble3(1.21, 2.43, 3.65, 4.87, 5.99, 6.11, 7.23, 8.35, 9.47, 10.59)
+7PointNDIdE setDouble4(5.87, 6.65, 7.43, 8.21, 9.01, 10.11, 11.21, 12.31, 13.41, 14.51)
+7PointNDIdE setZero2(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+7PointNDIiE pt1(58, 13)
+7PointNDIiE pt2(9, 60)
 
 Testing Operator Methods
 + operator method: (setInt3 + setInt4) = (8, 10, 12, 14, 16, 18, 20, 22, 24, 26)

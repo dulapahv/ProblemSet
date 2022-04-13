@@ -134,22 +134,29 @@
 
 
 
-def say(usin):
-    match usin:
-        case "nya":
-            print("You said nya!")
-        case "iku" | "nya":
-            print("You just coom ><")
-        case [action, time]:
-            print(f"I {action} at {time}")
-        case [('coom' | 'sleep' | 'eat') as action, time]:
-            print(f"I {action} at {time}")
-        case _:
-            print("I sleep")
+# def say(usin):
+#     match usin:
+#         case "nya":
+#             print("You said nya!")
+#         case "iku" | "nya":
+#             print("You just coom ><")
+#         case [action, time]:
+#             print(f"I {action} at {time}")
+#         case [('coom' | 'sleep' | 'eat') as action, time]:
+#             print(f"I {action} at {time}")
+#         case _:
+#             print("I sleep")
 
-say("nya")  # You said nya!
-say("iku")  # You just coom ><
-say("nya")  # You said nya!
-say(["afternoon", "work"])  # I worked at afternoon
-say(["coom", "afternoon"])  # I coom at afternoon
-say("nani")  # I sleep
+# say("nya")  # You said nya!
+# say("iku")  # You just coom ><
+# say("nya")  # You said nya!
+# say(["afternoon", "work"])  # I worked at afternoon
+# say(["coom", "afternoon"])  # I coom at afternoon
+# say("nani")  # I sleep
+
+sum = 0
+for i in range(21):
+    if i % 2 != 0:
+        sum += 2**i
+
+print(sum)

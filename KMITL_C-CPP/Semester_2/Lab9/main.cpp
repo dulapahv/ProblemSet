@@ -1,23 +1,16 @@
-#include <iostream>
-
 #include "Fleet.h"
-#include "Vehicle.h"
-#include "RegisteredVehicle.h"
-
-using namespace std;
 
 int main() {
-	Vehicle* car1 = new Vehicle("Toyota", 20000, 2018);
-	car1->print();
+	Bicycles bicycles1("Bicycles1", 500);
+	Bicycles bicycles2("Bicycles2", 300);
+	Truck truck1("Truck1", 4999, "PI3141");
+	Truck truck2("Truck2", 5999, "TAO6283");
+	Fleet fleet1 = Fleet();
 
-	RegisteredVehicle* car2 = new RegisteredVehicle("Toyota", 20000, 2018, "ABC123");
-	car2->print();
-
-	Fleet* fleet = new Fleet();
-	fleet->addVehicle(*car1);
-	fleet->addVehicle(*car2);
-	fleet->calcCapitalCost();
-	fleet->print();
-	
-	return 0;
+	fleet1.addVehicle(&bicycles1);
+	fleet1.addVehicle(&bicycles2);
+	fleet1.addVehicle(&truck1);
+	fleet1.addVehicle(&truck2);
+	fleet1.calcCapitalCost();
+	fleet1.print();
 }

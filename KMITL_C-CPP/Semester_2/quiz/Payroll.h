@@ -1,22 +1,19 @@
 #ifndef PAYROLL_H
 #define PAYROLL_H
 
-#include <iostream>
-#include <string>
 #include <vector>
+
 #include "Employee.h"
 
-using namespace std;
-
 class Payroll {
-private:
+private: 
 	vector<Employee*> employee_reg;
-public:
-	Payroll(vector<Employee*> employees);
+public: 
+	Payroll() {};
 
-    bool addEmployee(Employee* employee);
+	bool addEmployee(Employee* e);
 	double calcTotalWages();
-    void print();
+	void print();
 };
 
 #endif  // PAYROLL_H

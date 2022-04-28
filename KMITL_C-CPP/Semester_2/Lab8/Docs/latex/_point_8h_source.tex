@@ -1,0 +1,32 @@
+\hypertarget{_point_8h_source}{}\doxysection{C\+:/\+Users/\+Dulapah Vibulsanti/\+One\+Drive -\/ KMITL/\+Documents/\+Git\+Hub/\+Problem\+Set/\+KMITL\+\_\+\+C-\/\+CPP/\+Semester\+\_\+2/\+Lab8/\+Point.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_point}{Point}} \{}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} x, y;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_point}{Point}}() \{ x = y = 0.0f; \}}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_point}{Point}}(\textcolor{keywordtype}{double} xa, \textcolor{keywordtype}{double} ya) \{}
+\DoxyCodeLine{25         x = xa; y = ya;}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{double} getX() \{ \textcolor{keywordflow}{return} x; \}}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} setX(\textcolor{keywordtype}{double} x1) \{ x = x1; \}}
+\DoxyCodeLine{30     \textcolor{keywordtype}{double} getY() \{ \textcolor{keywordflow}{return} y; \}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} setY(\textcolor{keywordtype}{double} y1) \{ y = y1; \}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} move(\mbox{\hyperlink{class_point}{Point}} dx);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{double} distance(\mbox{\hyperlink{class_point}{Point}}\& b);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} print(ofstream\& f);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{36 \};}
+
+\end{DoxyCode}

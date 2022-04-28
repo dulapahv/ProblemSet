@@ -1,0 +1,20 @@
+\hypertarget{_quadrant_exception_8h_source}{}\doxysection{C\+:/\+Users/\+Dulapah Vibulsanti/\+One\+Drive -\/ KMITL/\+Documents/\+Git\+Hub/\+Problem\+Set/\+KMITL\+\_\+\+C-\/\+CPP/\+Semester\+\_\+2/\+Lab8/\+Quadrant\+Exception.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//user defined class for handling exception}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_quadrant_exception}{QuadrantException}} : \textcolor{keyword}{public} runtime\_error \{}
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_quadrant_exception}{QuadrantException}}()}
+\DoxyCodeLine{13         : runtime\_error(\textcolor{stringliteral}{"{}Quadrant error: Point is not in the first quadrant and/or in the specified limit\(\backslash\)n"{}}) \{}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 \};}
+
+\end{DoxyCode}

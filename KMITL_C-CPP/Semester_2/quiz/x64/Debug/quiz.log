@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\quiz\main.cpp(12,5): error C2065: 'TeaServer': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\quiz\main.cpp(12,15): error C2146: syntax error: missing ';' before identifier 't1'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\quiz\main.cpp(12,15): error C3861: 't1': identifier not found

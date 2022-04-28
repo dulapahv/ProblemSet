@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab9\Fleet.h(30,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab9\Fleet.h(45,21): warning C4018: '<': signed/unsigned mismatch
+  Lab9.vcxproj -> C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab9\Debug\Lab9.exe

@@ -1,0 +1,43 @@
+\hypertarget{_point4_d_8h_source}{}\doxysection{C\+:/\+Users/\+Dulapah Vibulsanti/\+One\+Drive -\/ KMITL/\+Documents/\+Git\+Hub/\+Problem\+Set/\+KMITL\+\_\+\+C-\/\+CPP/\+Semester\+\_\+2/\+Lab8/\+Point4D.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}math.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Point3D.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_point4_d}{Point4D}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_point3_d}{Point3D}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     T z4;}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_point4_d}{Point4D}}(T x, T y, T z, T z4) : \mbox{\hyperlink{class_point3_d}{Point3D}}(x, y, z) \{}
+\DoxyCodeLine{18         this-\/>z4 = z4;}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{/* + operator method */}}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a720156515e44ec67c761f647de8ea1ac}{operator+}}(\mbox{\hyperlink{class_point4_d}{Point4D<T>}}\& p); \textcolor{comment}{// Element-\/wise addition}}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a720156515e44ec67c761f647de8ea1ac}{operator+}}(T a); \textcolor{comment}{// Scalar addition}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{/* -\/ operator method */}}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a8ea246c09b0aaedb6d1415ff47e44cc8}{operator-\/}}(\mbox{\hyperlink{class_point4_d}{Point4D<T>}}\& p); \textcolor{comment}{// Element-\/wise subtraction}}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a8ea246c09b0aaedb6d1415ff47e44cc8}{operator-\/}}(T a); \textcolor{comment}{// Scalar subtraction}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{/* * operator method */}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a586018d8f217c2015805ac334ed76106}{operator*}}(\mbox{\hyperlink{class_point4_d}{Point4D<T>}}\& p); \textcolor{comment}{// Element-\/wise multiplication}}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_a586018d8f217c2015805ac334ed76106}{operator*}}(T a); \textcolor{comment}{// Scalar multiplication}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{/* / operator method */}}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_ab8e9f138d6d076732b67ec715f95f0c3}{operator/}}(\mbox{\hyperlink{class_point4_d}{Point4D<T>}}\& p); \textcolor{comment}{// Element-\/wise division}}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_point4_d}{Point4D<T>}} \mbox{\hyperlink{class_point4_d_ab8e9f138d6d076732b67ec715f95f0c3}{operator/}}(T a); \textcolor{comment}{// Scalar division}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} print(ofstream\& f);}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{39 \};}
+
+\end{DoxyCode}

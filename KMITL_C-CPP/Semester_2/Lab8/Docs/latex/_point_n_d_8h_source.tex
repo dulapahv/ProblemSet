@@ -1,0 +1,49 @@
+\hypertarget{_point_n_d_8h_source}{}\doxysection{C\+:/\+Users/\+Dulapah Vibulsanti/\+One\+Drive -\/ KMITL/\+Documents/\+Git\+Hub/\+Problem\+Set/\+KMITL\+\_\+\+C-\/\+CPP/\+Semester\+\_\+2/\+Lab8/\+Point\+ND.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_point_n_d}{PointND}} \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     vector<T> x;}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \textcolor{keyword}{static} \textcolor{keywordtype}{int} XLIMIT;}
+\DoxyCodeLine{16     \textcolor{keyword}{static} \textcolor{keywordtype}{int} YLIMIT;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \mbox{\hyperlink{class_point_n_d}{PointND}}(vector<T> x) \{}
+\DoxyCodeLine{19         this-\/>x.resize(x.size());}
+\DoxyCodeLine{20         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < x.size(); i++) \{}
+\DoxyCodeLine{21             this-\/>x[i] = x[i];}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{/* + operator method */}}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_a18eca29bb32a455df2ca29a68472fadb}{operator+}}(\mbox{\hyperlink{class_point_n_d}{PointND<T>}}\& p);  \textcolor{comment}{// Element-\/wise addition}}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_a18eca29bb32a455df2ca29a68472fadb}{operator+}}(T a);  \textcolor{comment}{// Scalar addition}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{/* -\/ operator method */}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_ace70a43aebe041bc8d930261b5323ec7}{operator-\/}}(\mbox{\hyperlink{class_point_n_d}{PointND<T>}}\& p);  \textcolor{comment}{// Element-\/wise subtraction}}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_ace70a43aebe041bc8d930261b5323ec7}{operator-\/}}(T a);  \textcolor{comment}{// Scalar subtraction}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{/* * operator method */}}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_a10dff36931e50b8020aeaed2a4ed77de}{operator*}}(\mbox{\hyperlink{class_point_n_d}{PointND<T>}}\& p);  \textcolor{comment}{// Element-\/wise multiplication}}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_a10dff36931e50b8020aeaed2a4ed77de}{operator*}}(T a);  \textcolor{comment}{// Scalar multiplication}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{/* / operator method */}}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_ad9a88f1d46f0e60d452e97709073b391}{operator/}}(\mbox{\hyperlink{class_point_n_d}{PointND<T>}}\& p);  \textcolor{comment}{// Element-\/wise division}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_point_n_d}{PointND<T>}} \mbox{\hyperlink{class_point_n_d_ad9a88f1d46f0e60d452e97709073b391}{operator/}}(T a);  \textcolor{comment}{// Scalar division}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} print(ofstream\& f);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{45 \};}
+
+\end{DoxyCode}

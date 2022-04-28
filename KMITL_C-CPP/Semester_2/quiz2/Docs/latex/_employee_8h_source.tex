@@ -1,0 +1,82 @@
+\hypertarget{_employee_8h_source}{}\doxysection{Employee.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef EMPLOYEE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define EMPLOYEE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Fleet.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_employee}{Employee}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} age;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{double} basic\_salary;}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_employee_a2b55a116583de4f44370cbecc7ffb6f4}{Employee}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{int} age, \textcolor{keywordtype}{double} basic\_salary) \{}
+\DoxyCodeLine{20         this-\/>name = name;}
+\DoxyCodeLine{21         this-\/>age = age;}
+\DoxyCodeLine{22         this-\/>basic\_salary = basic\_salary;}
+\DoxyCodeLine{23     \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} calcSalary() \{ \textcolor{keywordflow}{return} basic\_salary; \}}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} print() \{\};}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{class }\mbox{\hyperlink{class_engineer}{Engineer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_employee}{Employee}} \{}
+\DoxyCodeLine{31 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{32     \textcolor{keywordtype}{double} multiplier = 1.5;}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_engineer_a30ccb249bce9466af942c2b0669daf72}{Engineer}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{int} age, \textcolor{keywordtype}{double} basic\_salary) : \mbox{\hyperlink{class_employee}{Employee}}(name, age, basic\_salary) \{\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{double} calcSalary();}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{class_mechanic}{Mechanic}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_employee}{Employee}} \{}
+\DoxyCodeLine{43 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44     vector<Vehicle> flags;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} multiplier;}
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \mbox{\hyperlink{class_mechanic_a18620cfbae5b093add9491ee8c8e942e}{Mechanic}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{int} age, \textcolor{keywordtype}{double} basic\_salary, vector<Vehicle> flags) : \mbox{\hyperlink{class_employee}{Employee}}(name, age, basic\_salary) \{}
+\DoxyCodeLine{49         this-\/>flags = flags;}
+\DoxyCodeLine{50         multiplier = 1 + (flags.size() / 10.0);}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{double} calcSalary();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{class }\mbox{\hyperlink{class_tea_server}{TeaServer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_employee}{Employee}} \{}
+\DoxyCodeLine{59 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{60     \textcolor{keywordtype}{double} multiplier = 1.0;}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{63     \mbox{\hyperlink{class_tea_server_ae82ffbff5db1ec060d1d66134aa367ad}{TeaServer}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{int} age, \textcolor{keywordtype}{double} basic\_salary) : \mbox{\hyperlink{class_employee}{Employee}}(name, age, basic\_salary) \{\};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{double} calcSalary();}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{class }\mbox{\hyperlink{class_security_guard}{SecurityGuard}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_employee}{Employee}} \{}
+\DoxyCodeLine{71 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{72     \textcolor{keywordtype}{double} multiplier = 1.2;}
+\DoxyCodeLine{73 \textcolor{keyword}{public}:}
+\DoxyCodeLine{75     \mbox{\hyperlink{class_security_guard_af89a463d16b4ca64f50c14216ce21a90}{SecurityGuard}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{int} age, \textcolor{keywordtype}{double} basic\_salary) : \mbox{\hyperlink{class_employee}{Employee}}(name, age, basic\_salary) \{\};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{keywordtype}{double} calcSalary();}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// EMPLOYEE\_H}}
+
+\end{DoxyCode}

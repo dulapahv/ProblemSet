@@ -1,0 +1,85 @@
+\hypertarget{_vehicle_8h_source}{}\doxysection{Vehicle.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VEHICLE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define VEHICLE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{class_vehicle}{Vehicle}} \{}
+\DoxyCodeLine{10 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{11     \textcolor{keywordtype}{string} name;}
+\DoxyCodeLine{12     \textcolor{keywordtype}{double} price;}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_vehicle}{Vehicle}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} price) \{}
+\DoxyCodeLine{15         this-\/>name = name;}
+\DoxyCodeLine{16         this-\/>price = price;}
+\DoxyCodeLine{17     \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{double} getCost() \{ \textcolor{keywordflow}{return} price; \}}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} print() \{\};}
+\DoxyCodeLine{21 \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_vehicle}{Vehicle}} \{}
+\DoxyCodeLine{25 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{string} reg\_number;}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} price, \textcolor{keywordtype}{string} reg\_number) : \mbox{\hyperlink{class_vehicle}{Vehicle}}(name, price) \{}
+\DoxyCodeLine{29         this-\/>reg\_number = reg\_number;}
+\DoxyCodeLine{30     \}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{double} getCost() \{}
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} price + 500;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{class_jet}{Jet}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}} \{}
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     \textcolor{keywordtype}{double} load\_capacity;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} max\_passenger;}
+\DoxyCodeLine{42 \textcolor{keyword}{public}:}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_jet}{Jet}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} price, \textcolor{keywordtype}{string} reg\_number) : \mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}}(name, price, reg\_number) \{}
+\DoxyCodeLine{44         load\_capacity = 2000;}
+\DoxyCodeLine{45         max\_passenger = 10;}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_car}{Car}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}} \{}
+\DoxyCodeLine{53 \textcolor{keyword}{private}:}
+\DoxyCodeLine{54     \textcolor{keywordtype}{double} load\_capacity;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} max\_passenger;}
+\DoxyCodeLine{56 \textcolor{keyword}{public}:}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_car}{Car}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} price, \textcolor{keywordtype}{string} reg\_number) : \mbox{\hyperlink{class_registered_vehicle}{RegisteredVehicle}}(name, price, reg\_number) \{}
+\DoxyCodeLine{58         load\_capacity = 1000;}
+\DoxyCodeLine{59         max\_passenger = 4;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{class }\mbox{\hyperlink{class_bicycle}{Bicycle}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_vehicle}{Vehicle}} \{}
+\DoxyCodeLine{67 \textcolor{keyword}{private}:}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} seats;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{bool} hasBasket;}
+\DoxyCodeLine{70 \textcolor{keyword}{public}:}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_bicycle}{Bicycle}}(\textcolor{keywordtype}{string} name, \textcolor{keywordtype}{double} price) : \mbox{\hyperlink{class_vehicle}{Vehicle}}(name, price) \{}
+\DoxyCodeLine{72         seats = 2;}
+\DoxyCodeLine{73         hasBasket = \textcolor{keyword}{true};}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} print();}
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//VEHICLE\_H}}
+
+\end{DoxyCode}

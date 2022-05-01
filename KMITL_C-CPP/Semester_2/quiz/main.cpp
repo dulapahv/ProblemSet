@@ -28,7 +28,7 @@ int main() {
     //cout << s1.calcSalary() << endl;
     Engineer e1("Tom", 20, 10000);
     //cout << e1.calcSalary() << endl;
-    Mechanic m1("Jerry", 20, 8000, vector<Vehicle>{});
+    Mechanic m1("Jerry", 20, 8000, vector<Vehicle>{bike1, car1, jet1});
     //cout << m1.calcSalary() << endl;
 
     Payroll payroll1 = Payroll();

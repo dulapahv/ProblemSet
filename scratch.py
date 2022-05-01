@@ -48,18 +48,26 @@
 #     except UnboundLocalError:
 #         raise UnboundLocalError("Key not found")
 
-sum = 0
-for i in range(1,5+1):
-    for j in range(1,i+1):
-        sum += j + 10
+# sum = 0
+# for i in range(1,5+1):
+#     for j in range(1,i+1):
+#         sum += j + 10
 
-print(sum)
+# print(sum)
 
-sum = 0
-for i in range(1,5+1):
-    sum += j + 10
+# sum = 0
+# for i in range(1,5+1):
+#     sum += j + 10
 
-print(sum)
+# print(sum)
 
-x = [i for i in range(1,5+1)]
-print(x)
+# x = [i for i in range(1,5+1)]
+# print(x)
+
+from tcp_latency import measure_latency
+import time
+
+while True:
+    ping = (measure_latency(host='138.91.42.107', port=25565, timeout=2.5))
+    print(ping)
+    time.sleep(180)

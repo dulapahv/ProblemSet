@@ -76,7 +76,7 @@
 # class BetterList:
 #     def __init__(self, *args):
 #         self.list = list(args)
-    
+
 #     def __add__(self, other):
 #         return BetterList(self.list + other.list)
 
@@ -112,7 +112,6 @@
 
 #     def __gt__(self, other):
 #         return self.list > other.list
-
 
 
 # list1 = BetterList(1,2,3)
@@ -159,7 +158,7 @@
 
 # for i in range(n):
 #     print(cards[i].getScore())
-    
+
 # print("-" * 10)
 
 # for i in range(n - 1):
@@ -185,12 +184,12 @@
 
 # # Euler method
 # def euler(x0,y0,xn,n):
-    
+
 #     # Calculating step size
 #     h = (xn-x0)/n
-    
+
 #     print('\n-----------SOLUTION-----------')
-#     print('------------------------------')    
+#     print('------------------------------')
 #     print('x0\ty0\tslope\tyn')
 #     print('------------------------------')
 #     for i in range(n):
@@ -200,7 +199,7 @@
 #         print('------------------------------')
 #         y0 = yn
 #         x0 = x0+h
-    
+
 #     print('\nAt x=%.4f, y=%.4f' %(xn,yn))
 
 # # Inputs
@@ -217,6 +216,205 @@
 # # Euler method call
 # euler(x0,y0,xn,step)
 
-import math
-x = math.e ** (0.0004 ** 2)
-print(f"{x:.10f}")
+# import math
+# x = math.e ** (0.0004 ** 2)
+# print(f"{x:.10f}")
+
+# def solve(h, x=0.4):
+#     x0 = x - h  # find x0
+#     y0 = 1 + (x0 * (0 * (1 ** 0.5)))  # find y(x0)
+#     return 1 + (h * (x0 * (y0 ** 0.5)))
+
+# print(solve(0.0004))
+
+# // pseudocode
+#  function powmod(base b, exponent e, modulus m)
+#   if m = 1 then return 0
+#   var c := 1
+#   for var a from 1 to e
+#     c := (c * b) mod m
+#   end for
+#   return c
+
+# def powmod(base, expo, modulus):
+#     if modulus == 1:
+#         return 0
+#     c = 1
+#     for i in range(1, expo + 1):
+#         print(f'{c} * {base} % {modulus} = {c * base % modulus}')
+#         c = (c * base) % modulus
+#     return c
+
+# print(powmod(6036982461, 21345, 23))
+
+# height = int(input())
+# for i in range(height):
+#     print(' ' * (height - i - 1), end='')
+#     print('*' * ((2 * i) + 1), end='')
+#     print()
+
+# data = []
+# for i in range(5):
+#     data.append(input())
+
+# score = int(input())
+
+# if score >= 90:
+#     print('A')
+# elif score >= 85 and score <= 89:
+#     print('B+')
+# elif score >= 80 and score <= 84:
+#     print('B')
+# elif score >= 75 and score <= 79:
+#     print('C+')
+# elif score >= 70 and score <= 74:
+#     print('C')
+# elif score >= 65 and score <= 69:
+#     print('D+')
+# elif score >= 60 and score <= 64:
+#     print('D')
+# else:
+#     print('F')
+
+# height = int(input())
+# for i in range(height):
+#     print(' ' * (height - i - 1), end='')
+#     print('*' * ((2 * i) + 1), end='')
+#     print()
+# for i in range(height - 1):
+#     print(' ' * (i + 1), end='')
+#     print('*' * (2 * (height - i - 1) - 1), end='')
+#     print()
+
+# column = int(input())
+# row = int(input())
+
+# mat = []
+# for i in range(row * column):
+#     mat.append(float(input()))
+
+# for i in range(row):
+#     for j in range(column):
+#         result = (mat[i * column + j] - min(mat)) / (max(mat) - min(mat))
+#         print(f"{result:.4f}", end=' ')
+#     print()
+
+# string = input()
+
+# for i in range(len(string)):
+#     print(' ' * (len(string) - i - 1) + string[i], end='')
+#     print()
+
+# n = int(input())
+# data = []
+# for i in range(n):
+#     data.append(int(input()))
+
+# x = 1
+# while True:
+#     if len(data) <= (2 ** x):
+#         break
+#     x += 1
+
+# print(x)
+
+# import math
+# sum = 0
+# for i in range(0, 101):
+#     print(i)
+#     sum += math.floor(i/5)
+
+# print(sum)
+
+# import math
+# try:
+#     for i in range(1, 101):
+#         for y in range(-99999, 99999):
+#             if (i / y) - 1 == -1:
+#                 print(f"{y = }")
+#                 break
+# except:
+#     pass
+
+# import math
+# sum = 0
+# for i in range(0, 11):
+#     sum += (math.factorial(10)) / (math.factorial(i) * math.factorial(10 - i))
+
+# print(sum)
+
+"""
+>>> factorial(5)
+120
+
+>>> [factorial(n) for n in range(6)]
+[1, 1, 2, 6, 24, 120]
+
+>>> factorial(30)
+265252859812191058636308480000000
+
+>>> factorial(-1)
+Traceback (most recent call last):
+    ...
+ValueError: n must be >= 0
+
+>>> factorial(30.1)
+Traceback (most recent call last):
+    ...
+ValueError: n must be exact integer
+
+>>> factorial(30.0)
+265252859812191058636308480000000
+
+
+>>> factorial(1e100)
+Traceback (most recent call last):
+    ...
+OverflowError: n too large
+"""
+
+# def factorial(n):
+#     import math
+#     if not n >= 0:
+#         raise ValueError("n must be >= 0")
+#     if math.floor(n) != n:
+#         raise ValueError("n must be exact integer")
+#     if n+1 == n:  # catch a value like 1e300
+#         raise OverflowError("n too large")
+#     result = 1
+#     factor = 2
+#     while factor <= n:
+#         result *= factor
+#         factor += 1
+#     return result
+
+# if __name__ == "__main__":
+#     import doctest
+#     doctest.testmod()
+
+# from chadchart import Policy
+# policy = Policy()
+# policy.show_all()
+# print('All policy:',policy.all)
+# print('-----')
+# print('Number 1 (dictionary):', policy.number(1))
+# print('Number 1 (thai):',policy.number(1)['thai'])
+# print('Number 1 (english):',policy.number(1)['english'])
+# print('Number 1 (tag):', policy.number(1)['tag'])
+# print(policy.all_tag)
+# print(policy.all_tag['เรียนดี'])
+# policy.show_category()
+# policy.category('ปลอดภัยดี')
+# policy.credit()
+# policy.developer()
+
+# def find_avg(data):
+#     try:
+#         return sum(data) / len(data)
+#     except ZeroDivisionError:
+#         raise Exception("Cannot find average of empty data!")
+#     except TypeError:
+#         raise Exception("Data type not supported!")
+
+# print(find_avg([1, 2, 3, 4, 5]))
+

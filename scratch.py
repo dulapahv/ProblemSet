@@ -418,3 +418,335 @@ OverflowError: n too large
 
 # print(find_avg([1, 2, 3, 4, 5]))
 
+# print('Hello world!')
+# a = 2
+# a **= 3
+# print(a)
+
+# num1 = 10 * 20
+# num2 = 12.34
+# num3 = 0.55
+# num4 = -.65
+# text1 = 'Gacha player will never be happy'
+# bool1 = True
+
+# print(num1)
+# print(text1)
+# print(bool1)
+
+# string1 = 'The fact that you are ugly is what makes you a failure'
+# string2 = "Will you accept half of my chromosome?"
+# stringQuote1 = 'He told me, "Even Hitler cared Germany, but no one care me" before he disappeared.'
+# stringQuote2 = "Stop 'coding' and go get a 'life'!"
+
+# print(string1.title())
+# print(string2.upper())
+# print(stringQuote1.lower())
+
+
+# firstName = 'Konomi'
+# lastName = 'Suzuki'
+# print(firstName + ' ' + lastName)
+# print(firstName, lastName)
+# print('%s %s' % (firstName, lastName))
+# print('{} {}'.format(firstName, lastName))
+
+# print(f'{firstName} {lastName}')
+
+# print('Sometimes it takes a real man to become\nthe best girl')
+# print('Sometimes it takes a\t\treal man to become the best girl')
+
+# var = '+ Uwooo +'
+
+# print(f'{var.lstrip("+")}')
+# print(f'{var.rstrip("+")}')
+# print(f'{var.strip("+")}')
+
+# I'll always have a special place in your heart, even I'm just a comment.
+
+# """
+# At times, our relationship felt like it was the best
+# thing that had ever happened to me, but lately,
+# everything has felt wrong.
+# """
+
+# x = 10.6
+# print(int(x))
+
+# girlfriends = ['Armstrong', 'Phoenix', 'Chadchart']
+# girlfriends.insert(1, 'Anya')
+# print(girlfriends)
+
+# lover = []
+
+# secret = ['you', 'me', 'bed', 'now']
+# secret2 = [10, 20, 30]
+# print(sorted(secret))
+# print(sorted(secret, reverse=True))
+# secret2.sort(reverse=True)
+# print(secret2)
+
+# txt = 'ara~'
+# print(len(txt))
+
+# msg1 = input()
+# msg2 = input('May I use your toilet? ')
+# msg3 = input('Give me a number: ').split(', ')
+# print(msg1)
+# print(msg2)
+# print(msg3)
+
+# msg = ['our', 'love', 'is', 'like', 'a', 'pi']
+# removed = msg.pop(1)
+# print(removed)
+# print(msg)
+
+# num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(num[:5])          # [0, 1, 2, 3, 4]
+# print(num[5:])          # [5, 6, 7, 8, 9]
+# print(num[2:4])         # [2, 3]
+# print(num[:-2])         # [0, 1, 2, 3, 4, 5, 6, 7]
+# print(num[-2:])         # [8, 9]
+# print(num[-4:-2])       # [6, 7]
+# print(num[:8:2])        # [0, 2, 4, 6]
+# print(num[1:8:2])       # [1, 3, 5, 7]
+# print(num[::-1])        # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+# print(num[::-2])        # [9, 7, 5, 3, 1]
+# print(num[:])           # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# ans = [1, 3, 2, 3, 5, 4]
+# sus = ans[:]
+# print(sus)
+
+
+# print(list(range(10)))          # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(list(range(5, 10)))       # [5, 6, 7, 8, 9]
+# print(list(range(0, 10, 2)))    # [0, 2, 4, 6, 8]
+
+# for i in range(10):
+#     print(i)
+
+# square = []
+# for number in range(10):
+#     square.append(number**2)
+# print(square)
+
+# square = [number**2 for number in range(10)]
+# print(square)
+
+# people = ['Chocola', 'Vanilla', 'Maple']
+# new_list = []
+# for person in people:
+#     new_list.append(f'Ms.{person}')
+# for person in new_list:
+#     print(person)
+
+# people = ['Chocola', 'Vanilla', 'Maple']
+# new_list = [f'Ms.{person}' for person in people]
+# for person in new_list:
+#     print(person)
+
+# txt = "weed"
+# print(list(txt))
+
+# txt = "weed"
+# for char in txt:
+#     print(char)
+
+# txt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# print(txt[0])           # A
+# print(txt[-1])          # Z
+# print(txt[:5])          # ABCDE
+# print(txt[5:])          # FGHIJKLMNOPQRSTUVWXYZ
+# print(txt[::2])         # ACEGIKMOQSUWY
+# print(txt[1::2])        # BDFHJLNPRTVXZ
+# print(txt[-4:-2])       # WX
+# print(txt[1:10:2])      # BDFHJ
+# print(txt[::-1])        # ZYXWVUTSRQPONMLKJIHGFEDCBA
+# print(txt[::-2])        # ZXVTRPNLJHFDB
+# print(txt[:])           # ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+# txt = 'Love will guide the way, our hearts bound by an eternal promise!'
+# check1 = 'promise' in txt
+# check2 = 'hate' in txt
+# print(check1)
+# print(check2)
+
+# txt = "Don't cry because it's over, smile because it happened."
+# print(txt.find('because'))      # First occurrence
+# print(txt.rfind('because'))     # Last occurrence
+
+# txt = 'never gonna give you up, never gonna let you down'
+# count = txt.count('never')
+# print(count)
+
+# txt = 'From this day forth, our fates are bound together'
+# txt = txt.split(' ')
+# print(txt)
+
+# txt = ('yes', 'we', 'can')
+# for word in txt:
+#     print(word)
+
+# val_int = 1112
+# print(f'{val_int:b}')       # 10001011000
+# print(f'{val_int:e}')       # 1.112000e+03
+# print(f'{val_int:.2e}')     # 1.11e+03
+
+# val_float = 1112.12345
+# print(f'{val_float:.3e}')     # 1.112e+03
+# print(f'{val_float:.4f}')     # 1112.1235
+# print(f'{val_float:.2%}')     # 111212.35%
+
+# txt = 'SE14 Pre-Session'
+# print(f'+{txt:>40}+')
+# print(f'+{txt:<40}+')
+# print(f'+{txt:^40}+')
+# print(f'+{txt:*>40}+')
+# print(f'+{txt:=<40}+')
+# print(f'+{txt:#^40}+')
+
+#give example of set and mathematical operation
+# set1 = {1, 2, 3, 4, 5}
+# set2 = {4, 5, 6, 7, 8}
+# print(set1 & set2)      # Intersection                      {1, 2}
+# print(set1 | set2)      # Union                             {1, 2, 3, 4, 5, 6, 7, 8}
+# print(set1 - set2)      # Difference                        {3, 4, 5}
+# print(set1 ^ set2)      # Symmetric difference              {3, 4, 5, 6, 7, 8}
+# print(set1 >= set2)     # Is set2 a subset of set1?         False
+# print(set1 <= set2)     # Is set1 a subset of set2?         False
+# print(set1 == set2)     # Are set1 and set2 equal?          False
+# print(set1 != set2)     # Are set1 and set2 not equal?      True
+
+# x = 5
+# if x == 5:
+#     print('x is 5')
+# print('done')
+
+# x = 6
+# if x == 5:
+#     print('x is 5')
+# else:
+#     print('x is 6')
+# print('done')
+
+# x = 10
+# if x == 5:
+#     print('x is 5')
+# elif x == 6:
+#     print('x is 6')
+# else:
+#     print('x is not 5 or 6')
+# print('done')
+
+# txt = 'I love Genshin Impact'
+# print('money' in txt)
+
+# number = [1, 2, 3, 4, 5]
+# print(1 in number)
+
+# x = 5
+# if x >= 0 and x < 10:
+#     print('nice')
+# elif (x >= 10 and x < 20) or (x == 3):
+#     print('bruh')
+# else:
+#     print('no')
+
+# x = 0
+# while x < 5:
+#     print(x)
+#     x += 1
+
+# for x in range(5):
+#     print(x)
+
+# txt1 = 'I hate'
+# txt2 = 'gacha game'
+# print(txt1, txt2, sep='+-+')
+
+# number = []
+# num = ''
+# while num != 'quit':
+#     num = input('Enter a number: ')
+#     if num == 'quit':
+#         break
+#     number.append(int(num))
+# print(number)
+
+# print('What would you like to eat?')
+# print('[1] Pizza')
+# print('[2] Steak')
+# print('[q] quit')
+# choice = ''
+# while choice != 'q':
+#     choice = input('Enter your choice: ')
+#     if choice == '1':
+#         print('You chose Pizza')
+#     elif choice == '2':
+#         print('You chose Steak')
+#     elif choice == 'q':
+#         print('You chose to quit')
+#     else:
+#         print('Invalid choice')
+# print('Thank you for choosing')
+
+# num = []
+# for i in range(10):
+#     if i % 2 == 0:
+#         break
+#     num.append(i)
+# print(num)
+
+# def function_name(argument_1, argument_2):
+# 	# Do whatever we want this function to do,
+# 	#  using argument_1 and argument_2
+
+# # Use function_name to call the function.
+# function_name(value_1, value_2)
+
+# def add_two_numbers(number_1, number_2):
+#     return number_1 + number_2
+
+# a = 5
+# b = 3
+# answer = add_two_numbers(a, b)
+# print(answer)
+
+# def add_two_numbers(number_1, number_2=3):
+#     return number_1 + number_2
+
+# a = 5
+# answer = add_two_numbers(a)
+# print(answer)
+
+# demonstrate keyword argument
+# def add_two_numbers(number_1, number_2):
+#     return number_1 - number_2
+
+# a = 5
+# b = 3
+# answer = add_two_numbers(number_2 = a, number_1 = b)
+# print(answer)
+
+# Accepting a sequence of arbitrary length
+# def add_two_numbers(*numbers):
+#     print(numbers)
+#     total = 0
+#     for number in numbers:
+#         total += number
+#     return total
+
+# a = 5
+# b = 3
+# c = 10
+# answer = add_two_numbers(a, b, c)
+# print(answer)
+
+# Example of accepting an arbitrary number of keyword arguments
+def example_function(arg_1, arg_2, **kwargs):
+    print('arg_1:', arg_1)
+    print('arg_2:', arg_2)
+    print('arg_3:', kwargs)
+    
+example_function('a', 'b', value_3='c', value_4='d', value_5='e')

@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duvibuls <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 15:42:47 by duvibuls          #+#    #+#             */
-/*   Updated: 2022/06/21 15:46:26 by duvibuls         ###   ########.fr       */
+/*   Created: 2022/06/22 18:30:49 by duvibuls          #+#    #+#             */
+/*   Updated: 2022/06/22 18:32:16 by duvibuls         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char **argv)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
 
-	i = argc - 1;
-	j = 0;
-	if (argc > 1)
-	{
-		while (i >= 1)
-		{
-			j = 0;
-			while (argv[i][j] != '\0')
-			{
-				write(1, &argv[i][j], 1);
-				j++;
-			}
-			write(1, "\n", 1);
-			i--;
-		}
-	}
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

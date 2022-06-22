@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   inter.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duvibuls <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 11:10:03 by duvibuls          #+#    #+#             */
-/*   Updated: 2022/06/22 11:25:47 by duvibuls         ###   ########.fr       */
+/*   Created: 2022/06/22 19:02:43 by duvibuls          #+#    #+#             */
+/*   Updated: 2022/06/22 19:12:03 by duvibuls         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	is_space(char c)
+void	inter(char *find, char *str)
 {
-	if (c == ' ' || c == '\t')
-		return (1);
-	return (0);
-}
-
-void	first_word(char *str)
-{
+	int	*arr;
 	int	i;
-	int	start;
 
+	arr = (int [144]){0};
 	i = 0;
-	while (str[i] != '\0' && is_space(str[i]))
-		i++;
-	start = i;
-	while (str[i] != '\0' && !is_space(str[i]))
-		i++;
-	while (start < i && i != 1)
+	while (str[i] != '\0')
 	{
-		write(1, &str[start], 1);
-		start++;
+		arr[(int)str[i]]++;
+		i++;
+	}
+	i = 0;
+	while (find[i] != '\0')
+	{
+		if (arr[(int)find[i]] != 0)
+		{
+			write(1, &find[i], 1);
+			arr[(int)find[i]] = 0;
+		}	
+		i++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc > 1)
-	{
-		first_word(argv[1]);
-	}
+	if (argc == 3)
+		inter(argv[1], argv[2]);
 	write(1, "\n", 1);
 }

@@ -1,29 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   last_word.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duvibuls <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 15:28:49 by duvibuls          #+#    #+#             */
-/*   Updated: 2022/06/21 15:34:38 by duvibuls         ###   ########.fr       */
+/*   Created: 2022/06/22 18:43:23 by duvibuls          #+#    #+#             */
+/*   Updated: 2022/06/22 18:59:34 by duvibuls         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int	is_space(char c)
+{
+	if (c == ' ' || c == '\t')
+		return (1);
+	return (0);
+}
+
+void	last_word(char *str)
 {
 	int	i;
+	int	start;
 
 	i = 0;
-	if (argc >= 1)
+	while (str[i] != '\0')
+		i++;
+	i -= 1;
+	while (i >= 0 && is_space(str[i]))
+		i--;
+	start = i;
+	while (i >= 0 && !is_space(str[i]))
+		i--;
+	i += 1;
+	while (i <= start)
 	{
-		while (argv[0][i] != '\0')
-		{	
-			write(1, &argv[0][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
+		write(1, &str[i], 1);
+		i++;
 	}
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+		last_word(argv[1]);
+	write(1, "\n", 1);
 }

@@ -62,14 +62,14 @@ int	is_numeric(char c)
 	return (0);
 }
 
-int is_printable(char c)
+int	is_printable(char c)
 {
 	if (c >= ' ' && c != 127)
 		return (1);
 	return (0);
 }
 
-void error(void)
+void	error(void)
 {
 	ft_putstr("Dict Error\n");
 	exit(1);

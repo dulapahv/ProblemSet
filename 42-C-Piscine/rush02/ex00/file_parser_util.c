@@ -13,14 +13,16 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "utility.h"
 #include "numdict.h"
+#include "utility.h"
 
 int	nbr_chk_flag(int flag, char *str_num, int index, int *is_number)
 {
 	int	num;
 
 	num = 0;
+	if (index > 3)
+		flag = 2;
 	if (flag == 1)
 	{
 		str_num[index] = '\0';
@@ -44,6 +46,7 @@ int	get_nbr(int fp, char c[1], int *is_number)
 {
 	int		flag;
 	char	*temp;
+	int		is_not_eof;
 	int		i;
 
 	flag = 0;
@@ -60,9 +63,9 @@ int	get_nbr(int fp, char c[1], int *is_number)
 			if (!is_numeric(c[0]))
 				error();
 			temp[i++] = c[0];
-			if (i > 3)
-				flag = 2;
-			read(fp, c, 1);
+			is_not_eof = read(fp, c, 1);
+			if (!is_not_eof)
+				break ;
 		}
 	}
 	return (nbr_chk_flag(flag, temp, i, is_number));
@@ -70,14 +73,22 @@ int	get_nbr(int fp, char c[1], int *is_number)
 
 void	skip(int fp, char c[1])
 {
+	int	chk;
+
+	chk = 0;
 	if (fp == -1 || c == NULL)
 		error();
 	while (c[0] == ' ' || c[0] == '\t')
 		read(fp, c, 1);
 	if (c[0] == ':')
+	{
 		read(fp, c, 1);
+		chk = 1;
+	}
 	while (c[0] == ' ' || c[0] == '\t')
 		read(fp, c, 1);
+	if (!chk)
+		error();
 }
 
 char	*word_chk_flag(int flag, char *str, int index)
@@ -103,7 +114,6 @@ char	*get_word(int fp, char c[1])
 
 	temp = NULL;
 	flag = 0;
-	is_not_eof = 0;
 	i = 0;
 	skip (fp, c);
 	if (is_printable(c[0]))

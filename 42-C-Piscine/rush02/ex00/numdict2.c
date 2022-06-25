@@ -6,7 +6,7 @@
 /*   By: abossel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 19:59:35 by abossel           #+#    #+#             */
-/*   Updated: 2022/06/25 13:33:22 by abossel          ###   ########.fr       */
+/*   Updated: 2022/06/25 20:37:50 by abossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	free_dict(t_dict *d)
 		free(d->dict[i].word);
 		i++;
 	}
+	free(d->dict);
+	d->dict = NULL;
 	d->size = 0;
 	d->len = 0;
 }

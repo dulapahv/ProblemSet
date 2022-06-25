@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utility.h                                          :+:      :+:    :+:   */
+/*   file_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duvibuls <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 20:00:32 by duvibuls          #+#    #+#             */
-/*   Updated: 2022/06/25 11:18:59 by duvibuls         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:50:20 by duvibuls         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILITY_H
-# define UTILITY_H
+#ifndef FILE_PARSER_UTIL_H
+# define FILE_PARSER_UTIL_H
 
-int		ft_atoi(char *str);
-char	*ft_strdup(char *src);
-int	is_numeric(char c);
-int is_printable(char c);
-int error(void);
+int		nbr_chk_flag(int flag, char *str_num, int index, int *is_number);
+int		get_nbr(int fp, char c[1], int *is_number);
+char	*word_chk_flag(int flag, char *str, int index);
+char	*get_word(int fp, char c[1]);
+void	skip(int fp, char c[1]);
 
 #endif

@@ -13,11 +13,10 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
+#include "file_parser_util.h"
+#include "ft_put.h"
 #include "numdict.h"
 #include "utility.h"
-#include "ft_put.h"
-#include "file_parser_util.h"
 
 void	rm_extra_space(char *str)
 {
@@ -26,6 +25,8 @@ void	rm_extra_space(char *str)
 
 	i = 0;
 	j = 0;
+	if (str == NULL)
+		error();
 	while (str[i])
 	{
 		if (str[i] == ' ' && str[i + 1] == ' ')
@@ -38,7 +39,7 @@ void	rm_extra_space(char *str)
 	str[j] = '\0';
 }
 
-int	add_to_dict(t_dict *dict, int num, int is_number, char *word)
+void	add_to_dict(t_dict *dict, int num, int is_number, char *word)
 {
 	if (word != NULL && dict != NULL)
 	{
@@ -49,8 +50,7 @@ int	add_to_dict(t_dict *dict, int num, int is_number, char *word)
 		free(word);
 	}
 	else
-		return (error());
-	return (0);
+		error();
 }
 
 void	file_parser(char *file, t_dict *dict)
@@ -77,7 +77,7 @@ void	file_parser(char *file, t_dict *dict)
 		add_to_dict(dict, num, is_number, word);
 	}
 }
-
+/*
 int	main(void)
 {	
 	t_dict	*d;
@@ -89,3 +89,4 @@ int	main(void)
 	free_dict(d);
 	free(d);
 }
+*/

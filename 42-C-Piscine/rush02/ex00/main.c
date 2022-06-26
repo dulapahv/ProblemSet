@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tjukmong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/26 12:55:12 by tjukmong          #+#    #+#             */
+/*   Updated: 2022/06/26 15:36:45 by tjukmong         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "numdict.h"
 #include "file_parser_util.h"
 #include "file_parser.h"
@@ -14,19 +26,14 @@ void	ft_parse_nbr(t_dict *dict, char *str, int len)
 	{
 		nbr = str[len - 1] - 48;
 		if (len % 3 == 0)
-			ft_print_first(dict, str, nbr, len, "");
+			ft_print_first(dict, str, nbr, len);
 		else if (len % 3 == 2)
-			ft_print_second(dict, str, nbr, len, "");
+			ft_print_second(dict, str, nbr, len);
 		else if (len % 3 == 1)
-			ft_print_third(dict, str, nbr, len, "");
+			ft_print_third(dict, str, nbr, len);
 		len--;
 	}
 }
-
-// void	ft_parse_dict(t_dict *dict, char *str, int len)
-// {
-// 	//
-// }
 
 int	main(int argc, char **argv)
 {
@@ -42,12 +49,11 @@ int	main(int argc, char **argv)
 	else if (argc == 3)
 	{
 		file_parser(argv[1], &dict);
-		ft_parse_nbr(&dict, argv[1], ft_strlen(argv[1]));
+		ft_parse_nbr(&dict, argv[2], ft_strlen(argv[2]));
 		ft_putstr("\n");
 	}
 	else
 		ft_putstr("Error\n");
-	print_dict(&dict);
 	free_dict(&dict);
 	return (0);
 }

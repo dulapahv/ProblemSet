@@ -2255,4 +2255,29 @@ No two rows or columns may contain the same numbers.
 //  right: {1, 2, 2, 2}
 
 // */
+#include <stdio.h> 
+#include <string.h> 
 
+void removeExtraSpaces(char* str) 
+{ 
+    int i = 0, j = 0; 
+    while (str[i]) 
+    { 
+        if (str[i] == ' ' && str[i+1] == ' ') 
+        { 
+            i++; 
+            continue; 
+        } 
+        str[j++] = str[i++]; 
+    } 
+    str[j] = '\0'; 
+}
+  
+// Driver program 
+int main() 
+{ 
+    char str[] = "hey      everybody     !"; 
+    removeExtraSpaces(str); 
+    printf("%s", str); 
+    return 0; 
+}

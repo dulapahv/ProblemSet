@@ -1,0 +1,7 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "files.associations": {
+        "numdict.h": "c",
+        "ft_main.h": "c"
+    }
+}

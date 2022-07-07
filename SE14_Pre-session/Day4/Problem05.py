@@ -28,9 +28,11 @@ for item in sale_db:
 if total == 0:
     print('No manga sales')
 else:
+    top_manga = []
     print(f'Total manga sales: {total:.1f}')
     print('Top sales:')
     for item in sale_db:
         if item in manga_db:
             if sale_db[item] * manga_db[item] == top:
-                print(item)
+                top_manga.append(item)
+    print(*sorted(top_manga), sep='\n')

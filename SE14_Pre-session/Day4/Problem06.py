@@ -8,7 +8,7 @@ with open(file, 'r') as f:
         nucleotide_count = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
         print(f'DNA Strand #{index}')
         flag = 0
-        strand = strand.strip('\n')
+        strand = strand.strip('\n').upper()
         compl = ""
         for nucleotide in strand:
             if nucleotide not in base_pair:

@@ -1,36 +1,26 @@
-def parse_input(qt):
-    db = {}
-    for i in range(qt):
-        item = input()
-        tmp_name, tmp_price = "", ""
-        for char in item:
-            if char.isprintable() and not char.isnumeric():
-                tmp_name += char
-            elif char.isnumeric():
-                tmp_price += char
-        if tmp_name[1:-2] not in db:
-            db[tmp_name[1:-2]] = int(tmp_price)
+node = {"A": ["B", 3.4],
+        "C": ["D", 5.6],
+        "B": ["C", 4.0],
+        "D": ["E", 4.2],
+        "E": ["F", 5.5],
+        "G": ["H", 2.3],
+        "I": ["J", 3.3],
+        "F": ["G", 6.0],
+        "H": ["I", 3.9],
+        "J": [None, 0.0]}
+
+
+def find_route(start, node):
+    nodeTravelled = []
+    dist = 0
+    while True:
+        if start in node.keys() and start is not None:
+            dist += node.get(start)[1]
+            nodeTravelled += start
+            start = node.get(start)[0]
         else:
-            db[tmp_name[1:-2]] += int(tmp_price)
-    return db
+            break
+    return f'{nodeTravelled}, {dist:.2f} km.'
 
 
-manga_db = parse_input(int(input()))
-sale_db = parse_input(int(input()))
-
-total = 0
-top = 0
-for item in sale_db:
-    if item in manga_db:
-        total += sale_db[item] * manga_db[item]
-        if sale_db[item] * manga_db[item] > top:
-            top = sale_db[item] * manga_db[item]
-if total == 0:
-    print('No manga sales')
-else:
-    print(f'Total manga sales: {total:.1f}')
-    print('Top sales:')
-    for item in sale_db:
-        if item in manga_db:
-            if sale_db[item] * manga_db[item] == top:
-                print(item)
+exec(input())

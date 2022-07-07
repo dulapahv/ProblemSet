@@ -1,21 +1,12 @@
-string = input().lower()
+file, year = input().split(' ')
 
-count = {}
-for char in string:
-    if char in count:
-        count[char] += 1
+with open(file, 'r') as f:
+    get_data = f.readlines()
+    score = []
+    for entry in get_data:
+        if entry[0] == year[2] and entry[1] == year[3]:
+            score.append(float(entry.split(' ')[1]))
+    if score:
+        print(f'{min(score)} {max(score)} {sum(score)/len(score)}')
     else:
-        count[char] = 1
-
-count = dict(sorted(count.items(), key=lambda x: x[1], reverse=True))
-keyList = [elem for elem in count.keys()]
-valueList = [elem for elem in count.values()]
-
-for i in range(len(keyList)):
-    for j in range(i, len(valueList)):
-        if valueList[i] == valueList[j]:
-            if keyList[i] > keyList[j]:
-                keyList[i], keyList[j] = keyList[j], keyList[i]
-
-for i in range(len(keyList)):
-    print(f'{keyList[i]} -> {valueList[i]}')
+        print('No data')

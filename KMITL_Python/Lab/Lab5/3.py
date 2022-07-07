@@ -3,7 +3,7 @@ import turtle
 t = turtle.Turtle()
 n = int(input("Enter number of N: "))
 
-t.pen(speed = 0, fillcolor = "darkgrey")
+t.pen(speed = 0, fillcolor = "grey")
 for i in range(n):
     for j in range(n):
         if (i + j) % 2 == 0:
@@ -18,5 +18,6 @@ for i in range(n):
     t.rt(90)
     t.fd(100)
     t.rt(180)
+t.ht()
 
 turtle.done()

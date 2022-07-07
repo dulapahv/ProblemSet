@@ -606,7 +606,7 @@ OverflowError: n too large
 # print(f'+{txt:=<40}+')
 # print(f'+{txt:#^40}+')
 
-#give example of set and mathematical operation
+# give example of set and mathematical operation
 # set1 = {1, 2, 3, 4, 5}
 # set2 = {4, 5, 6, 7, 8}
 # print(set1 & set2)      # Intersection                      {1, 2}
@@ -748,7 +748,7 @@ OverflowError: n too large
 #     print('arg_1:', arg_1)
 #     print('arg_2:', arg_2)
 #     print('arg_3:', kwargs)
-    
+
 # example_function('a', 'b', value_3='c', value_4='d', value_5='e')
 # f = open("test.txt",'w')  # write in text mode
 # f = open("img.bmp",'r+b') # read and write in binary mode
@@ -756,5 +756,335 @@ OverflowError: n too large
 # f = open("test.txt")
 # f.close()
 
-with open('file.txt', 'w') as f:
-	f.write("My hand is getting tired from head patting!")
+# with open('file.txt', 'w') as f:
+# 	f.write("My hand is getting tired from head patting!")
+
+# Python3 code for Maximum size
+# square sub-matrix with all 1s
+
+# def printMaxSubSquare(M):
+#     R = len(M) # no. of rows in M[][]
+#     C = len(M[0]) # no. of columns in M[][]
+
+#     S = []
+#     for i in range(R):
+#       temp = []
+#       for j in range(C):
+#         if i==0 or j==0:
+#           temp += M[i][j],
+#         else:
+#           temp += 0,
+#       S += temp,
+#     # here we have set the first row and first column of S same as input matrix, other entries are set to 0
+
+#     # Update other entries
+#     for i in range(1, R):
+#         for j in range(1, C):
+#             if (M[i][j] == 1):
+#                 S[i][j] = min(S[i][j-1], S[i-1][j],
+#                             S[i-1][j-1]) + 1
+#             else:
+#                 S[i][j] = 0
+
+#     # Find the maximum entry and
+#     # indices of maximum entry in S[][]
+#     max_of_s = S[0][0]
+#     max_i = 0
+#     max_j = 0
+#     for i in range(R):
+#         for j in range(C):
+#             if (max_of_s < S[i][j]):
+#                 max_of_s = S[i][j]
+#                 max_i = i
+#                 max_j = j
+
+#     print("Maximum size sub-matrix is: ")
+#     for i in range(max_i, max_i - max_of_s, -1):
+#         for j in range(max_j, max_j - max_of_s, -1):
+#             print (M[i][j], end = " ")
+#         print("")
+
+# M = [[0, 1, 1, 0, 1],
+#     [1, 1, 0, 1, 0],
+#     [0, 1, 1, 1, 0],
+#     [1, 1, 1, 1, 0],
+#     [1, 1, 1, 1, 1],
+#     [0, 0, 0, 0, 0]]
+
+# M = []
+# for i in range(5):
+#     M.append(input().split(' '))
+
+# for i in range(5):
+#     for j in range(5):
+#         M[i][j] = int(M[i][j])
+
+# print(M)
+
+# printMaxSubSquare(M)
+
+# no = [str(k) for k in range(10)]
+# alpha = [' ', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+
+# def text2keys(text):
+#     text_samp = text.lower()
+#     key_out = []
+#     for ch in text_samp:
+#         for gr in alpha:
+#             if ch in gr:
+#                 key_out.append(str(alpha.index(gr)) * (gr.index(ch) + 1))
+#     out = " ".join(key_out)
+#     return out
+
+# def keys2text(keys):
+#     chars = keys.split()
+#     out = ''
+#     for c in chars:
+#         l = int(c[0])
+#         p = len(c)
+#         out += alpha[l][p-1]
+#     return out
+
+# exec(input())
+
+# from turtle import *
+
+
+# def calendar_of_2021(month):
+#     speed(0)
+#     pu()
+#     setpos(-125, 100)
+#     pd()
+#     monthTxt = ["January", "February", "March", "April", "May", "June",
+#                 "July", 'August', "September", "October", "November", "December"]
+#     dateTxt = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
+#     dateRange = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#     dateStart = [5, 1, 1, 4, 6, 2, 4, 0, 3, 5, 1, 3]
+#     for i in range(2):
+#         fd(250)
+#         rt(90)
+#         fd(30)
+#         rt(90)
+#     rt(90)
+#     fd(30)
+#     lt(90)
+#     fd(125)
+#     write(f"{monthTxt[month - 1]} 2022", font=("Arial", 14), align="center")
+#     fd(-125)
+
+#     for i in range(7):
+#         for j in range(2):
+#             fd(250 / 7)
+#             rt(90)
+#             fd(30)
+#             rt(90)
+#         fd(250 / 7)
+#     fd(-250)
+#     rt(90)
+#     fd(30)
+#     lt(90)
+#     pu()
+#     for i in range(7):
+#         write(f"  {dateTxt[i]}", font=("Arial", 12))
+#         fd(250 / 7)
+#     fd(-250)
+#     pd()
+
+#     datePos = dateStart[month - 1]
+#     dateCount = (0 - datePos) + 1
+#     while dateCount <= dateRange[month - 1]:
+#         for i in range(7):
+#             if 1 <= dateCount <= dateRange[month - 1]:
+#                 rt(90)
+#                 fd(30)
+#                 lt(90)
+#                 write(f"   {dateCount}", font=("Arial", 12))
+#                 lt(90)
+#                 fd(30)
+#                 rt(90)
+#             for j in range(2):
+#                 fd(250 / 7)
+#                 rt(90)
+#                 fd(30)
+#                 rt(90)
+#             fd(250 / 7)
+#             dateCount += 1
+#             datePos += 1
+#         rt(90)
+#         fd(30)
+#         lt(90)
+#         fd(-250)
+#     ht()
+#     done()
+
+# calendar_of_2021(8)
+
+# node = {"A": ["B", 3.4],
+#         "C": ["D", 5.6],
+#         "B": ["C", 4.0],
+#         "D": ["E", 4.2],
+#         "E": ["F", 5.5],
+#         "G": ["H", 2.3],
+#         "I": ["J", 3.3],
+#         "F": ["G", 6.0],
+#         "H": ["I", 3.9],
+#         "J": [None, 0.0]}
+
+
+# def find_route(start, node):
+#     nodeTravelled = []
+#     dist = 0
+#     while True:
+#         if start in node.keys() and start is not None:
+#             dist += node.get(start)[1]
+#             nodeTravelled += start
+#             start = node.get(start)[0]
+#         else:
+#             break
+#     return f'{nodeTravelled}, {dist:.2f} km.'
+
+
+# exec(input())
+
+
+# import turtle
+
+# color1 =  'red'
+# color2 = ''
+# color3 = 'skyblue'
+# color4 = ''
+
+# s = turtle.getscreen()
+# t = turtle.Turtle()
+
+# def jiu():
+#     t.pensize(20)
+
+#     t.fillcolor(color1)
+#     t.begin_fill()
+
+#     t.right(90)
+#     t.forward(50)
+#     t.right(180)
+#     t.circle(40, -180)
+#     t.right(180)
+#     t.forward(200)
+
+#     t.right(180)
+#     t.circle(100, -180)
+
+#     t.backward(20)
+#     t.left(15)
+#     t.circle(500, -20)
+#     t.backward(20)
+
+#     t.circle(40, -180)
+#     t.left(7)
+#     t.backward(50)
+
+#     t.up()
+#     t.left(90)
+#     t.forward(10)
+#     t.right(90)
+#     t.down()
+
+#     t.right(240)
+#     t.circle(50, -70)
+
+#     t.end_fill()
+
+
+# def glass():
+#     t.up()
+
+#     t.right(230)
+#     t.forward(100)
+#     t.left(90)
+#     t.forward(20)
+#     t.right(90)
+
+#     t.down()
+#     t.fillcolor(color3)
+#     t.begin_fill()
+
+#     t.right(150)
+#     t.circle(90, -55)
+
+#     t.right(180)
+#     t.forward(1)
+#     t.right(180)
+#     t.circle(10, -65)
+#     t.right(180)
+#     t.forward(110)
+#     t.right(180)
+
+#     t.circle(50, -190)
+#     t.right(170)
+#     t.forward(80)
+
+#     t.right(180)
+#     t.circle(45, -30)
+
+#     t.end_fill()
+
+# def jhola():
+#     t.up()
+#     t.right(60)
+#     t.forward(100)
+#     t.right(90)
+#     t.forward(75)
+
+#     t.fillcolor(color1)
+#     t.begin_fill()
+
+#     t.down()
+#     t.forward(30)
+#     t.right(255)
+
+#     t.circle(300, -30)
+#     t.right(260)
+#     t.forward(30)
+
+#     t.end_fill()
+
+
+# jiu()
+# glass()
+# jhola()
+# t.ht()
+
+# turtle.done()
+
+
+# import turtle
+
+# t = turtle.Turtle()     
+
+# t.fd(100)
+# t.rt(90)
+# t.fd(100)
+# t.rt(45)
+# t.fd(200)
+
+# turtle.done()
+
+# sum = 5
+# myList = sum([1, 2, 3, 4, 5])	# ERROR
+
+# import turtle
+
+# t = turtle.Turtle()
+
+# t.setpos(-250, 250)
+# t.seth(20)
+# t.fd(200)
+# print(t.xcor())
+# print(t.heading())
+
+# turtle.done()
+
+# age = 18
+
+# is_legal = 'YES' if age >= 18 else 'NO'
+
+# print(is_legal)

@@ -2279,5 +2279,5 @@ int main()
     char str[] = "hey      everybody     !"; 
     removeExtraSpaces(str); 
     printf("%s", str); 
-    return 0; 
+	return 0; 
 }

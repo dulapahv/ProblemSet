@@ -1,44 +1,38 @@
-file, selected = input().split(' ')
+def parse_input(qt):
+	db = {}
+	for i in range(qt):
+		item = input()
+		tmp_name, tmp_price = "", ""
+		for char in item:
+			if char.isprintable() and not char.isnumeric():
+				tmp_name += char
+			elif char.isnumeric():
+				tmp_price += char
+		if tmp_name[1:-2] not in db:
+			db[tmp_name[1:-2]] = int(tmp_price)
+		else:
+			db[tmp_name[1:-2]] += int(tmp_price)
+	return db
 
-with open(file, 'r') as f:
-    base_pair = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
-    data = f.readlines()
-    index = 1
-    for strand in data:
-        nucleotide_count = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
-        print(f'DNA Strand #{index}')
-        flag = 0
-        strand = strand.strip('\n').upper()
-        compl = ""
-        for nucleotide in strand:
-            if nucleotide not in base_pair:
-                if index != len(data):
-                    print('Invalid DNA\n')
-                else:
-                    print('Invalid DNA')
-                flag = 1
-            else:
-                compl += base_pair[nucleotide]
-                nucleotide_count[nucleotide] += 1
-        compl = compl[::-1]
 
-        index += 1
-        if flag == 1:
-            continue
+manga_db = parse_input(int(input()))
+sale_db = parse_input(int(input()))
 
-        print(f'Reverse Complement: {compl}')
-        print(f'Frequency: ', end='')
-        for key, value in nucleotide_count.items():
-            if key != list(nucleotide_count.keys())[-1]:
-                print(f'{key}={value}, ', end='')
-            else:
-                print(f'{key}={value}', end='')
-
-        interested = 0
-        for i in range(1, len(strand)):
-            if strand[i - 1] == selected[0] and strand[i] == selected[1]:
-                interested += 1
-        if index - 1 != len(data):
-            print(f'\nInterested Pair Count: {interested}\n')
-        else:
-            print(f'\nInterested Pair Count: {interested}')
+total = 0
+top = 0
+for item in sale_db:
+	if item in manga_db:
+		total += sale_db[item] * manga_db[item]
+		if sale_db[item] * manga_db[item] > top:
+			top = sale_db[item] * manga_db[item]
+if total == 0:
+	print('No manga sales')
+else:
+	top_manga = []
+	print(f'Total manga sales: {total:.1f}')
+	print('Top sales:')
+	for item in sale_db:
+		if item in manga_db:
+			if sale_db[item] * manga_db[item] == top:
+				top_manga.append(item)
+	print(*sorted(top_manga), sep='\n')

@@ -1,1 +1,0 @@
-print(("m!play").replace("m!", "").split())

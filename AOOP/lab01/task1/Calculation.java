@@ -24,7 +24,7 @@ public class Calculation {
 	}
 
 	int getSmallest() {
-		return Math.min(x, Math.max(y, z));
+		return Math.min(x, Math.min(y, z));
 	}
 
 	int getSum() {

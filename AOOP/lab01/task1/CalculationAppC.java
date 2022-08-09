@@ -10,6 +10,7 @@ public class CalculationAppC {
 		y = scan.nextInt();
 		System.out.print("Enter third integer: ");
 		z = scan.nextInt();
+		scan.close();
 
 		Calculation c = new Calculation(x, y, z);
 

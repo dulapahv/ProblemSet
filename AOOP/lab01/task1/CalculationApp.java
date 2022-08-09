@@ -10,9 +10,10 @@ public class CalculationApp {
 		y = scan.nextInt();
 		System.out.print("Enter third integer: ");
 		z = scan.nextInt();
+		scan.close();
 
 		int max = Math.max(x, Math.max(y, z));
-		int min = Math.min(x, Math.max(y, z));
+		int min = Math.min(x, Math.min(y, z));
 		int sum = x + y + z;
 		int prod = x * y * z;
 		int avg = sum / 3;

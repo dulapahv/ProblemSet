@@ -2255,29 +2255,76 @@ No two rows or columns may contain the same numbers.
 //  right: {1, 2, 2, 2}
 
 // */
-#include <stdio.h> 
-#include <string.h> 
+// #include <stdio.h> 
+// #include <string.h> 
 
-void removeExtraSpaces(char* str) 
-{ 
-    int i = 0, j = 0; 
-    while (str[i]) 
-    { 
-        if (str[i] == ' ' && str[i+1] == ' ') 
-        { 
-            i++; 
-            continue; 
-        } 
-        str[j++] = str[i++]; 
-    } 
-    str[j] = '\0'; 
-}
+// void removeExtraSpaces(char* str) 
+// { 
+//     int i = 0, j = 0; 
+//     while (str[i]) 
+//     { 
+//         if (str[i] == ' ' && str[i+1] == ' ') 
+//         { 
+//             i++; 
+//             continue; 
+//         } 
+//         str[j++] = str[i++]; 
+//     } 
+//     str[j] = '\0'; 
+// }
   
-// Driver program 
-int main() 
-{ 
-    char str[] = "hey      everybody     !"; 
-    removeExtraSpaces(str); 
-    printf("%s", str); 
-	return 0; 
+// // Driver program 
+// int main() 
+// { 
+//     char str[] = "hey      everybody     !"; 
+//     removeExtraSpaces(str); 
+//     printf("%s", str); 
+// 	return 0; 
+// }
+
+// int sum(int a[], int n) {
+// 	int sum = 0;
+// 	for (int i = 0; i < n; i++)
+// 		sum += a[i];
+// 	return sum;
+// }
+
+// void transpose(int **a, int n) {
+// 	for (int i = 0; i < n; i++)
+// 		for (int j = i + 1; j < n; j++)
+// 			swap(a[i][j], a[j][i]);
+// }
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+
+int main()
+{
+    int X;
+    scanf("%d", &X);
+    int N;
+    scanf("%d", &N);
+
+    for (int i = 0; i < N; i++) {
+        int F;
+        int T;
+        char category[257];
+        scanf("%d%d%s", &F, &T, category);
+
+		if (X >= F && X <= T) {
+			printf("%s", category);
+			return 0;
+		}
+    }
+
+
+
+    return 0;
 }

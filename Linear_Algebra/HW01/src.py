@@ -10,7 +10,7 @@ def color_mix(c1, c2):
 red = mcolors.to_rgb([1, 0, 0])
 green = mcolors.to_rgb([0, 1, 0])
 blue = mcolors.to_rgb([0, 0, 1])
-mycolor = color_mix(red, green)
+mycolor = color_mix(red, blue)
 plt.plot(2, 4, 'o', color=mycolor, markersize=50)
 
 # plt.show()

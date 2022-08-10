@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: duvibuls <duvibuls@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: duvibuls <duvibuls@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 16:50:21 by duvibuls          #+#    #+#             */
 /*   Updated: 2022/08/10 16:50:21 by duvibuls         ###   ########.fr       */

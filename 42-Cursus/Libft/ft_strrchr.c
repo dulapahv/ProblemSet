@@ -12,4 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*ptr;
+
+	ptr = NULL;
+	if (c >= 0 && c <= 127)
+	{
+		while (*s)
+		{
+			if (*s == c)
+				ptr = (char *)s;
+			s++;
+		}
+		if (!c)
+			return ((char *)s);
+		return (ptr);
+	}
+	return ((char *)s);
+}

@@ -7,10 +7,7 @@ MANDATORY		= memset bzero memcpy memmove memchr memcmp strlen isalpha isdigit is
 				isascii isprint toupper tolower strchr strrchr strncmp strlcpy strlcat strnstr \
 				atoi calloc strdup substr strjoin strtrim split itoa strmapi putchar_fd putstr_fd \
 				putendl_fd putnbr_fd striteri
-# BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
-# MANDATORY = strlen isdigit isascii toupper tolower isalpha isalnum isprint \
-# 			strdup
-BONUS =
+BONUS			= lstnew lstadd_front lstsize lstlast lstadd_back lstdelone lstclear lstiter lstmap
 VSOPEN			= $(addprefix vs, $(MANDATORY)) $(addprefix vs, $(BONUS))
 
 CC		= clang++

@@ -1,105 +1,70 @@
 public class MyArray {
-	private int MAX_SIZE = 1;
-	private int[] array;
+	private int[] arr;
+	private int size;
+	private int MAX_SIZE = 5;
 
-	public MyArray() {
-		array = new int[1];
+	MyArray() {
+		this.arr = new int[MAX_SIZE];
 	}
 
-	public MyArray(int[] array) {
-		this.array = array;
+	public void add(int n) {
+		if (!isFull()) {
+			this.arr[this.size++] = n;
+		} else
+			this.expand();
 	}
 
-	private void expand() {
-		MAX_SIZE *= 2;
-		int[] temp = new int[MAX_SIZE * 2];
-		System.arraycopy(array, 0, temp, 0, array.length);
-		array = temp;
+	public boolean isFull() {
+		return this.size == MAX_SIZE;
 	}
 
-	boolean isFull() {
-		return array.length == MAX_SIZE;
+	public void expand() {
+		MAX_SIZE = 2 * MAX_SIZE;
+		int[] newArr = new int[MAX_SIZE];
+		System.arraycopy(this.arr, 0, newArr, 0, size);
+		this.arr = newArr;
 	}
 
-	boolean isEmpty() {
-		return array.length == 0;
-	}
-
-	void add(int a) {
-		if (array.length == MAX_SIZE) {
-			expand();
+	public void insert(int n, int index) {
+		for (int i = this.size; i > index; i--) {
+			this.arr[i] = this.arr[i - 1];
 		}
-		array[array.length - 1] = a;
+		this.arr[index] = n;
+		this.size++;
 	}
 
-	void insert(int a, int index) {
-		int[] newArray = new int[array.length + 1];
-		System.arraycopy(array, 0, newArray, 0, index);
-		newArray[index] = a;
-		System.arraycopy(array, index, newArray, index + 1, array.length - index);
-		array = newArray;
-	}
-
-	int find(int a) {
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] == a) {
+	public int find(int n) {
+		for (int i = 0; i < this.size; i++) {
+			if (this.arr[i] == n) {
 				return i;
 			}
 		}
 		return -1;
 	}
 
-	int binarySearch(int a) {
-		int low = 0;
-		int high = array.length - 1;
-		while (low <= high) {
-			int mid = (low + high) / 2;
-			if (array[mid] == a) {
-				return mid;
-			} else if (array[mid] < a) {
-				low = mid + 1;
-			} else {
-				high = mid - 1;
+	public int binarySearch(int n) {
+		int a = 0, b = this.size - 1;
+		while (a <= b) {
+			int m = (a + b) / 2;
+			if (this.arr[m] == n) {
+				return m;
 			}
+			if (n < this.arr[m]) {
+				b = m - 1;
+			} else
+				a = m + 1;
 		}
 		return -1;
 	}
 
-	private void delete(int index) {
-		int[] newArray = new int[array.length - 1];
-		System.arraycopy(array, 0, newArray, 0, index);
-		System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
-		array = newArray;
+	public void deleteU(int index) {
+		this.arr[index] = this.arr[--this.size];
 	}
 
-	void deleteUnordered(int a) {
-		int index = find(a);
-		if (index != -1) {
-			delete(index);
+	public void deleteO(int index) {
+		for (int i = index; i < this.size - 1; i++) {
+			this.arr[i] = this.arr[i + 1];
 		}
+		this.size--;
 	}
-
-	void deleteOrdered(int a) {
-		int index = binarySearch(a);
-		if (index != -1) {
-			delete(index);
-		}
-	}
-
-	public String toString() {
-		String s = "";
-		for (int i = 0; i < array.length; i++) {
-			s += array[i] + ", ";
-		}
-		return s;
-	}
-
-	int getAt(int index) {
-		return array[index];
-	}
-
-	void setAt(int index, int value) {
-		array[index] = value;
-	}
-
 }

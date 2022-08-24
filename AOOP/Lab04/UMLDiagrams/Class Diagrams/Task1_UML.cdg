@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Task1">
+  <ClassDiagramComponents>
+    <Class name="IntList" package="com.mycompany.task1" visibility="public" xPosition="620.0" yPosition="287.0">
+      <Fields>
+        <Field name="list" type="int[]" visibility="protected"/>
+        <Field name="numElements" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="int" name="value"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ListTest" package="com.mycompany.task1" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SortedIntList" package="com.mycompany.task1" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="add" returnType="void" visibility="public">
+          <Argument type="int" name="value"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="com.mycompany.task1.SortedIntList" target="com.mycompany.task1.IntList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

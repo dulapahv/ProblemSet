@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Task2">
+  <ClassDiagramComponents>
+    <Class name="CountedItem" package="com.mycompany.task2" visibility="public" xPosition="302.0" yPosition="145.0">
+      <Fields>
+        <Field name="quantity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getQuantity" returnType="int" visibility="public"/>
+        <Method name="setQuantity" returnType="void" visibility="public">
+          <Argument type="int" name="quantity"/>
+        </Method>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PurchaseItem" package="com.mycompany.task2" visibility="public" xPosition="523.0" yPosition="537.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="unitPrice" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Task2" package="com.mycompany.task2" visibility="public" xPosition="936.0" yPosition="537.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WeightedItem" package="com.mycompany.task2" visibility="public" xPosition="741.0" yPosition="145.0">
+      <Fields>
+        <Field name="weight" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getWeight" returnType="double" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="double" name="weight"/>
+        </Method>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="com.mycompany.task2.CountedItem" target="com.mycompany.task2.PurchaseItem"/>
+    <IsRelation name="is" source="com.mycompany.task2.WeightedItem" target="com.mycompany.task2.PurchaseItem"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

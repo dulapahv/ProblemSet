@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task1">
+  <ClassDiagramComponents>
+    <Class name="Employee" package="Task1" visibility="public" xPosition="345.0" yPosition="303.0">
+      <Fields>
+        <Field name="socialSecurityNumber" type="String" visibility="protected"/>
+        <Field name="payRate" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="eName"/>
+          <Argument type="String" name="eAddress"/>
+          <Argument type="String" name="ePhone"/>
+          <Argument type="String" name="socSecNumber"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="pay" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Executive" package="Task1" visibility="public" xPosition="23.0" yPosition="20.0">
+      <Fields>
+        <Field name="bonus" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="eName"/>
+          <Argument type="String" name="eAddress"/>
+          <Argument type="String" name="ePhone"/>
+          <Argument type="String" name="socSecNumber"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="awardBonus" returnType="void" visibility="public">
+          <Argument type="double" name="execBonus"/>
+        </Method>
+        <Method name="pay" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Firm" package="Task1" visibility="public" xPosition="53.0" yPosition="303.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hourly" package="Task1" visibility="public" xPosition="665.0" yPosition="20.0">
+      <Fields>
+        <Field name="hoursWorked" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="eName"/>
+          <Argument type="String" name="eAddress"/>
+          <Argument type="String" name="ePhone"/>
+          <Argument type="String" name="socSecNumber"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addHours" returnType="void" visibility="public">
+          <Argument type="int" name="moreHours"/>
+        </Method>
+        <Method name="pay" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Staff" package="Task1" visibility="public" xPosition="68.0" yPosition="481.0">
+      <Fields>
+        <Field name="staffList" type="StaffMember[]" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="payday" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StaffMember" package="Task1" visibility="public" isAbstract="true" xPosition="771.0" yPosition="583.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="address" type="String" visibility="protected"/>
+        <Field name="phone" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="eName"/>
+          <Argument type="String" name="eAddress"/>
+          <Argument type="String" name="ePhone"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="pay" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Volunteer" package="Task1" visibility="public" xPosition="1004.0" yPosition="303.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="eName"/>
+          <Argument type="String" name="eAddress"/>
+          <Argument type="String" name="ePhone"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="pay" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Task1.Executive" target="Task1.Employee"/>
+    <IsRelation name="is" source="Task1.Hourly" target="Task1.Employee"/>
+    <IsRelation name="is" source="Task1.Employee" target="Task1.StaffMember"/>
+    <IsRelation name="is" source="Task1.Volunteer" target="Task1.StaffMember"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

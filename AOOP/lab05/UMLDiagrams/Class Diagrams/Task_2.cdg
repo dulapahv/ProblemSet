@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task2">
+  <ClassDiagramComponents>
+    <Class name="Cake" package="Task2" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="protected"/>
+        <Field name="rate" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="calPrice" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="CakeApp" package="Task2" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrderCake" package="Task2" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="weight" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="weight"/>
+          <Argument type="String" name="name"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calPrice" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ReadyMadeCake" package="Task2" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="quantity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="quantity"/>
+          <Argument type="String" name="name"/>
+          <Argument type="double" name="rate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calPrice" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Task2.OrderCake" target="Task2.Cake"/>
+    <IsRelation name="is" source="Task2.ReadyMadeCake" target="Task2.Cake"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -17,6 +17,18 @@ public class ReadyMadeCake extends Cake {
         this.quantity = quantity;
     }
 
+    public int getQuantity() {
+        return this.quantity;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getRate() {
+        return this.rate;
+    }
+
     @Override
     public double calPrice() {
         return this.rate * this.quantity;

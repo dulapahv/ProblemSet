@@ -2,7 +2,7 @@
 
 <ClassDiagram name="main.java.Task2">
   <ClassDiagramComponents>
-    <Class name="Cake" package="Task2" visibility="public" isAbstract="true" xPosition="20.0" yPosition="20.0">
+    <Class name="Cake" package="Task2" visibility="public" isAbstract="true" xPosition="336.0" yPosition="311.0">
       <Fields>
         <Field name="name" type="String" visibility="protected"/>
         <Field name="rate" type="double" visibility="protected"/>
@@ -18,7 +18,7 @@
         <Method name="calPrice" returnType="double" visibility="public" isAbstract="true"/>
       </Methods>
     </Class>
-    <Class name="CakeApp" package="Task2" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="CakeApp" package="Task2" visibility="public" xPosition="24.0" yPosition="311.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -27,7 +27,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="OrderCake" package="Task2" visibility="public" xPosition="620.0" yPosition="20.0">
+    <Class name="OrderCake" package="Task2" visibility="public" xPosition="24.0" yPosition="20.0">
       <Fields>
         <Field name="weight" type="double" visibility="private"/>
       </Fields>
@@ -39,10 +39,13 @@
         </Constructor>
       </Constructors>
       <Methods>
+        <Method name="getWeight" returnType="double" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getRate" returnType="double" visibility="public"/>
         <Method name="calPrice" returnType="double" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ReadyMadeCake" package="Task2" visibility="public" xPosition="920.0" yPosition="20.0">
+    <Class name="ReadyMadeCake" package="Task2" visibility="public" xPosition="537.0" yPosition="20.0">
       <Fields>
         <Field name="quantity" type="int" visibility="private"/>
       </Fields>
@@ -54,6 +57,9 @@
         </Constructor>
       </Constructors>
       <Methods>
+        <Method name="getQuantity" returnType="int" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getRate" returnType="double" visibility="public"/>
         <Method name="calPrice" returnType="double" visibility="public"/>
       </Methods>
     </Class>

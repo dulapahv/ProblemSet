@@ -16,8 +16,9 @@ public class CakeApp {
         Cake[] cakeList = new Cake[7];
         int quantity = 0;
         double totalPrice = 0.0;
+        double totalReadyMadeCakePrice = 0.0;
         double highestPrice = 0.0;
-        int index = 0;
+        String highestMsg = "";
 
         cakeList[0] = new OrderCake(4.5, "Butter", 50);
         cakeList[1] = new ReadyMadeCake(5, "Pound", 25);
@@ -27,31 +28,39 @@ public class CakeApp {
         cakeList[5] = new ReadyMadeCake(10, "Angel Food", 49);
         cakeList[6] = new ReadyMadeCake(2, "Chiffon", 15);
 
-        for (quantity = 0; quantity < cakeList.length; quantity++) {
-            double price = cakeList[quantity].calPrice();
+        for (int i = 0; i < cakeList.length; i++) {
+            double price = cakeList[i].calPrice();
             totalPrice += price;
+            if (cakeList[i] instanceof ReadyMadeCake) {
+                quantity += ((ReadyMadeCake) cakeList[i]).getQuantity();
+                totalReadyMadeCakePrice += cakeList[i].calPrice();
+            }
             if (price > highestPrice) {
                 highestPrice = price;
-                index = quantity;
+                if (cakeList[i] instanceof ReadyMadeCake) {
+                    highestMsg = ((ReadyMadeCake) cakeList[i]).getName()
+                            + " " + ((ReadyMadeCake) cakeList[i]).getRate()
+                            + " " + ((ReadyMadeCake) cakeList[i]).getQuantity()
+                            + " pieces " + ((ReadyMadeCake) cakeList[i]).calPrice();
+                } else {
+                    highestMsg = ((OrderCake) cakeList[i]).getName()
+                            + " " + ((OrderCake) cakeList[i]).getRate()
+                            + " " + ((OrderCake) cakeList[i]).getWeight()
+                            + " pounds " + ((OrderCake) cakeList[i]).calPrice();
+                }
             }
         }
-        System.out.println("Total price of all cakes sold " + totalPrice + "\n"
+
+        System.out.println("Total price of all cakes sold: " + totalPrice + "\n"
                 + "ReadyMadeCake:\n"
                 + "\tTotal quantity sold " + quantity + "\n"
-                + "\tTotal price sold " + totalPrice + "\n"
-                + "Highest Price Cake: " + cakeList[index].name
-                + " " + cakeList[index].rate + " "
-                + (int) (cakeList[index].calPrice() / cakeList[index].rate)
-                + " pieces " + cakeList[index].calPrice());
+                + "\tTotal price sold " + totalReadyMadeCakePrice + "\n"
+                + "Highest Price Cake: " + highestMsg);
 
-        JOptionPane.showMessageDialog(null, "Total price of all cakes sold "
-                + totalPrice + "\n"
+        JOptionPane.showMessageDialog(null, "Total price of all cakes sold: " + totalPrice + "\n"
                 + "ReadyMadeCake:\n"
                 + "  Total quantity sold " + quantity + "\n"
-                + "  Total price sold " + totalPrice + "\n"
-                + "Highest Price Cake: " + cakeList[index].name
-                + " " + cakeList[index].rate + " "
-                + (int) (cakeList[index].calPrice() / cakeList[index].rate)
-                + " pieces " + cakeList[index].calPrice());
+                + "  Total price sold " + totalReadyMadeCakePrice + "\n"
+                + "Highest Price Cake: " + highestMsg);
     }
 }

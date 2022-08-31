@@ -17,6 +17,18 @@ public class OrderCake extends Cake {
         this.weight = weight;
     }
 
+    public double getWeight() {
+        return this.weight;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public double getRate() {
+        return this.rate;
+    }
+
     @Override
     public double calPrice() {
         return this.rate * this.weight;

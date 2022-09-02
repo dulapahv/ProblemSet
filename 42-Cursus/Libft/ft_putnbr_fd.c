@@ -20,7 +20,6 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "2", 1);
 		n = 147483648;
 	}
-
 	if (n < 0)
 	{
 		write(fd, "-", 1);

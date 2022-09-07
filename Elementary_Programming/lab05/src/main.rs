@@ -81,7 +81,6 @@ fn access_array(n: usize) -> f64 {
 	let t0 = Instant::now();
 	for j in 0..N {
 		let c = v_array[j];
-		let r = c.side;
 	}
 	let duration = time_diff_nsecs(t0);
 	println!("Start {:?} Time to access array {:?}", t0, duration);
@@ -132,14 +131,19 @@ fn access_vector(n: usize) -> f64 {
 		side: 1.0,
 	};
 	let mut v_objects: Vec<Square> = Vec::with_capacity(50);
-	let t0 = Instant::now();
+	
 	// println!("Start {:?}", t0 );
 	for j in 0..n {
 		v_objects.push(c0);
 		c0.side *= 1.001;
 	}
+	let t0 = Instant::now();
+	for k in 0..n {
+		let x = v_objects[k];
+	}
+		
 	let duration = time_diff_nsecs(t0);
-	println!("Start {:?} Time to initialize array {:?}", t0, duration);
+	println!("Start {:?} Time to access array {:?}", t0, duration);
 	duration as f64
 }
 

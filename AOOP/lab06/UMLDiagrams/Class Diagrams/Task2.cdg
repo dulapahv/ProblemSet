@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task2">
+  <ClassDiagramComponents>
+    <Class name="Book" package="Task2" visibility="public" xPosition="311.0" yPosition="333.0">
+      <Fields>
+        <Field name="title" type="String" visibility="private"/>
+        <Field name="isbn" type="String" visibility="private"/>
+        <Field name="author" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="isbn"/>
+          <Argument type="String" name="author"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitle" returnType="String" visibility="public"/>
+        <Method name="isbn" returnType="String" visibility="public"/>
+        <Method name="author" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BookList" package="Task2" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="books" type="ArrayList&lt;Book&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addBook" returnType="void" visibility="public">
+          <Argument type="String" name="t"/>
+          <Argument type="String" name="i"/>
+          <Argument type="String" name="a"/>
+        </Method>
+        <Method name="displayBook" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="books" source="Task2.BookList" target="Task2.Book" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Book&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task1">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="Task1" visibility="public" isAbstract="true" xPosition="893.0" yPosition="10.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="App" package="Task1" visibility="public" xPosition="20.0" yPosition="403.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Cat" package="Task1" visibility="public" xPosition="320.0" yPosition="476.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public"/>
+        <Method name="talk" returnType="void" visibility="public"/>
+        <Method name="play" returnType="void" visibility="public"/>
+        <Method name="eat" returnType="void" visibility="public">
+          <Argument type="Prey" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Dog" package="Task1" visibility="public" xPosition="596.0" yPosition="476.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public"/>
+        <Method name="talk" returnType="void" visibility="public"/>
+        <Method name="play" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Fish" package="Task1" visibility="public" xPosition="890.0" yPosition="476.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="move" returnType="void" visibility="public"/>
+        <Method name="isEaten" returnType="void" visibility="public">
+          <Argument type="Predator" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Mouse" package="Task1" visibility="public" xPosition="1170.0" yPosition="476.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="move" returnType="void" visibility="public"/>
+        <Method name="talk" returnType="void" visibility="public"/>
+        <Method name="isEaten" returnType="void" visibility="public">
+          <Argument type="Predator" name="p"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pet" package="Task1" visibility="public" isAbstract="true" xPosition="596.0" yPosition="144.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Playful" package="Task1" visibility="public" xPosition="320.0" yPosition="818.0">
+      <Methods>
+        <Method name="play" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Predator" package="Task1" visibility="public" xPosition="893.0" yPosition="818.0">
+      <Methods>
+        <Method name="eat" returnType="void" visibility="public">
+          <Argument type="Prey" name="p"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Prey" package="Task1" visibility="public" xPosition="1170.0" yPosition="818.0">
+      <Methods>
+        <Method name="isEaten" returnType="void" visibility="public">
+          <Argument type="Predator" name="p"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Talking" package="Task1" visibility="public" xPosition="596.0" yPosition="818.0">
+      <Methods>
+        <Method name="talk" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Task1.Predator" target="Task1.Prey" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Dog" target="Task1.Talking"/>
+    <IsRelation name="is" source="Task1.Dog" target="Task1.Pet"/>
+    <IsRelation name="is" source="Task1.Pet" target="Task1.Animal"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Dog" target="Task1.Playful"/>
+    <UseRelation source="Task1.Cat" target="Task1.Prey" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Task1.Cat" target="Task1.Pet"/>
+    <IsRelation name="is" source="Task1.Mouse" target="Task1.Animal"/>
+    <UseRelation source="Task1.Fish" target="Task1.Predator" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Mouse" target="Task1.Talking"/>
+    <IsRelation name="is" source="Task1.Fish" target="Task1.Pet"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Cat" target="Task1.Talking"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Cat" target="Task1.Predator"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Cat" target="Task1.Playful"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Fish" target="Task1.Prey"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Mouse" target="Task1.Prey"/>
+    <UseRelation source="Task1.Mouse" target="Task1.Predator" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Task1.Prey" target="Task1.Predator" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

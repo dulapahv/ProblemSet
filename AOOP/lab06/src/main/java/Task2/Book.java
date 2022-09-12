@@ -24,11 +24,11 @@ public class Book {
         return this.title;
     }
 
-    public String isbn() {
+    public String getIsbn() {
         return this.isbn;
     }
 
-    public String author() {
+    public String getAuthor() {
         return this.author;
     }
 

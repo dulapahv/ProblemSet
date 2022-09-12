@@ -43,11 +43,11 @@ public class BookList {
         bList.displayBook();
 
         System.out.println("\nSort by isbn");
-        Collections.sort(bList.books, (Book o1, Book o2) -> o1.isbn().compareTo(o2.isbn()));
+        Collections.sort(bList.books, (Book o1, Book o2) -> o1.getIsbn().compareTo(o2.getIsbn()));
         bList.displayBook();
 
         System.out.println("\nSort by author");
-        Collections.sort(bList.books, (Book o1, Book o2) -> o1.author().compareTo(o2.author()));
+        Collections.sort(bList.books, (Book o1, Book o2) -> o1.getAuthor().compareTo(o2.getAuthor()));
         bList.displayBook();
     }
 }

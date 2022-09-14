@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task1">
+  <ClassDiagramComponents>
+    <Class name="Book" package="Task1" visibility="public" xPosition="747.0" yPosition="431.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+        <Field name="author" type="String" visibility="private"/>
+        <Field name="title" type="String" visibility="private"/>
+        <Field name="yearPublished" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="author"/>
+          <Argument type="String" name="title"/>
+          <Argument type="int" name="yearPublished"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getCreator" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getTitle" returnType="String" visibility="public"/>
+        <Method name="getYear" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CatalogApp" package="Task1" visibility="public" xPosition="60.0" yPosition="285.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CatalogItem" package="Task1" visibility="public" xPosition="60.0" yPosition="73.0">
+      <Fields>
+        <Field name="media" type="S" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="S" name="media"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="CatalogItem&lt;S&gt;" name="o"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CD" package="Task1" visibility="public" xPosition="275.0" yPosition="431.0">
+      <Fields>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="artist" type="String" visibility="private"/>
+        <Field name="title" type="String" visibility="private"/>
+        <Field name="year" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="artist"/>
+          <Argument type="String" name="title"/>
+          <Argument type="int" name="year"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getCreator" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getTitle" returnType="String" visibility="public"/>
+        <Method name="getYear" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Media" package="Task1" visibility="public" xPosition="557.0" yPosition="73.0">
+      <Methods>
+        <Method name="getId" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getCreator" returnType="Comparable&lt;T&gt;" visibility="public"/>
+        <Method name="getTitle" returnType="String" visibility="public"/>
+        <Method name="getYear" returnType="int" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Book" target="Task1.Media"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.CD" target="Task1.Media"/>
+    <UseRelation source="Task1.CatalogItem" target="Task1.CatalogItem" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

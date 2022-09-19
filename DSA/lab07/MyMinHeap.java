@@ -58,10 +58,12 @@ public class MyMinHeap {
 	}
 
 	public String toString() {
-		String result = "";
+		StringBuffer sb = new StringBuffer();
+		sb.append("[ ");
 		for (int i = 0; i < size; i++) {
-			result += heap[i] + " ";
+			sb.append(heap[i]).append(" ");
 		}
-		return result;
+		sb.append("]");
+		return sb.toString();
 	}
 }

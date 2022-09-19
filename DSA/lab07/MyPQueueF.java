@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class MyPQueueF {
 	FibonacciMinPQ<Integer> heap = new FibonacciMinPQ<Integer>();
 
@@ -18,6 +20,15 @@ public class MyPQueueF {
 	}
 
 	public String toString() {
-		return heap.toString();
+		StringBuffer sb = new StringBuffer();
+
+		Iterator<Integer> it = heap.iterator();
+		;
+		sb.append("[ ");
+		while (it.hasNext()) {
+			sb.append(it.next()).append(" ");
+		}
+		sb.append("]");
+		return sb.toString();
 	}
 }

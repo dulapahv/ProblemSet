@@ -41,9 +41,9 @@ fn main() {
 	let m = 20.0;
 	let x: f64 = 1.0;
 	{
-		let x10 = x / m;
+		let x10_2 = x / m;
 	}
-	println!("{}% is {}", 1 as f64 / m, x10); //cannot divide int by f64. Cast 1 as f64
+	//println!("{}% is {}", 1 / m, x10_2); // x10_2 is limited in the scope above
 
 	//8: Different operation (multiply and divide)
 

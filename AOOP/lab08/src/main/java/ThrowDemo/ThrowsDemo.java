@@ -2,16 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Task1.creatingexception;
+package ThrowDemo;
 
 /**
  *
  * @author Dulapah Vibulsanti
  */
-public class OutOfRangeException extends Exception {
+public class ThrowsDemo {
 
-    OutOfRangeException(String message) {
-        super(message);
+    static void throwOne() throws IllegalAccessException {
+        System.out.println("Inside ThrowsOne()");
+        throw new IllegalAccessException("Demo");
     }
-
 }

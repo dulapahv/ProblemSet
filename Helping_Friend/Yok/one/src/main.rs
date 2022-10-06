@@ -50,7 +50,7 @@ fn lut_cos(lut: [f64; N], x: f64) -> f64 {
     //fins cos
     let mut b = 0;
     for j in 0..N {
-        if y <= lut[j] {
+        if y < lut[j] {
             if j > 0 {
                 upper_c = lut[j];
                 b = j;

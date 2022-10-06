@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task2">
+  <ClassDiagramComponents>
+    <Class name="pftCalculator" package="Task2" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="score" type="int" visibility="private"/>
+        <Field name="pullups" type="int" visibility="private"/>
+        <Field name="situps" type="int" visibility="private"/>
+        <Field name="runMin" type="int" visibility="private"/>
+        <Field name="runSec" type="int" visibility="private"/>
+        <Field name="Icon" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="aboutMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="calculateButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="closeMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="cutMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="editMenu" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="femaleRadioButton" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="fileMenu" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="helpMenu" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="indexMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="maleRadioButton" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="openMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="pasteMenuItem" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="pftScoreField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="pftScoreLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="pullupsField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="pullupsLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="radioButtonGroups" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="runLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="runMinField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="runSecField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="situpsField" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="situpsLabel" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="closeMenuItemActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="cutMenuItemActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="maleRadioButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="pullupsFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="runMinFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="situpsFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="pftScoreFieldActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="calculateButtonActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

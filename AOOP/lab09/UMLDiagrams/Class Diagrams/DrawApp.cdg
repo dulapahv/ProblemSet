@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task1">
+  <ClassDiagramComponents>
+    <Class name="DrawApp" package="Task1" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="frame" type="JFrame" visibility="private" isStatic="true"/>
+        <Field name="canvas" type="JPanel" visibility="private" isStatic="true"/>
+        <Field name="colorPalette" type="JPanel" visibility="private" isStatic="true"/>
+        <Field name="currentColor" type="Color" visibility="private" isStatic="true"/>
+        <Field name="lastMouseX" type="int" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createAndShowGUI" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

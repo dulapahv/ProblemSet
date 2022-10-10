@@ -101,41 +101,43 @@ fn main() {
     /*
     a)	Make an initial table which contains some expected unicodes
     */
-    let mut table = vec![
-        (0x0000, 0x007F, Language::English),
-        (0x0E00, 0x0E7F, Language::Thai),
-        (0x3040, 0x309F, Language::Japanese),
-        (0x4E00, 0x9FFF, Language::Chinese),
-    ];
+	// No need?
+    // let mut table = vec![
+    //     (0x0000, 0x007F, Language::English),
+    //     (0x0E00, 0x0E7F, Language::Thai),
+    //     (0x3040, 0x309F, Language::Japanese),
+    //     (0x4E00, 0x9FFF, Language::Chinese),
+    // ];
 
     /* Check point B(a) */
 
     /*
     b)	Read the test file, scan the table to find initially known languages (skip them) and list unicodes for languages not yet known.
     */
-    for c in input.chars() {
-        let language = get_language(c, &languages);
-        let mut found = false;
-        for entry in &table {
-            if entry.2 == language {
-                found = true;
-                break;
-            }
-        }
-        if !found {
-            let mut start = c as u32;
-            let mut end = c as u32;
-            for c in input.chars() {
-                let language = get_language(c, &languages);
-                if language == language {
-                    end = c as u32;
-                } else {
-                    break;
-                }
-            }
-            table.push((start, end, language));
-        }
-    }
+	// No need?
+    // for c in input.chars() {
+    //     let language = get_language(c, &languages);
+    //     let mut found = false;
+    //     for entry in &table {
+    //         if entry.2 == language {
+    //             found = true;
+    //             break;
+    //         }
+    //     }
+    //     if !found {
+    //         let mut start = c as u32;
+    //         let mut end = c as u32;
+    //         for c in input.chars() {
+    //             let language = get_language(c, &languages);
+    //             if language == language {
+    //                 end = c as u32;
+    //             } else {
+    //                 break;
+    //             }
+    //         }
+    //         table.push((start, end, language));
+    //     }
+    // }
 
     /*
     c)	Use the output from this program to look up remaining unicodes and add more entries to your table.

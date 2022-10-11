@@ -5,13 +5,13 @@ fn main() {
 
     /* Read from stdin */
     // let mut input = String::new();
-    // std::io::stdin().read_line(&mut input).unwrap();
+    // std::io::stdin().read_line(&mut input).expect("Failed to read line");
 
     /* Read from a file */
     // add later along the lab
     let mut input = String::new();
-    let mut file = std::fs::File::open("input.txt").unwrap();
-    std::io::Read::read_to_string(&mut file, &mut input).unwrap();
+    let mut file = std::fs::File::open("input.txt").expect("Failed to open file");
+    std::io::Read::read_to_string(&mut file, &mut input).expect("Failed to read file");
 
     /*
     a.	You should build an enumerated type containing readable labels for each language.
@@ -22,7 +22,10 @@ fn main() {
         Thai,
         Japanese,
         Chinese,
-        ASCII, // add later along the lab
+        Korean,
+        Burmese,
+        ASCII,   // add later along the lab
+        Unicode, // add later along the lab
     }
 
     /*
@@ -52,7 +55,7 @@ fn main() {
         LanguageInfo {
             language: Language::Japanese,
             range: (0x3040, 0x309F),
-            name: "Hiragana".to_string(),
+            name: "Japanese".to_string(),
         },
         LanguageInfo {
             language: Language::Chinese,
@@ -60,10 +63,26 @@ fn main() {
             name: "Chinese".to_string(),
         },
         LanguageInfo {
+            language: Language::Korean,
+            range: (0xAC00, 0xD7AF),
+            name: "Korean".to_string(),
+        },
+        LanguageInfo {
+            language: Language::Burmese,
+            range: (0x1000, 0x109F),
+            name: "Burmese".to_string(),
+        },
+        LanguageInfo {
             // add later along the lab
             language: Language::ASCII,
             range: (0x00, 0x7F),
             name: "ASCII".to_string(),
+        },
+        LanguageInfo {
+            // add later along the lab
+            language: Language::Unicode,
+            range: (0x00, 0x10FFFF),
+            name: "Unicode".to_string(),
         },
     ];
 
@@ -101,12 +120,16 @@ fn main() {
     /*
     a)	Make an initial table which contains some expected unicodes
     */
-	// No need?
+    // No need?
     // let mut table = vec![
-    //     (0x0000, 0x007F, Language::English),
+    //     (0x20, 0x7E, Language::English),
     //     (0x0E00, 0x0E7F, Language::Thai),
     //     (0x3040, 0x309F, Language::Japanese),
     //     (0x4E00, 0x9FFF, Language::Chinese),
+    //     (0xAC00, 0xD7AF, Language::Korean),
+    //     (0x1000, 0x109F, Language::Burmese),
+    //     (0x00, 0x7F), // Language::ASCII),
+    //     (0x00, 0x10FFFF), // Language::Unicode),
     // ];
 
     /* Check point B(a) */
@@ -114,7 +137,7 @@ fn main() {
     /*
     b)	Read the test file, scan the table to find initially known languages (skip them) and list unicodes for languages not yet known.
     */
-	// No need?
+    // No need?
     // for c in input.chars() {
     //     let language = get_language(c, &languages);
     //     let mut found = false;

@@ -1,0 +1,5 @@
+日本人は淡白な食べ物が好き println!("enter a character:");
+泰国人喜欢吃辣的 same as in Xichuan
+Un clima de El Niño ပုဂံသည် မှော်ဆန်သောနေရာတစ်ခုဖြစ်သည်။
+태국 사람들은 뜨거운 음식을 좋아합니다 français 
+Les Thaïlandais aiment la nourriture très chaude 

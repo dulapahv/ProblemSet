@@ -92,14 +92,14 @@ fn main() {
     d.	Build a function which, given a unicode value, scans the table and finds
     out to which language that character belong - returning the enumerated type.
     */
-    fn get_language(c: char, languages: &Vec<LanguageInfo>) -> Language {
-        for language in languages {
-            if c as u32 >= language.range.0 && c as u32 <= language.range.1 {
-                return language.language;
-            }
-        }
-        panic!("No language found for character {}", c);
-    }
+	fn get_language(c: char, languages: &Vec<LanguageInfo>) -> Language {
+		for language in languages {
+			if language.range.0 <= c as u32 && c as u32 <= language.range.1 {
+				return language.language;
+			}
+		}
+		panic!("Invalid character");
+	}
 
     /* Check point A(d) */
 

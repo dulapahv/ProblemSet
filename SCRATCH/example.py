@@ -7,10 +7,21 @@
 # print(f"{n+m:x}")
 # print(f"{n+m}")
 
-# write a code to convert decimal number to 30 bit binary
-number = int(input("Enter a number: "))
+# # write a code to convert decimal number to 30 bit binary
+# number = int(input("Enter a number: "))
 
-if number < 0:
-   print("Invalid input")
-else:
-   print(bin(number)[2:].zfill(30))
+# if number < 0:
+#    print("Invalid input")
+# else:
+#    print(bin(number)[2:].zfill(30))
+
+
+a = [5, 1, 3, 8, 9, 0, 2, 4, 7, 6]
+for i in range(len(a)):
+	for j in range(i, len(a)):
+		if a[j] < a[i]:
+			temp = a[j]
+			a[j] = a[i]
+			a[i] = temp
+
+print(a)

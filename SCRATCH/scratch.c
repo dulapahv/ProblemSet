@@ -2305,26 +2305,48 @@ No two rows or columns may contain the same numbers.
  * the standard input according to the problem statement.
  **/
 
-int main()
-{
-    int X;
-    scanf("%d", &X);
-    int N;
-    scanf("%d", &N);
+// int main()
+// {
+//     int X;
+//     scanf("%d", &X);
+//     int N;
+//     scanf("%d", &N);
 
-    for (int i = 0; i < N; i++) {
-        int F;
-        int T;
-        char category[257];
-        scanf("%d%d%s", &F, &T, category);
+//     for (int i = 0; i < N; i++) {
+//         int F;
+//         int T;
+//         char category[257];
+//         scanf("%d%d%s", &F, &T, category);
 
-		if (X >= F && X <= T) {
-			printf("%s", category);
-			return 0;
+// 		if (X >= F && X <= T) {
+// 			printf("%s", category);
+// 			return 0;
+// 		}
+//     }
+
+
+
+//     return 0;
+// }
+
+#include <stdio.h>
+
+int main() {
+	int arr[] = {5, 1, 3, 8, 9, 0, 2, 4, 7, 6};
+	int len = sizeof(arr) / sizeof(arr[0]);
+	int temp;
+
+	for (int i = 0; i < len; i++) {
+		for (int j = i; j < len; j++) {
+			if (arr[j] < arr[i]) {
+				temp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = temp;
+			}
 		}
-    }
+	}
 
-
-
-    return 0;
+	for (int i = 0; i < len; i++) {
+		printf("%d ", arr[i]);
+	}
 }

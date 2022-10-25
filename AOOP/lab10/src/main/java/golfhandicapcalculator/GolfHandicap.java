@@ -114,7 +114,7 @@ public class GolfHandicap extends javax.swing.JFrame {
             }
         });
 
-        jTextField4.setText("jTextField4");
+        jTextField4.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

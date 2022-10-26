@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task1">
+  <ClassDiagramComponents>
+    <Class name="Client" package="Task1" visibility="public" xPosition="1246.0" yPosition="61.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Editing" package="Task1" visibility="public" xPosition="754.0" yPosition="485.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="read" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FunReading" package="Task1" visibility="public" xPosition="912.0" yPosition="642.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="read" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NewsAnchor" package="Task1" visibility="public" xPosition="196.0" yPosition="485.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="NewspaperEditor" package="Task1" visibility="public" xPosition="354.0" yPosition="617.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Person" package="Task1" visibility="public" xPosition="134.0" yPosition="27.0">
+      <Fields>
+        <Field name="readingBehavior" type="ReadingBehavior" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setReadingBehavior" returnType="void" visibility="public">
+          <Argument type="ReadingBehavior" name="rb"/>
+        </Method>
+        <Method name="read" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PrompterReading" package="Task1" visibility="public" xPosition="1070.0" yPosition="336.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="read" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Student" package="Task1" visibility="public" xPosition="38.0" yPosition="336.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="StudiousReading" package="Task1" visibility="public" xPosition="596.0" yPosition="336.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="read" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="ReadingBehavior" package="Task1" visibility="public" xPosition="875.0" yPosition="61.0">
+      <Methods>
+        <Method name="read" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.StudiousReading" target="Task1.ReadingBehavior"/>
+    <UseRelation source="Task1.Person" target="Task1.ReadingBehavior" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.FunReading" target="Task1.ReadingBehavior"/>
+    <IsRelation name="is" source="Task1.NewsAnchor" target="Task1.Person"/>
+    <HasRelation name="readingBehavior" source="Task1.Person" target="Task1.ReadingBehavior" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.PrompterReading" target="Task1.ReadingBehavior"/>
+    <IsRelation name="is" source="Task1.NewspaperEditor" target="Task1.Person"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task1.Editing" target="Task1.ReadingBehavior"/>
+    <IsRelation name="is" source="Task1.Student" target="Task1.Person"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

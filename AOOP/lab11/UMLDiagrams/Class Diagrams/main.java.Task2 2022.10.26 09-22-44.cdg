@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.Task2">
+  <ClassDiagramComponents>
+    <Class name="Circle" package="Task2" visibility="public" xPosition="72.0" yPosition="425.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DecoratorPatternDemo" package="Task2" visibility="public" xPosition="937.0" yPosition="281.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="Task2" visibility="public" xPosition="286.0" yPosition="425.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RedShapeDecorator" package="Task2" visibility="public" xPosition="509.0" yPosition="425.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+        <Method name="setRedBorder" returnType="void" visibility="private">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ShapeDecorator" package="Task2" visibility="public" isAbstract="true" xPosition="681.0" yPosition="53.0">
+      <Fields>
+        <Field name="decoratedShape" type="Shape" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Shape" name="decoratedShape"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="draw" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Shape" package="Task2" visibility="public" xPosition="286.0" yPosition="53.0">
+      <Methods>
+        <Method name="draw" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Task2.RedShapeDecorator" target="Task2.ShapeDecorator"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task2.Rectangle" target="Task2.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task2.Circle" target="Task2.Shape"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Task2.ShapeDecorator" target="Task2.Shape"/>
+    <UseRelation source="Task2.RedShapeDecorator" target="Task2.Shape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="decoratedShape" source="Task2.ShapeDecorator" target="Task2.Shape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

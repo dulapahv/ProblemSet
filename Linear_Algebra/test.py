@@ -25,14 +25,14 @@ def parabola(t, y):
     [81.  9.  1.]]
 
     np.linalg.lstsq(A, y, rcond=None)[0].round(6)
-    array([-4.56515152, 46.13060606, 30.78909091])
+    array([-5.199242 52.199848 16.529091])
     """
     A = np.vstack([t ** 2, t, np.ones(len(t))]).T
-    a, b, c = np.linalg.lstsq(A, y, rcond=None)[0].round(6)
-    print(f"y = {c} {'+' if b >= 0 else ''} {b} t {'+' if a >= 0 else ''} {a} t^2")
+    a, b, c = np.linalg.lstsq(A, y, rcond=None)[0]
+    print(f"y = {c:.6f} {'+' if b >= 0 else ''} {b:.6f} t {'+' if a >= 0 else ''} {a:.6f} t^2")
 
-    plt.plot(t, y, 'o')
-    plt.plot(t, y0 + v0*t - 9.8/2 * t**2, 'r-')
+    plt.plot(t, a * (t ** 2) + (b * t) + c)
+    plt.plot(t, y, 'ro')
     plt.show()
 
 

@@ -1,0 +1,5 @@
+Role: Manager
+Name: John Smith
+Age: 35
+StaffList: Bob Brown, Alice Green
+Pos: 14.34567, 100.45675

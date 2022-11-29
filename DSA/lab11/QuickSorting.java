@@ -1,7 +1,5 @@
 import java.util.Random;
 
-import javax.print.event.PrintJobAdapter;
-
 class TeacherQuickSort {
     static void quickSort(int keys[], int begin, int end) {
         if (begin < end) {

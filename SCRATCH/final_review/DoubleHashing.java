@@ -11,14 +11,15 @@ public class DoubleHashing {
         // H(x) + iG(x)
         for (int i : random_list) {
             int pos = i % 11;
-            int c1 = 1;
+            int c = 1;
             while (true) {
                 if (hash_table[pos] == 0) {
                     hash_table[pos] = i;
                     break;
                 } else {
-                    pos = (pos + c1 * (pos + hash_table[pos])) % 11;
-                    c1 += 1;
+                    pos = i % 11; // Reset pos to initial position
+                    pos = (pos + c * (pos + hash_table[pos])) % 11;
+                    c += 1;
                 }
             }
         }

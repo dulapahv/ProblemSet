@@ -1,0 +1,27 @@
+[
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe   -O3 -DNDEBUG -o CMakeFiles\\quiz.dir\\main.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\quiz\\main.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/main.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe   -O3 -DNDEBUG -o CMakeFiles\\quiz.dir\\Employee.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\quiz\\Employee.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/Employee.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe   -O3 -DNDEBUG -o CMakeFiles\\quiz.dir\\Fleet.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\quiz\\Fleet.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/Fleet.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe   -O3 -DNDEBUG -o CMakeFiles\\quiz.dir\\Payroll.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\quiz\\Payroll.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/Payroll.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/build",
+  "command": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-g++.exe   -O3 -DNDEBUG -o CMakeFiles\\quiz.dir\\Vehicle.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\quiz\\Vehicle.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/quiz/Vehicle.cpp"
+}
+]

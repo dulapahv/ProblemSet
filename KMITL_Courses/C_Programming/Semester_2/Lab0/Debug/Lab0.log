@@ -1,0 +1,35 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1088,5): warning MSB8027: Two or more files with the name of ExampleA.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Lab0\ExampleA.cpp, src\ExampleA.cpp.
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1088,5): warning MSB8027: Two or more files with the name of Point.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Lab0\Point.cpp, src\Point.cpp.
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1088,5): warning MSB8027: Two or more files with the name of Pt.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Lab0\Pt.cpp, src\Pt.cpp.
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1088,5): warning MSB8027: Two or more files with the name of Rectangle.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Lab0\Rectangle.cpp, src\Rectangle.cpp.
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1088,5): warning MSB8027: Two or more files with the name of VectorExample.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are Lab0\VectorExample.cpp, src\VectorExample.cpp.
+  ExampleA.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(25,44): error C2065: 'Rectangle': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(32,5): error C2065: 'Rectangle': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(32,16): error C2065: 'r1': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(32,25): error C2061: syntax error: identifier 'Rectangle'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(33,26): error C2065: 'r1': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(34,31): error C2065: 'r1': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(38,5): error C2065: 'r1': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(39,5): error C2065: 'Point': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(39,11): error C2146: syntax error: missing ';' before identifier 'tlr'
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(39,11): error C2065: 'tlr': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(39,17): error C2065: 'r1': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(40,35): error C2065: 'tlr': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(40,52): error C2065: 'tlr': undeclared identifier
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab0\Lab0\ExampleA.cpp(46,26): error C2065: 'tlr': undeclared identifier
+  Point.cpp
+  Pt.cpp
+  Rectangle.cpp
+  VectorExample.cpp
+  ExampleA.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\ExampleA.cpp': No such file or directory
+  Point.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\Point.cpp': No such file or directory
+  Pt.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\Pt.cpp': No such file or directory
+  Rectangle.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\Rectangle.cpp': No such file or directory
+  VectorExample.cpp
+c1xx : fatal error C1083: Cannot open source file: 'src\VectorExample.cpp': No such file or directory
+  Generating Code...

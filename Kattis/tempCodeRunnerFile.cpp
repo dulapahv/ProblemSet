@@ -1,2 +1,0 @@
-int cases;
-    // cin >> cases;

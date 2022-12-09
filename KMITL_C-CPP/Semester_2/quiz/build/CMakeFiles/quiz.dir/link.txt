@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\quiz.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\quiz.dir/objects.a @CMakeFiles\quiz.dir\objects1.rsp
-C:\msys64\mingw64\bin\x86_64-w64-mingw32-g++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\quiz.dir/objects.a -Wl,--no-whole-archive -o quiz.exe -Wl,--out-implib,libquiz.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\quiz.dir\linklibs.rsp

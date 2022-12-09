@@ -1,0 +1,27 @@
+[
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\lab8.dir\\main.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\Lab8\\main.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/main.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\lab8.dir\\Point.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\Lab8\\Point.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/Point.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\lab8.dir\\Point3D.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\Lab8\\Point3D.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/Point3D.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\lab8.dir\\Point4D.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\Lab8\\Point4D.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/Point4D.cpp"
+},
+{
+  "directory": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\lab8.dir\\PointND.cpp.obj -c \"C:\\Users\\Dulapah Vibulsanti\\OneDrive - KMITL\\Documents\\GitHub\\ProblemSet\\KMITL_C-CPP\\Semester_2\\Lab8\\PointND.cpp\"",
+  "file": "C:/Users/Dulapah Vibulsanti/OneDrive - KMITL/Documents/GitHub/ProblemSet/KMITL_C-CPP/Semester_2/Lab8/PointND.cpp"
+}
+]

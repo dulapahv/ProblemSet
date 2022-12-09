@@ -1,0 +1,7 @@
+﻿  Animal.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab6\Animal.h(7,10): fatal error C1014: too many include files: depth = 1024
+  ExampleMI.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab6\Animal.h(7,10): fatal error C1014: too many include files: depth = 1024
+  Monkey.cpp
+C:\Users\Dulapah Vibulsanti\OneDrive - KMITL\Documents\GitHub\ProblemSet\KMITL_C-CPP\Semester_2\Lab\Lab6\Animal.h(7,10): fatal error C1014: too many include files: depth = 1024
+  Generating Code...

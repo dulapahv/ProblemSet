@@ -1,0 +1,169 @@
+1.1)
+i / k * x + j * y + c ; c = 'a' = 97 (ASCII of letter 'a')
+3 / 25 * 2.1 + 5 * 3.7 + 97
+(0.12 * 2.1 + 5 * 3.7) + 97
+(0.252 + 5 * 3.7) + 97
+(0.252 + 18.5) + 97
+(18.752 + 97)
+115.752
+
+1.2)
+x / (k * i + j) * (y + c) ; c = 'a' = 97 (ASCII of letter 'a')
+2.1 / (25 * 3 + 5) * (3.7 + 97)
+2.1 / (75 + 5) * (3.7 + 97)
+2.1 / 80 * (3.7 + 97)
+0.02625 * (3.7 + 97)
+0.02625 * 100.7
+2.643375
+
+1.3)
+func(func(x, y), i)
+func(x, y) = func(2.1, 3.7) = 2.1 * 2.1 + 3.7 * 3.7
+4.41 + 3.7 * 3.7
+4.41 + 13.69
+18.1
+
+so, func(18.1(func(x, y), i)) = func(18.1, 3) = 18.1 * 18.1 + 3 * 3
+327.61 + 3 * 3
+327.61 + 9
+336.61
+
+1.4)
+Because i++, j++ will increment the value of i, but return the original value that i held before being incremented. So,
+a1[i++] = a1[3] = 4
+a2[j++] = a2[5] = 6
+but a2[j++] is processed the last so the output value is 6
+
+1.5)
+a1[i++] = a2[i++]
+Here, the value of i is changed but the array index i does not changed. To make it clearer,
+a1[i++] = a1[3] = 4 ; i now = 4
+and then,
+a2[i++] = a2[3] = 2 ; i now = 5
+
+You can see that value of i changed but the array index does not. This could be hard to be noticed and could create a bug later on, thus, not well defined.
+
+However,
+a1[i++] = a2[j++]
+is technically well defined because we only access and change the value of i and j once, on each side.
+
+2.1)
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 6; i++)
+        printf("(%d, %d)\n", i + 2, 3 + (2 * (i + 1)));
+}
+
+2.2)
+#include <stdio.h>
+
+int main() {
+    char arr[3] = {'c', 'a', 'b'};
+    int count = 0;
+    for (int i = 0; i < 6; i++) {
+        if (count == 3)
+            count = 0;
+        printf("(%d, %c)\n", i + 2, arr[count]);
+        count++;
+    }
+}
+
+2.3)
+#include <stdio.h>
+
+int main() {
+    char arr[3] = {'c', 'b', 'a'};
+    int count = 0;
+    for (int i = 0; i < 7; i++) {
+        if (count == 3)
+            count = 0;
+        if (i == 3)
+            printf("(%d, %c);\n", 8 - i, arr[count]);
+        else
+            printf("(%d, %c), ", 8 - i, arr[count]);
+        count++;
+    }
+}
+
+3.1)
+#include <stdio.h>
+
+double compute(double num) {
+    return ((8 * (num * num)) + (2 * num) + 5);
+}
+
+int main() {
+    printf("%lf", compute(5));
+}
+
+3.2)
+#include <stdio.h>
+
+int all_even(int a[], size_t n)
+{
+    for (int i = 0; i < n; ++i)
+        if (a[i] % 2 == 0)
+            return 1;
+        else
+            return 0;
+}
+
+int main() {
+    int arr[5] = {3, 4, 6, 8, 10};
+    printf("%d", all_even(arr, 5));
+}
+
+4.1)
+#include <stdio.h>
+
+void divisible_by_two(int *a, size_t n) {
+    for (int i = 0; i < n; i++)
+        if (a[i] % 2 == 0)
+            a[i] = -2;
+}
+
+int main()
+{
+    int arr[] = {11, 12, 0, 7, 9, 1, 3, 2};
+    const size_t n = sizeof(arr) / sizeof(*arr);
+    printf("before: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\nafter: ");
+    divisible_by_two(arr, n);
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+
+4.2)
+#include <stdio.h>
+
+void replace(int *a, size_t n) {
+    int counterVal = 1;
+    for (int i = n - 1; i >= 0; i--) {
+        if (a[i] % 2 == 0) {
+            a[i] = counterVal;
+            counterVal++;
+        }
+        else
+            a[i] *= -1;
+    }
+   
+}
+
+int main()
+{
+    int arr[] = {11, 12, 0, 7, 9, 1, 3, 2};
+    const size_t n = sizeof(arr) / sizeof(*arr);
+    printf("before: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\nafter: ");
+    replace(arr, n);
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+

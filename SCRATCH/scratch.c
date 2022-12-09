@@ -1,6 +1,12 @@
 #include <stdio.h>
 
+int 💕(int 👦, int 👧) {
+    int 👼 = 👦 + 👧;
+    return 👼;
+}
+
 int main() {
-    printf("Hello, World!");
-    return 0;
+    int 👦 = 5;
+    int 👧 = 1;
+    printf("%d", 💕(👦, 👧));
 }

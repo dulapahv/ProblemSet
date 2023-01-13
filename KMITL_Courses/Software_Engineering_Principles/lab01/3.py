@@ -1,4 +1,4 @@
-def binary_search(target, arr, start=0, end=None) -> int | bool:
+def binary_search(target: int, arr: list[int], start: int = 0, end: int | None = None) -> int | bool:
     # end not given, set it to length of array
     if end is None:
         end = len(arr)

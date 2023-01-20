@@ -3,29 +3,28 @@
 
 double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size) {
     double median = 0;
-    int* nums3 = calloc((nums1Size + nums2Size), sizeof(int));
-    int i = 0;
-    int len = 0;
-    while (i < nums1Size) {
-        nums3[i] = nums1[i];
-        i++;
-        len++;
-    }
-    int j = 0;
-    while (j < nums2Size) {
-        nums3[i] = nums2[j];
-        j++;
-        i++;
-        len++;
-    }
-    for (int i = 0; i < len; i++) {
-        for (int j = i + 1; j < len; j++) {
-            if (nums3[i] > nums3[j]) {
-                int temp = nums3[i];
-                nums3[i] = nums3[j];
-                nums3[j] = temp;
-            }
+    int len = nums1Size + nums2Size;
+    int* nums3 = calloc(len, sizeof(int));
+    int i = 0, j = 0, k = 0;
+    while (i < nums1Size && j < nums2Size) {
+        if (nums1[i] < nums2[j]) {
+            nums3[k] = nums1[i];
+            i++;
+        } else {
+            nums3[k] = nums2[j];
+            j++;
         }
+        k++;
+    }
+    while (i < nums1Size) {
+        nums3[k] = nums1[i];
+        i++;
+        k++;
+    }
+    while (j < nums2Size) {
+        nums3[k] = nums2[j];
+        j++;
+        k++;
     }
     if (len % 2 != 0) {
         double ans = nums3[len / 2];

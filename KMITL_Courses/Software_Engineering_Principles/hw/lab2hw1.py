@@ -1,14 +1,15 @@
 import sys
-from PySide6.QtWidgets import *
-from PySide6.QtCore import *
+from PySide6.QtWidgets import (QApplication, QWidget, QPushButton,
+                               QLabel, QVBoxLayout, QGridLayout, QLineEdit, QDialog, QSpinBox)
+from PySide6.QtCore import Qt
 
 
 class Matrix_to_latex(QWidget):
-    def __init__(self):
+    def __init__(self) -> None:
         QWidget.__init__(self, None)
         vbox = QVBoxLayout()
         self.header = QLabel(self)
-        self.header.setText("Matrix to LaTeX converter")
+        self.header.setText("Matrix to LaTeX Converter")
         self.header.setStyleSheet(
             "font-weight: bold; font-size: 32px; font-family: Arial; letter-spacing: 1px; color: #ffffff;")
         vbox.addWidget(self.header)
@@ -43,7 +44,6 @@ class Matrix_to_latex(QWidget):
 
         self.setLayout(vbox)
 
-        # bigger windows
         self.resize(500, 300)
 
         self.setAutoFillBackground(True)
@@ -62,7 +62,7 @@ class Matrix_to_latex(QWidget):
 
         self.show()
 
-    def showGrid(self):
+    def showGrid(self) -> None:
         dialog = QDialog(self)
         grid = QGridLayout()
         self.entries = []
@@ -79,7 +79,8 @@ class Matrix_to_latex(QWidget):
         self.convert_button = QPushButton('Convert to LaTeX', self)
         self.convert_button.clicked.connect(self.result_dialog)
         self.convert_button.clicked.connect(dialog.close)
-        grid.addWidget(self.convert_button, self.row_spin.value() + 1, 0, 1, self.column_spin.value())
+        grid.addWidget(self.convert_button, self.row_spin.value() +
+                       1, 0, 1, self.column_spin.value())
         dialog.setLayout(grid)
 
         self.setAutoFillBackground(True)
@@ -96,7 +97,7 @@ class Matrix_to_latex(QWidget):
 
         dialog.show()
 
-    def result_dialog(self):
+    def result_dialog(self) -> None:
         dialog = QDialog(self)
         layout = QVBoxLayout()
 
@@ -136,7 +137,7 @@ class Matrix_to_latex(QWidget):
 
         dialog.show()
 
-    def matrix_to_latex(self):
+    def matrix_to_latex(self) -> str:
         latex = "\\begin{bmatrix}\n"
         for row in range(self.row_spin.value()):
             for col in range(self.column_spin.value()):

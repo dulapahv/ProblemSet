@@ -55,7 +55,7 @@ class Notepad(QMainWindow):
                     self, "Error", f"Failed to read file: {e}")
             self.is_saved = True
             self.setWindowTitle(self.windowTitle()[1:])
-        self.setWindowTitle(f"{file_name} - Notepad")
+            self.setWindowTitle(f"{file_name} - Notepad")
 
     def save(self):
         file_name, _ = QFileDialog.getSaveFileName(
@@ -70,7 +70,7 @@ class Notepad(QMainWindow):
                     self, "Warning", f"Cannot save file: {e}")
             self.is_saved = True
             self.setWindowTitle(self.windowTitle()[1:])
-        self.setWindowTitle(f"{file_name} - Notepad")
+            self.setWindowTitle(f"{file_name} - Notepad")
 
     def close(self):
         if self.ui.plainTextEdit.toPlainText() and not self.is_saved:

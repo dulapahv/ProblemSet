@@ -30,6 +30,8 @@ class Ui_Notepad(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Notepad.sizePolicy().hasHeightForWidth())
         Notepad.setSizePolicy(sizePolicy)
+        Notepad.setStyleSheet(u"selection-background-color: rgb(255, 240, 166);\n"
+"selection-color: rgb(0, 0, 0);")
         self.actionNew = QAction(Notepad)
         self.actionNew.setObjectName(u"actionNew")
         self.actionOpen = QAction(Notepad)
@@ -61,6 +63,7 @@ class Ui_Notepad(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy1)
+        self.centralwidget.setStyleSheet(u"background-color: rgb(90, 65, 58);")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -68,29 +71,44 @@ class Ui_Notepad(object):
         self.plainTextEdit = QPlainTextEdit(self.centralwidget)
         self.plainTextEdit.setObjectName(u"plainTextEdit")
         font = QFont()
+        font.setFamilies([u"Arial"])
         font.setPointSize(12)
         self.plainTextEdit.setFont(font)
+        self.plainTextEdit.setAutoFillBackground(False)
+        self.plainTextEdit.setStyleSheet(u"background-color: rgb(249, 249, 249);\n"
+"color: rgb(0, 0, 0);\n"
+"padding-left: 10px;\n"
+"padding-right: 10px;\n"
+"padding-top: 10px;")
         self.plainTextEdit.setFrameShape(QFrame.NoFrame)
         self.plainTextEdit.setFrameShadow(QFrame.Plain)
+        self.plainTextEdit.setLineWrapMode(QPlainTextEdit.NoWrap)
 
         self.verticalLayout.addWidget(self.plainTextEdit)
 
         self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setSpacing(6)
+        self.horizontalLayout_3.setSpacing(5)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(10, -1, -1, -1)
         self.label_line_col = QLabel(self.centralwidget)
         self.label_line_col.setObjectName(u"label_line_col")
         font1 = QFont()
-        font1.setPointSize(10)
+        font1.setFamilies([u"Arial"])
+        font1.setPointSize(9)
         self.label_line_col.setFont(font1)
+        self.label_line_col.setStyleSheet(u"padding: 4px 0 4px 0;\n"
+"color: rgb(249, 249, 249);")
 
         self.horizontalLayout_3.addWidget(self.label_line_col)
 
         self.line = QFrame(self.centralwidget)
         self.line.setObjectName(u"line")
         self.line.setEnabled(False)
+        self.line.setAutoFillBackground(False)
+        self.line.setStyleSheet(u"border: 0.5px solid rgb(115, 83, 74);\n"
+"background: rgb(115, 83, 74);")
         self.line.setFrameShadow(QFrame.Plain)
+        self.line.setLineWidth(0)
         self.line.setFrameShape(QFrame.VLine)
 
         self.horizontalLayout_3.addWidget(self.line)
@@ -98,12 +116,16 @@ class Ui_Notepad(object):
         self.label_word_count = QLabel(self.centralwidget)
         self.label_word_count.setObjectName(u"label_word_count")
         self.label_word_count.setFont(font1)
+        self.label_word_count.setStyleSheet(u"padding: 4px 0 4px 0;\n"
+"color: rgb(249, 249, 249);")
 
         self.horizontalLayout_3.addWidget(self.label_word_count)
 
         self.line_2 = QFrame(self.centralwidget)
         self.line_2.setObjectName(u"line_2")
         self.line_2.setEnabled(False)
+        self.line_2.setStyleSheet(u"border: 0.5px solid rgb(115, 83, 74);\n"
+"background: rgb(115, 83, 74);")
         self.line_2.setFrameShadow(QFrame.Plain)
         self.line_2.setFrameShape(QFrame.VLine)
 
@@ -112,12 +134,16 @@ class Ui_Notepad(object):
         self.label_char_count = QLabel(self.centralwidget)
         self.label_char_count.setObjectName(u"label_char_count")
         self.label_char_count.setFont(font1)
+        self.label_char_count.setStyleSheet(u"padding: 4px 0 4px 0;\n"
+"color: rgb(249, 249, 249);")
 
         self.horizontalLayout_3.addWidget(self.label_char_count)
 
         self.line_3 = QFrame(self.centralwidget)
         self.line_3.setObjectName(u"line_3")
         self.line_3.setEnabled(False)
+        self.line_3.setStyleSheet(u"border: 0.5px solid rgb(115, 83, 74);\n"
+"background: rgb(115, 83, 74);")
         self.line_3.setFrameShadow(QFrame.Plain)
         self.line_3.setFrameShape(QFrame.VLine)
 
@@ -126,6 +152,8 @@ class Ui_Notepad(object):
         self.label_zoom = QLabel(self.centralwidget)
         self.label_zoom.setObjectName(u"label_zoom")
         self.label_zoom.setFont(font1)
+        self.label_zoom.setStyleSheet(u"padding: 4px 0 4px 0;\n"
+"color: rgb(249, 249, 249);")
 
         self.horizontalLayout_3.addWidget(self.label_zoom)
 
@@ -135,13 +163,32 @@ class Ui_Notepad(object):
         Notepad.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(Notepad)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 800, 42))
+        font2 = QFont()
+        font2.setFamilies([u"Segoe UI"])
+        font2.setPointSize(10)
+        font2.setBold(True)
+        self.menubar.setFont(font2)
+        self.menubar.setStyleSheet(u"background-color: rgb(251, 208, 83);\n"
+"color: rgb(0, 0, 0);\n"
+"padding: 8.5px 5px 8.5px 5px;\n"
+"font-weight: 600;\n"
+"selection-background-color: rgb(255, 240, 166);")
         self.menuFile = QMenu(self.menubar)
         self.menuFile.setObjectName(u"menuFile")
+        font3 = QFont()
+        font3.setPointSize(10)
+        font3.setBold(True)
+        self.menuFile.setFont(font3)
+        self.menuFile.setStyleSheet(u"")
         self.menuEdit = QMenu(self.menubar)
         self.menuEdit.setObjectName(u"menuEdit")
+        self.menuEdit.setFont(font3)
+        self.menuEdit.setStyleSheet(u"")
         self.menuView = QMenu(self.menubar)
         self.menuView.setObjectName(u"menuView")
+        self.menuView.setFont(font3)
+        self.menuView.setStyleSheet(u"")
         Notepad.setMenuBar(self.menubar)
 
         self.menubar.addAction(self.menuFile.menuAction())

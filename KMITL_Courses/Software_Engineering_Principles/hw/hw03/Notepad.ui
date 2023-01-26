@@ -19,12 +19,19 @@
   <property name="windowTitle">
    <string>Untitled - Notepad</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">selection-background-color: rgb(255, 240, 166);
+selection-color: rgb(0, 0, 0);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="sizePolicy">
     <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(90, 65, 58);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -46,14 +53,28 @@
      <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>12</pointsize>
        </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(249, 249, 249);
+color: rgb(0, 0, 0);
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 10px;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
       </property>
       <property name="plainText">
        <string/>
@@ -63,7 +84,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <property name="spacing">
-       <number>6</number>
+       <number>5</number>
       </property>
       <property name="leftMargin">
        <number>10</number>
@@ -72,8 +93,13 @@
        <widget class="QLabel" name="label_line_col">
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>Arial</family>
+          <pointsize>9</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 4px 0 4px 0;
+color: rgb(249, 249, 249);</string>
         </property>
         <property name="text">
          <string>Ln 1, Col 1</string>
@@ -85,8 +111,18 @@
         <property name="enabled">
          <bool>false</bool>
         </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0.5px solid rgb(115, 83, 74);
+background: rgb(115, 83, 74);</string>
+        </property>
         <property name="frameShadow">
          <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -97,8 +133,13 @@
        <widget class="QLabel" name="label_word_count">
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>Arial</family>
+          <pointsize>9</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 4px 0 4px 0;
+color: rgb(249, 249, 249);</string>
         </property>
         <property name="text">
          <string>Word: 0</string>
@@ -109,6 +150,10 @@
        <widget class="Line" name="line_2">
         <property name="enabled">
          <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0.5px solid rgb(115, 83, 74);
+background: rgb(115, 83, 74);</string>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Plain</enum>
@@ -122,8 +167,13 @@
        <widget class="QLabel" name="label_char_count">
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>Arial</family>
+          <pointsize>9</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 4px 0 4px 0;
+color: rgb(249, 249, 249);</string>
         </property>
         <property name="text">
          <string>Character: 0</string>
@@ -134,6 +184,10 @@
        <widget class="Line" name="line_3">
         <property name="enabled">
          <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 0.5px solid rgb(115, 83, 74);
+background: rgb(115, 83, 74);</string>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Plain</enum>
@@ -147,8 +201,13 @@
        <widget class="QLabel" name="label_zoom">
         <property name="font">
          <font>
-          <pointsize>10</pointsize>
+          <family>Arial</family>
+          <pointsize>9</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 4px 0 4px 0;
+color: rgb(249, 249, 249);</string>
         </property>
         <property name="text">
          <string>100%</string>
@@ -165,10 +224,33 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>42</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>10</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(251, 208, 83);
+color: rgb(0, 0, 0);
+padding: 8.5px 5px 8.5px 5px;
+font-weight: 600;
+selection-background-color: rgb(255, 240, 166);</string>
+   </property>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
@@ -179,6 +261,15 @@
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>Edit</string>
     </property>
@@ -189,6 +280,15 @@
     <addaction name="actionSelect_all"/>
    </widget>
    <widget class="QMenu" name="menuView">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="title">
      <string>View</string>
     </property>

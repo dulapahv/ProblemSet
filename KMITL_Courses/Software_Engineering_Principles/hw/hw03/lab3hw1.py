@@ -35,14 +35,14 @@ class Notepad(QMainWindow):
         self.is_saved = True
 
     def new(self):
-        if self.ui.plainTextEdit.toPlainText() and not self.is_saved:
+        if not self.is_saved:
             self.save()
         self.ui.plainTextEdit.setPlainText("")
         self.setWindowTitle("Untitled - Notepad")
         self.is_saved = True
 
     def open(self):
-        if self.ui.plainTextEdit.toPlainText() and not self.is_saved:
+        if not self.is_saved:
             self.save()
         file_name, _ = QFileDialog.getOpenFileName(
             self, "Open File", "", "Text Files (*.txt)")
@@ -74,7 +74,7 @@ class Notepad(QMainWindow):
             self.setWindowTitle(f"{file_name} - Notepad")
 
     def close(self):
-        if self.ui.plainTextEdit.toPlainText() and not self.is_saved:
+        if not self.is_saved:
             self.save()
         exit(0)
 
@@ -135,7 +135,7 @@ class Notepad(QMainWindow):
         self.ui.label_char_count.setText(str(f"Character: {len(text):,}"))
 
     def closeEvent(self, event):
-        if self.ui.plainTextEdit.toPlainText() and not self.is_saved:
+        if not self.is_saved:
             self.save()
         event.accept()
 

@@ -66,7 +66,7 @@ class Notepad(QMainWindow):
             except Exception as e:
                 QMessageBox.warning(
                     self, "Warning", f"Cannot save file: {e}")
-        self.is_saved = True
+            self.is_saved = True
         self.setWindowTitle(f"{file_name} - Notepad")
 
     def close(self):

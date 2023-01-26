@@ -39,6 +39,7 @@ class Notepad(QMainWindow):
             self.save()
         self.ui.plainTextEdit.setPlainText("")
         self.setWindowTitle("Untitled - Notepad")
+        self.is_saved = True
 
     def open(self):
         if self.ui.plainTextEdit.toPlainText() and not self.is_saved:

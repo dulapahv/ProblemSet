@@ -32,7 +32,7 @@ class Notepad(QMainWindow):
         self.ui.plainTextEdit.textChanged.connect(self.count_word)
         self.ui.plainTextEdit.textChanged.connect(self.count_char)
 
-        self.is_saved = False
+        self.is_saved = True
 
     def new(self):
         if self.ui.plainTextEdit.toPlainText() and not self.is_saved:
@@ -47,12 +47,14 @@ class Notepad(QMainWindow):
             self, "Open File", "", "Text Files (*.txt)")
         if file_name:
             try:
-                with open(file_name, "r") as f:
-                    text = f.read()
+                with open(file_name, "rb") as f:
+                    text = f.read().decode("utf-8")
                     self.ui.plainTextEdit.setPlainText(text)
             except Exception as e:
                 QMessageBox.warning(
                     self, "Error", f"Failed to read file: {e}")
+            self.is_saved = True
+            self.setWindowTitle(self.windowTitle()[1:])
         self.setWindowTitle(f"{file_name} - Notepad")
 
     def save(self):
@@ -60,13 +62,14 @@ class Notepad(QMainWindow):
             self, "Save File", "", "Text Files (*.txt)")
         if file_name:
             try:
-                with open(file_name, "w") as f:
+                with open(file_name, "wb") as f:
                     text = self.ui.plainTextEdit.toPlainText()
-                    f.write(text)
+                    f.write(text.encode("utf-8"))
             except Exception as e:
                 QMessageBox.warning(
                     self, "Warning", f"Cannot save file: {e}")
             self.is_saved = True
+            self.setWindowTitle(self.windowTitle()[1:])
         self.setWindowTitle(f"{file_name} - Notepad")
 
     def close(self):
@@ -122,7 +125,10 @@ class Notepad(QMainWindow):
         self.ui.label_word_count.setText(str(f"Word: {len(text.split()):,}"))
 
     def count_char(self):
-        self.is_saved = False
+        if self.is_saved:
+            self.is_saved = False
+            if not self.windowTitle().startswith("*"):
+                self.setWindowTitle(f"*{self.windowTitle()}")
         text = self.ui.plainTextEdit.toPlainText()
         self.ui.label_char_count.setText(str(f"Character: {len(text):,}"))
 

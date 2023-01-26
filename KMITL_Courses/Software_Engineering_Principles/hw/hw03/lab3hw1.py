@@ -127,8 +127,7 @@ class Notepad(QMainWindow):
     def count_char(self):
         if self.is_saved:
             self.is_saved = False
-            if not self.windowTitle().startswith("*"):
-                self.setWindowTitle(f"*{self.windowTitle()}")
+            self.setWindowTitle(f"*{self.windowTitle()}")
         text = self.ui.plainTextEdit.toPlainText()
         self.ui.label_char_count.setText(str(f"Character: {len(text):,}"))
 

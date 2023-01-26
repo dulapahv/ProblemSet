@@ -86,7 +86,9 @@ class Notepad(QMainWindow):
         QApplication.clipboard().setText(self.ui.plainTextEdit.textCursor().selectedText())
 
     def paste(self):
-        self.ui.plainTextEdit.insertPlainText(QApplication.clipboard().text())
+        text = QApplication.clipboard().text()
+        if text:
+            self.ui.plainTextEdit.textCursor().insertText(text)
 
     def select_all(self):
         self.ui.plainTextEdit.selectAll()

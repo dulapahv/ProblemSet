@@ -30,6 +30,6 @@ my.Pi <- function(n) {
         abs(my.pi - 3.14159), "\n")
 }
 
-my.Pi(500000)
-my.Pi(1000000)
-my.Pi(3000000)
+my.Pi(10000)
+#my.Pi(1000000)
+#my.Pi(3000000)

@@ -1,5 +1,3 @@
-package lab02;
-
 import java.io.*;
 import java.util.*;
 
@@ -20,15 +18,22 @@ class CoinChange {
 }
 
 class Solution {
-    // solve recursively
     public long count(int coins[], int N, int sum) {
-        long[] dp = new long[sum + 1];
-        dp[0] = 1;
-        for (int i = 0; i < N; i++) {
-            for (int j = coins[i]; j <= sum; j++) {
-                dp[j] += dp[j - coins[i]];
+        long dp[][] = new long[N + 1][sum + 1];
+
+        // Base Cases
+        for (int i = 0; i <= N; i++)
+            dp[i][0] = 1;
+
+        // Fill the dp[ ][ ] table in bottom-up manner
+        for (int i = 1; i <= N; i++)
+            for (int j = 1; j <= sum; j++) {
+                if (j >= coins[i - 1])
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - coins[i - 1]];
+                else
+                    dp[i][j] = dp[i - 1][j];
             }
-        }
-        return dp[sum];
+
+        return dp[N][sum];
     }
 }

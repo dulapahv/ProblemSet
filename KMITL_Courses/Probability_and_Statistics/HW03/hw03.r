@@ -2,31 +2,27 @@ my.Binomial <- function(x, n, p) {
   # Set the scientific notation precision threshold to 30
   options(scipen = 30)
 
-  # Save x value later for coloring the selected bar graph
-  selected <- x
+  # Create a sequence of x values from 0 to n
+  x <- seq(0, n)
 
-  # Create a vector of the x values
-  x <- 0:n
-
-  # Create a vector of the y values
-  # Can also use built-in dbinom(x, n, p) function to calculate
-  y <- (factorial(n) / (factorial(x) * factorial(n - x))) * (p ^ x) * ((1 - p) ^ (n - x))
+  # Calculate the probability for each x value
+  x.fx <- dbinom(x, n, p)
 
   # Loop through the x values and print the probability for each one
   for (i in seq_along(x)) {
-    cat("P(X = ", x[i], ") = ", y[i], "\n", sep = "")
+    cat("P(X = ", x[i], ") = ", x.fx[i], "\n", sep = "")
   }
 
   # Calculate the mean, variance and standard deviation
-  mean <- n * p
-  variance <- n * p * (1 - p)
-  sd <- sqrt(variance)
+  EX <- sum(x * x.fx)
+  Var <- sum((x ^ 2) * x.fx) - (EX ^ 2)
+  SD <- sqrt(Var)
 
   # Print the mean, variance and standard deviation
-  cat("Mean:", mean, "\nVariance:", variance, "\nStandard Deviation:", sd, "\n")
+  cat("Mean:", EX, "\nVariance:", Var, "\nStandard Deviation:", SD, "\n")
 
   # Plot the y values as a bar chart and highlight the selected x value
-  barplot(y, names.arg = x, col = ifelse(x == selected, "#fa9398", "#219796"), xlab = "x", ylab = "P(X=x)")
+  barplot(x.fx, names.arg = x, col = "lightseagreen", xlab = "x", ylab = "P(X = x)")
 }
 
 my.Binomial(2, 4, 0.1)

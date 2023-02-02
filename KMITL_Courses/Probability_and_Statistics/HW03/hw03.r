@@ -1,4 +1,4 @@
-my.Binomial <- function(x, n, p) {
+my.Binomial <- function(n, p) {
   # Set the scientific notation precision threshold to 30
   options(scipen = 30)
 
@@ -25,4 +25,4 @@ my.Binomial <- function(x, n, p) {
   barplot(x.fx, names.arg = x, col = "lightseagreen", xlab = "x", ylab = "P(X = x)")
 }
 
-my.Binomial(2, 4, 0.1)
+my.Binomial(4, 0.1)

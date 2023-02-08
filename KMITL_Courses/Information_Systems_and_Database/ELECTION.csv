@@ -1,0 +1,148 @@
+ELECTION_YEAR,CANDIDATE,VOTES,WINNER_LOSER_INDIC
+1789,Washington G,69,W
+1789,Adams J,34,L
+1789,Jay J,9,L
+1789,Harrison R H,6,L
+1789,Retledge J,6,L
+1789,Hancock J,4,L
+1789,Clinton G,3,L
+1789,Huntington S,2,L
+1789,Milton J,2,L
+1789,Armstrong J,1,L
+1789,Lincoln B,1,L
+1789,Telfair E,1,L
+1792,Washington G,132,W
+1792,Adams J,77,L
+1792,Clinton G,50,L
+1792,Jefferson T,4,L
+1792,Burr A,1,L
+1796,Adams J,71,W
+1796,Jefferson T,68,L
+1796,Pinckney T,59,L
+1796,Burr A,30,L
+1796,Adams S,15,L
+1796,Ellsworth G,11,L
+1796,Clinton G,7,L
+1796,Jay J,5,L
+1796,Iredell J,3,L
+1796,Henry J,2,L
+1796,Johnson S,2,L
+1796,Washington G,2,L
+1796,Pinckney C C,1,L
+1800,Jefferson T,73,W
+1800,Burr A,73,L
+1800,Adams J,65,L
+1800,Pinckney C C,64,L
+1800,Jay J,1,L
+1804,Jefferson T,162,W
+1804,Pinckney C C,14,L
+1808,Madison J,122,W
+1808,Pinckney C C,47,L
+1808,Clinton G,6,L
+1812,Madison J,128,W
+1812,Clinton G,89,L
+1816,Monroe J,183,W
+1816,King R,34,L
+1820,Monroe J,231,W
+1820,Adams J Q,1,L
+1824,Adams J Q,84,W
+1824,Jackson A,99,L
+1824,Crawford W H,41,L
+1824,Clay H,37,L
+1828,Jackson A,178,W
+1828,Adams J,83,L
+1832,Jackson A,219,W
+1832,Clay H,49,L
+1832,Floyd J,11,L
+1832,Wirt W,7,L
+1836,Van Buren M,170,W
+1836,Harrison W H,73,L
+1836,White H L,26,L
+1836,Webster D,14,L
+1836,Mangum W P,11,L
+1840,Harrison W H,234,W
+1840,Van Buren M,60,L
+1844,Polk J K,170,W
+1844,Clay H,105,L
+1848,Taylor Z,163,W
+1848,Cass L,127,L
+1852,Pierce F,254,W
+1852,Scott W,42,L
+1856,Buchanan J,174,W
+1856,Fremont J C,114,L
+1856,Fillmore M,8,L
+1860,Lincoln A,180,W
+1860,Breckinridge J,72,L
+1860,Bell J,39,L
+1860,Douglas S,12,L
+1864,Lincoln A,212,W
+1864,McClellan G B,21,L
+1868,Grant U S,214,W
+1868,Seymour H,80,L
+1872,Grant U S,286,W
+1872,Hendricks T A,42,L
+1872,Brown B G,18,L
+1872,Jenkins C J,2,L
+1872,Davis D,1,L
+1876,Hayes R B,185,W
+1876,Tilden S J,184,L
+1880,Garfield J A,214,W
+1880,Hancock W S,155,L
+1884,Cleveland G,219,W
+1884,Blaine J G,182,L
+1888,Harrison B,233,W
+1888,Cleveland G,168,L
+1892,Cleveland G,277,W
+1892,Harrison B,145,L
+1892,Weaver J B,22,L
+1896,McKinley W,271,W
+1896,Bryan W J,176,L
+1900,McKinley W,292,W
+1900,Bryan W J,155,L
+1904,Roosevelt T,336,W
+1904,Parker A B,140,L
+1908,Taft W H,321,W
+1908,Bryan W J,162,L
+1912,Wilson W,435,W
+1912,Roosevelt T,88,L
+1912,Taft W H,8,L
+1916,Wilson W,277,W
+1916,Hughes C E,254,L
+1920,Harding W G,404,W
+1920,Cox W W,127,L
+1924,Coolidge C,382,W
+1924,Davis J W,136,L
+1924,La Follette R M,13,L
+1928,Hoover H C,444,W
+1928,Smith A E,87,L
+1932,Roosevelt F D,472,W
+1932,Hoover H C,59,L
+1936,Roosevelt F D,523,W
+1936,Landon A M,8,L
+1940,Roosevelt F D,449,W
+1940,Wilkie W L,82,L
+1944,Roosevelt F D,432,W
+1944,Dewey T E,99,L
+1948,Truman H S,303,W
+1948,Dewey T E,189,L
+1948,Thurmound J S,39,L
+1952,Eisenhower D D,442,W
+1952,Stevenson A,8,L
+1956,Eisenhower D D,457,W
+1956,Stevenson A,73,L
+1956,Jones W B,1,L
+1960,Kennedy J F,303,W
+1960,Nixon R M,219,L
+1960,Byrd,15,L
+1964,Johnson L B,486,W
+1964,Goldwater B,52,L
+1968,Nixon R M,301,W
+1968,Humphrey H H,191,L
+1968,Wallace G C,46,L
+1972,Nixon R M,520,W
+1972,McGovern GS,17,L
+1972,Hospers J,1,L
+1976,Carter J E,297,W
+1976,Ford G R,240,L
+1980,Reagan R,489,W
+1980,Carter J E,49,L

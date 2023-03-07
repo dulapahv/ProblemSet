@@ -8,16 +8,22 @@ class TreeNode:
 
 class Solution:
     def deepestLeavesSum(self, root) -> int:
-        q = [root]
-        while q:
-            pre = q
-            current = []
-            for p in q:
-                for child in [p.left, p.right]:
-                    if child:
-                        current.append(child)
-            q = current
-        return sum(node.val for node in pre)
+        rootl = root
+        rootr = root
+        ret = 0
+        while (rootl.left or rootl.right):
+            if rootl.left:
+                rootl = rootl.left
+            else:
+                rootl = rootl.right
+        ret += rootl.val
+        while (rootr.right or rootr.left):
+            if rootr.right:
+                rootr = rootr.right
+            else:
+                rootr = rootr.left
+        ret += rootr.val
+        return ret
 
 
 # [1,2,3,4,5,null,6,7,null,null,null,null,8]

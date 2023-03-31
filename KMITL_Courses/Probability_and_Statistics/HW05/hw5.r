@@ -1,22 +1,21 @@
-cond_mean_var <- function(X, Joint){
-  # Extract the marginal of X
-  marginal_X <- rowSums(Joint)
-  # Extract the marginal of Y
-  marginal_Y <- colSums(Joint)
-  # Extract the conditional probability of Y given X
-  cond_prob <- Joint/marginal_X
-  # Compute the Mean of Y given X
-  cond_mean <- cond_prob %*% marginal_Y
-  # Compute the variance of Y given X
-  cond_var <- (cond_prob^2 %*% marginal_Y) - (cond_mean^2)
-  # Print the results
-  cat("Mean of Y given X =", X, "is", cond_mean[X],
-  "and the variance is", cond_var[X], " \n")
+find_mean_variance <- function(x, Joint) {
+    # y = Response time (nearest second)
+    y <- c(1, 2, 3, 4)
+    # marginal PDF fX(x) = summation of fXY(x,y)
+    marginal_pdf <- apply(Joint, 2, sum)
+    # conditional PDF fY|x(y) = fXY(x,y) / fX(x)
+    conditional_pdf <- Joint[, x] / marginal_pdf[x]
+    # calculate mean
+    mean <- sum(y * conditional_pdf)
+    # calculate variance
+    var <- sum((y - mean)^2 * conditional_pdf)
+    # print the mean and variance
+    cat("E(Y|X =", x, ") =", mean, "\n")
+    cat("V(Y|X =", x, ") =", var, "\n")
 }
 
+Joint <- matrix(c(0.01, 0.02, 0.25, 0.02, 0.03, 0.2, 0.02, 0.1, 0.05, 0.15, 0.1, 0.05), nrow = 4, ncol = 3, byrow = TRUE)
 
-Joint = matrix(c(0.01,0.02,0.25,0.02,0.03,0.20,0.02,0.10,0.05,0.15,0.10,0.05),nrow=4,ncol=3)
-
-
-# Test function
-cond_mean_var(1, Joint)
+find_mean_variance(1, Joint)
+find_mean_variance(2, Joint)
+find_mean_variance(3, Joint)

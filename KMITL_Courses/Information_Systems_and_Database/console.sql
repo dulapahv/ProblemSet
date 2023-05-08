@@ -336,12 +336,53 @@
 
 -- Find the names of those presidents born in a state which entered the union not more than 30 years earlier than their
 -- first inauguration year.
-SELECT "PRES_NAME"
-FROM "PRESIDENT" X
-WHERE "STATE_BORN" IN
-      (SELECT "STATE_NAME"
-       FROM "STATE"
-       WHERE "YEAR_ENTERED" + 30 >= ANY
-             (SELECT MIN("YEAR_INAUGURATED")
-              FROM "ADMINISTRATION"
-              WHERE "PRES_NAME" = X."PRES_NAME"))
+-- SELECT "PRES_NAME"
+-- FROM "PRESIDENT" X
+-- WHERE "STATE_BORN" IN
+--       (SELECT "STATE_NAME"
+--        FROM "STATE"
+--        WHERE "YEAR_ENTERED" + 30 >= ANY
+--              (SELECT MIN("YEAR_INAUGURATED")
+--               FROM "ADMINISTRATION"
+--               WHERE "PRES_NAME" = X."PRES_NAME"))
+
+-- List hobbies that at least 3 Democratic presidents have in common.
+-- SELECT "HOBBY"
+-- FROM "PRES_HOBBY", "PRESIDENT"
+-- WHERE "PRESIDENT"."PRES_NAME" = "PRES_HOBBY"."PRES_NAME"
+--   AND "PARTY" = 'Democratic'
+-- GROUP BY "HOBBY"
+-- HAVING COUNT(*) >= 3
+
+--  List details of presidents who belonged to the party which has the highest number of presidents in Ohio.
+-- SELECT p.*
+-- FROM "PRESIDENT" p
+--          JOIN (SELECT "PARTY"
+--                FROM "PRESIDENT"
+--                WHERE "STATE_BORN" = 'Ohio'
+--                GROUP BY "PARTY"
+--                ORDER BY COUNT(*) DESC
+--                LIMIT 1) q ON p."PARTY" = q."PARTY"
+-- WHERE p."STATE_BORN" = 'Ohio'
+
+-- List the rows of the top two candidates by votes for each year
+-- SELECT *
+-- FROM "ELECTION" e
+-- WHERE e."WINNER_LOSER_INDIC" = 'W'
+--   AND e."CANDIDATE" IN
+--       (SELECT "CANDIDATE"
+--        FROM "ELECTION"
+--        WHERE "ELECTION_YEAR" = e."ELECTION_YEAR"
+--        ORDER BY "VOTES" DESC
+--        LIMIT 2)
+-- ORDER BY "ELECTION_YEAR", "VOTES" DESC
+
+-- List the name of the youngest second wife
+SELECT "SPOUSE_NAME"
+FROM "PRES_MARRIAGE"
+WHERE "PRES_NAME" IN (SELECT "PRES_NAME"
+                      FROM "PRES_MARRIAGE"
+                      GROUP BY "PRES_NAME"
+                      HAVING COUNT(*) > 1)
+ORDER BY "SP_AGE"
+LIMIT 1;

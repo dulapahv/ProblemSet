@@ -378,11 +378,30 @@
 -- ORDER BY "ELECTION_YEAR", "VOTES" DESC
 
 -- List the name of the youngest second wife
-SELECT "SPOUSE_NAME"
-FROM "PRES_MARRIAGE"
-WHERE "PRES_NAME" IN (SELECT "PRES_NAME"
-                      FROM "PRES_MARRIAGE"
-                      GROUP BY "PRES_NAME"
-                      HAVING COUNT(*) > 1)
-ORDER BY "SP_AGE"
-LIMIT 1;
+-- SELECT "SPOUSE_NAME"
+-- FROM "PRES_MARRIAGE"
+-- WHERE "PRES_NAME" IN (SELECT "PRES_NAME"
+--                       FROM "PRES_MARRIAGE"
+--                       GROUP BY "PRES_NAME"
+--                       HAVING COUNT(*) > 1)
+-- ORDER BY "SP_AGE"
+-- LIMIT 1;
+
+-- List hobbies that no Republican presidents have in common.
+-- SELECT "HOBBY"
+-- FROM "PRES_HOBBY", "PRESIDENT"
+-- WHERE "PRESIDENT"."PRES_NAME" = "PRES_HOBBY"."PRES_NAME"
+--   AND "PARTY" = 'Republican'
+-- GROUP BY "HOBBY"
+-- HAVING COUNT(*) = 1
+
+-- List details of Republican presidents who have maximum total number of hobbies in the party.
+SELECT "PRESIDENT".*
+FROM "PRESIDENT"
+         JOIN (SELECT "PRESIDENT"."PRES_NAME"
+               FROM "PRES_HOBBY", "PRESIDENT"
+               WHERE "PRESIDENT"."PRES_NAME" = "PRES_HOBBY"."PRES_NAME"
+                 AND "PARTY" = 'Republican'
+               GROUP BY "PRESIDENT"."PRES_NAME"
+               ORDER BY COUNT(*) DESC
+               LIMIT 1) q ON "PRESIDENT"."PRES_NAME" = q."PRES_NAME"

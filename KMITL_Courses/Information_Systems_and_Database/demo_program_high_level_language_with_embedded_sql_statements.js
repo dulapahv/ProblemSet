@@ -1,4 +1,4 @@
-// JSON vs SQL: A continuation from rrrgdemo.ipynb
+// JSON vs SQL: A continuation from demo_program_high_level_language_with_embedded_sql_statements.ipynb
 
 // a people array used as a database table for people
 
